@@ -1,0 +1,32 @@
+{
+  "name": "we-theme-accounts-default",
+  "version": "0.0.1",
+  "authors": [
+    "Alberto Souza <alberto.souza.99@gmail.com>"
+  ],
+  "description": "TODO",
+  "main": "dist/stylesheet/style.css",
+  "moduleType": [
+    "globals"
+  ],
+  "dependencies": {
+    "nprogress": "~0.1.6",
+    "bootstrap": "~3.0.3",
+    "jquery": "^2.1.1",
+    "font-awesome": "4.1.0"
+  },
+  "keywords": [
+    "ember.js",
+    "ember"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wejs/we-theme-accounts-default",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "examples",
+    "src"
+  ]
+}

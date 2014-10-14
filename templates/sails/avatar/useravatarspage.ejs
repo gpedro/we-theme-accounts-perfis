@@ -1,0 +1,19 @@
+<h2><%= __("avatar.page.title") %></h2>
+
+<%- include ../partials/avatar-local-nav.ejs %>
+
+<p><%- __("avatar.page.description") %></p>
+
+<div>
+<img src="/avatar/<%= user.id %>?style=medium">
+<% if(currentAvatar){ %>
+
+<% } else { %>
+
+  Você está usando o avatar padrão da rede.<br>
+
+  <a href="#">Para alterar o avatar clique aqui</a>
+
+<% } %>
+
+</div>

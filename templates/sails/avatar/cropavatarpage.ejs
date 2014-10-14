@@ -1,0 +1,71 @@
+<h2><%= __("avatar.page.crop.title") %></h2>
+
+<%- include ../partials/avatar-local-nav.ejs %>
+
+<p><%- __("avatar.page.crop.description") %></p>
+
+<form action="/avatar/crop" name="changeAvatarForm" class="change-avatar-form" method="POST">
+  <div class="form-group">
+    <img src="/avatar/<%= user.id %>?style=original" id="userAvatarToResize" />
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-success submit" type="submit">
+      <%- __("avatar.form.crop.submit.label") %>
+      <span class="glyphicon glyphicon-chevron-right"> </span>
+    </button>
+    <a href="/avatar" class="btn btn-default submit">
+      <%- __("avatar.form.cancel.label") %>
+    </a>
+  </div>
+
+  <input type="hidden" name="imageId" value="<%= user.avatarId %>" />
+
+  <input id="crop-coord-x" type="hidden" name="coord-x" value="" />
+  <input id="crop-coord-y" type="hidden" name="coord-y" value="" />
+  <input id="crop-coord-x2" type="hidden" name="coord-x2" value="" />
+  <input id="crop-coord-y2" type="hidden" name="coord-y2" value="" />
+  <input id="crop-coord-w" type="hidden" name="coord-w" value="" />
+  <input id="crop-coord-h" type="hidden" name="coord-h" value="" />
+
+  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+
+</form>
+
+<script type="text/javascript">
+  jQuery(function($) {
+
+    var  cropElement = $('#userAvatarToResize');
+    // set box width based on parent width
+    //var parentWidth = cropElement.parent().width();
+
+    var fieldCoordx = $('#crop-coord-x');
+    var fieldCoordy = $('#crop-coord-y');
+    var fieldCoordx2 = $('#crop-coord-x2');
+    var fieldCoordy2 = $('#crop-coord-y2');
+    var fieldCoordw = $('#crop-coord-w');
+    var fieldCoordh = $('#crop-coord-h');
+
+    cropElement.Jcrop({
+      setSelect:   [ 0, 0, 650, 650 ],
+      //boxWidth: parentWidth,
+      boxHeight: 660,
+      bgColor: 'black',
+      bgOpacity: '0.4',
+      onSelect: function(coords) {
+        fieldCoordx.val(coords.x);
+        fieldCoordy.val(coords.y);
+        fieldCoordx2.val(coords.x2);
+        fieldCoordy2.val(coords.y2);
+        fieldCoordw.val(coords.w);
+        fieldCoordh.val(coords.h);
+      },
+      // trueSize: [
+      //   file.width,
+      //   file.heigth
+      // ],
+      //aspectRatio: 1
+    });
+  });
+</script>
+

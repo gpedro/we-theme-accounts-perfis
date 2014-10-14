@@ -1,0 +1,31 @@
+<h2><%= __("avatar.page.change.title") %></h2>
+
+<%- include ../partials/avatar-local-nav.ejs %>
+
+<p><%- __("avatar.page.change.description") %></p>
+
+<form action="/avatar/change" name="changeAvatarForm" class="change-avatar-form" method="POST" enctype="multipart/form-data">
+  <div class="form-group">
+    <div class="input-group">
+      <label for="username" class="input-group-addon">
+        <span class="glyphicon glyphicon-picture"></span>
+        <%- __("avatar.form.avatar.label") %>
+      </label>
+      <input class="form-control input-lg"  type="file" id="avatar" name="avatar">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-success submit" type="submit">
+      <%- __("avatar.form.submit.label") %>
+      <span class="glyphicon glyphicon-chevron-right"> </span>
+    </button>
+    <a href="/avatar" class="btn btn-default submit">
+      <%- __("avatar.form.cancel.label") %>
+    </a>
+  </div>
+
+  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
+
+</form>
+

@@ -1,0 +1,26 @@
+{
+  "name": "we-theme-accounts-default",
+  "description": "Default We.js accounts theme.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:wejs/we-theme-accounts-default.git"
+  },
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-bump": "0.0.14",
+    "grunt-contrib-connect": "^0.8.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-link-html": "^0.1.2",
+    "grunt-sync": "0.0.8"
+  },
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}

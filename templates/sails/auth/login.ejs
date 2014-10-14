@@ -1,0 +1,49 @@
+
+<h2 class="form-signin-heading"><%= __("auth.login.title") %></h2>
+
+<% if (errors) {%>
+  <% errors.forEach(function (error) { %>
+    <%= __(error) %>
+  <% }) %>
+<% } %>
+
+<form role="form" class="user-signup-form"  action="/auth/local" method="post">
+  <!-- input: email -->
+  <div class="form-group">
+    <div class="input-group">
+      <label for="email" class="input-group-addon">
+        <span class="glyphicon glyphicon-envelope"></span>
+      </label>
+      <input class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" name="identifier">
+    </div>
+  </div>
+
+
+  <!-- input: password -->
+  <div class="form-group">
+    <div class="input-group">
+      <label for="password" class="input-group-addon">
+        <span class="glyphicon glyphicon-lock"> </span>
+      </label>
+      <input class="form-control input-lg" placeholder="<%= __("auth.register.form.password") %>" required="true" type="password" name="password">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <button class="btn btn-lg btn-success submit" type="submit">
+        <%= __("auth.register.form.submit") %>
+        <span class="glyphicon glyphicon-chevron-right"> </span>
+      </button>
+    </div>
+  </div>
+
+</form>
+
+<% if (providers) {%>
+  <h4>You can also use one of these...</h4>
+
+  <% Object.keys(providers).forEach(function (key) { %>
+    <a href="/auth/<%= providers[key].slug %>" role="button"><%= providers[key].name %></a>
+  <% }) %>
+<% } %>

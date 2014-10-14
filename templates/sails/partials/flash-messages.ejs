@@ -1,0 +1,27 @@
+
+<% if( errorMessage = req.flash('error-message')){ %>
+  <% errorMessage.forEach(function(message){ %>
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%- message %>
+    </div>
+  <% }) %>
+<% } %>
+
+<% if( successMessage = req.flash('success-message')){ %>
+  <% successMessage.forEach(function(message){ %>
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%- message %>
+    </div>
+  <% }) %>
+<% } %>
+
+<% if( successMessage = req.flash('warning-message')){ %>
+  <% successMessage.forEach(function(message){ %>
+    <div class="alert alert-success alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%- message %>
+    </div>
+  <% }) %>
+<% } %>

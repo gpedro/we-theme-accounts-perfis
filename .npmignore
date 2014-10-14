@@ -1,0 +1,8 @@
+test
+example
+bower_components
+.jscsrc
+.jshintignore
+.jshintrc
+.travis.yml
+.gitignore
