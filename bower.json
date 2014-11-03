@@ -1,6 +1,7 @@
 {
-  "name": "we-theme-accounts-default",
+  "name": "we-theme-accounts-perfis",
   "version": "0.0.1",
+  "private": true,
   "authors": [
     "Alberto Souza <alberto.souza.99@gmail.com>"
   ],
@@ -13,14 +14,15 @@
     "nprogress": "~0.1.6",
     "bootstrap": "~3.0.3",
     "jquery": "^2.1.1",
-    "font-awesome": "4.1.0"
+    "font-awesome": "4.1.0",
+    "tupi": "~0.1.32"
   },
   "keywords": [
     "ember.js",
     "ember"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/wejs/we-theme-accounts-default",
+  "homepage": "https://github.com/wejs/we-theme-accounts-perfis",
   "ignore": [
     "node_modules",
     "bower_components",

@@ -1,10 +1,10 @@
 {
-  "name": "we-theme-accounts-default",
-  "description": "Default We.js accounts theme.",
+  "name": "we-theme-accounts-perfis",
+  "description": "Tema visual do we-theme-accounts-perfis.",
   "version": "0.0.2",
   "repository": {
     "type": "git",
-    "url": "git@github.com:wejs/we-theme-accounts-default.git"
+    "url": "git@github.com:wejs/we-theme-accounts-perfis.git"
   },
   "main": "index.js",
   "dependencies": {},

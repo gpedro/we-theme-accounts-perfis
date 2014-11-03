@@ -1,6 +1,6 @@
-# we-theme-accounts-default
+# Tema do projeto perfis.atencaobasica.org.br
 
-We.js accounts default theme see it working on: [accounts.wejs.org](accounts.wejs.org)
+We.js accounts default theme see it working on: [perfis.atencaobasica.org.br](perfis.atencaobasica.org.br)
 
 ## development
 
@@ -22,8 +22,8 @@ We.js accounts default theme see it working on: [accounts.wejs.org](accounts.wej
 In terminal:
 
 ```sh
-git clone https://github.com/wejs/we-theme-accounts-default.git
-cd we-theme-accounts-default
+git clone https://github.com/wejs/perfis.atencaobasica.org.br.git
+cd perfis.atencaobasica.org.br
 npm install && bower install
 ```
 
@@ -37,14 +37,6 @@ grunt
 
 then access in yout browser: http://localhost:4000/
 
-
-## Links
-
-> * Team: https://github.com/orgs/wejs/people
-> * Contributors: https://github.com/wejs/we-theme-accounts-default/graphs/contributors
-> * We.js: https://github.com/wejs
-
 ## Copyright and license
 
-Copyright 2013-2014 Alberto Souza <alberto.souza.dev@gmail.com> and [contributors](https://github.com/wejs/wejs-theme-default/graphs/contributors) , under [the MIT license](LICENSE).
-
+Copyright 2013-2014, [the MIT license](LICENSE).
