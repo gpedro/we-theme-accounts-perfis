@@ -1,7 +1,7 @@
 {
   "name": "we-theme-accounts-default",
   "description": "Default We.js accounts theme.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "git@github.com:wejs/we-theme-accounts-default.git"
