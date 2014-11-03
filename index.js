@@ -24,6 +24,6 @@ module.exports = {
     // one theme javascript file
     javascript: 'dist/javascript/script.js',
     // one css file
-    stylesheet: 'dist/stylesheet/old-style.css'
+    stylesheet: 'dist/stylesheet/style.css'
   }
 };

@@ -1,20 +1,20 @@
 
 <h2 class="form-signin-heading"><%= __("auth.login.title") %></h2>
 
-<% if (errors) {%>
+<% if (typeof errors !== 'undefined' && errors ) {%>
   <% errors.forEach(function (error) { %>
     <%= __(error) %>
   <% }) %>
 <% } %>
 
-<form role="form" class="user-signup-form"  action="/auth/local" method="post">
+<form role="form" class="user-signup-form"  action="/login" method="post">
   <!-- input: email -->
   <div class="form-group">
     <div class="input-group">
       <label for="email" class="input-group-addon">
         <span class="glyphicon glyphicon-envelope"></span>
       </label>
-      <input class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" name="identifier">
+      <input class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" name="email">
     </div>
   </div>
 
@@ -40,7 +40,7 @@
 
 </form>
 
-<% if (providers) {%>
+<% if (typeof providers !== 'undefined' && providers ) {%>
   <h4>You can also use one of these...</h4>
 
   <% Object.keys(providers).forEach(function (key) { %>

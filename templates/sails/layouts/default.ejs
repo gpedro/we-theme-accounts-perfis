@@ -8,25 +8,12 @@
 
     <link rel="icon" href="/favicon.ico">
 
-    <!--STYLES-->
-    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap-theme.css">
-    <link rel="stylesheet" href="/vendor/select2/select2.css">
-    <link rel="stylesheet" href="/vendor/Jcrop/css/jquery.Jcrop.css">
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
+    <%- sails.services.theme.getlinkCssTags() %>
 
-    <!--SCRIPTS-->
-    <script src="/vendor/jquery/dist/jquery.js"></script>
-    <script src="/vendor/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="/vendor/select2/select2.js"></script>
-    <script src="/vendor/jquery-validation/dist/jquery.validate.js"></script>
-    <script src="/vendor/bootstrapValidator/dist/js/bootstrapValidator.js"></script>
-    <script src="/vendor/Jcrop/js/jquery.color.js"></script>
-    <script src="/vendor/Jcrop/js/jquery.Jcrop.js"></script>
-    <script src="/js/app.js"></script>
-    <script src="/js/jquery.checkAvailability.js"></script>
-    <!--SCRIPTS END-->
+    <%- sails.services.theme.getJsScriptTag() %>
+
+    <script src="/core/js/app.js"></script>
+    <script src="/core/js/jquery.checkAvailability.js"></script>
   </head>
 
   <body>
@@ -36,6 +23,5 @@
       <%- include ../partials/flash-messages.ejs %>
       <%- body %>
     </div>
-
   </body>
 </html>
