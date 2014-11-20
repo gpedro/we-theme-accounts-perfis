@@ -7,3 +7,13 @@
     </div>
   <% }) %>
 <% } %>
+
+<% var flasMessages = req.flash('messages'); if(flasMessages){ %>
+  <% flasMessages.forEach(function(message){ %>
+    <div class="alert alert-<%= message.status %> alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%- message.message %>
+    </div>
+  <% }) %>
+<% } %>
+
