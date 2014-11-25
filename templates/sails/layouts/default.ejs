@@ -12,12 +12,93 @@
 
     <%- sails.services.theme.getJsScriptTag() %>
 
+    <style type="text/css">
+      body {
+        background: #fafafa;
+      }
+      .user-form .form-group input[type="text"].form-control,
+      .user-form .form-group input[type="email"].form-control,
+      .user-form .form-group input[type="password"].form-control {
+        box-shadow: none;
+        background: #f2f2f2;
+        border: none;
+      }
+      .user-form .input-group label {
+        background: #f2f2f2;
+        border: none;
+        color: #333;
+      }
+      .user-form .form-group .submit {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      .user-signup-form {
+        border-radius: 5px;
+        background: #fff;
+        box-shadow: 0 0 4px #b5b5b5;
+        width: 400px;
+        margin: auto;
+      }
+      .user-signup-form .form-content {
+        padding: 35px 35px 20px 35px;
+      }
+      .user-signup-form .user-signup-logo-cdp {
+        text-align: center;
+      }
+      .user-signup-form .user-signup-logo-cdp svg {
+        width: 96px;
+        height: 96px;
+      }
+      .user-signup-form h2.form-signin-heading {
+        color: #797979;
+        font-weight: bold;
+        margin: 35px 0 0 0;
+        text-align: center;
+      }
+      .user-signup-form h3 {
+        color: #797979;
+        text-align: center;
+        margin: 0;
+      }
+      .user-signup-form h3+.form-group {
+        margin-top: 50px;
+      }
+      .user-signup-form .form-footer {
+        background: #f2f2f2;
+        padding: 20px;
+        text-align: center;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      .user-signup-form .form-footer ul {
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+      }
+      .user-signup-form .form-footer ul li {
+        display: inline-block;
+        list-style: none;
+        font-size: 12px;
+        padding: 0 5px;
+        border-right: 1px solid #c0c0c0;
+        line-height: 1em;
+      }
+      .user-signup-form .form-footer ul li a {
+        color: #58a8cd;
+      }
+      .user-signup-form .form-footer ul li:last-child {
+        border: none;
+      }
+
+    </style>
+
     <script src="/core/js/app.js"></script>
     <script src="/core/js/jquery.checkAvailability.js"></script>
   </head>
 
   <body>
     <%- include ../partials/navbar.ejs %>
+
 
     <div class="container">
       <%- include ../partials/flash-messages.ejs %>
