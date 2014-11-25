@@ -17,6 +17,20 @@
   </div>
   <!-- /input: username -->
 
+  <!-- input: cpf -->
+  <div class="form-group">
+    <div class="input-group">
+      <label for="cpf" class="input-group-addon">
+        <span class="glyphicon glyphicon-user"></span>
+      </label>
+      <input id="cpf" class="form-control input-lg" placeholder="Digite o seu CPF" required="true" type="text" value="<%= (user.cpf||'') %>" name="cpf">
+      <label for="cpf" class="input-group-addon">
+        <div id="cpfResponse"></div>
+      </label>
+    </div>
+  </div>
+  <!-- /input: cpf -->
+
   <!-- input: email -->
   <div class="form-group">
     <div class="input-group">
@@ -46,73 +60,6 @@
     </div>
     <!-- /input: password -->
   <% } %>
-
-  <hr>
-  <h4><%- __('user.form.interests.title') %></h4><br>
-  <!-- input: interests -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="fieldInterests" class="input-group-addon">
-        <span class="glyphicon glyphicon-tags"></span>&nbsp; <%- __("user.form.interests.label") %>
-      </label>
-
-      <%- sails.tags.arrayToSelect2('fieldInterests','class="form-control select2" multiple="true"',interests, []) %>
-
-    </div>
-    <p class="text-muted"><%- __("user.form.interests.description") %></p>
-  </div>
-  <!-- /input: interests -->
-
-  <!-- input: competences -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="fieldCompetences" class="input-group-addon">
-        <span class="glyphicon glyphicon-tags"></span>&nbsp; <%- __("user.form.competences.label") %>
-      </label>
-
-      <%- sails.tags.arrayToSelect2('fieldCompetences', 'class="form-control select2" multiple="true"',interests, []) %>
-
-    </div>
-    <p class="text-muted"><%- __("user.form.competences.description") %></p>
-  </div>
-  <!-- /input: competences -->
-
-  <hr>
-  <h4><%- __('auth.register.form.fields.optional.title') %></h4>
-  <br>
-
-  <!-- input: displayName -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="displayName" class="input-group-addon">
-        <span class="glyphicon glyphicon-user"></span>
-      </label>
-      <input id="displayName" class="form-control input-lg" placeholder="<%= __("auth.register.form.displayName") %>" required="true" type="text"  value="<%= (user.displayName||'') %>" name="displayName">
-    </div>
-  </div>
-  <!-- /input: displayName -->
-  <!-- input: biography -->
-  <div class="form-group">
-    <label for="biography"><%- __("auth.register.form.biography.label") %>
-    </label>
-    <textarea id="biography" class="form-control input-lg" placeholder="<%= __("auth.register.form.biography.placeholder") %>" name="biography"><%= (user.biography||'') %></textarea>
-
-  </div>
-  <!-- /input: biography -->
-  <hr>
-  <!-- input: language -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="language" class="input-group-addon">
-        <span class="glyphicon glyphicon-globe"></span> <%- __("auth.register.form.language") %>
-      </label>
-      <select id="language" name="language" class="form-control input-md">
-        <option value="pt-br">pt-br</option>
-        <option value="en-us">en-us</option>
-      </select>
-    </div>
-  </div>
-  <!-- /input: language -->
 
   <%- include ../partials/sys-messages.ejs %>
 

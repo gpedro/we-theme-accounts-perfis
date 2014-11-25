@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand" href="http://wejs.org">
+        <a class="navbar-brand" href="http://atencaobasica.org.br">
           <%- __('navbar.link.return.network') %>
         </a>
     </div>
@@ -20,12 +20,12 @@
           <li>
             <a href="/login"><%- __('navbar.link.login') %></a>
           </li>
+          <li>
+            <a href="/auth/forgot-password"><%- __('navbar.link.forgot-password') %></a>
+          </li>
           <% } else { %>
           <li>
             <a href="/account"><%- __('navbar.link.user.account') %></a>
-          </li>
-          <li>
-            <a href="/avatar"><%- __('navbar.link.user.avatar') %></a>
           </li>
           <li>
             <a href="/auth/logout"><%- __('navbar.link.user.logout') %></a>

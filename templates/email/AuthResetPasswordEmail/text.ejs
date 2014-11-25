@@ -1,10 +1,9 @@
-Hi <%= user.name %>,
+Oi <%= user.displayName %>,
 
-Someone (hopefully you) has requested a password reset for your <%= site.name %> account.  Follow the link below to set a new password:
+Alguém (esperamos que você) solicitou uma nova senha para a sua conta no <%= site.name %> . Siga o link abaixo para definir uma nova senha:
 
 Link: <%= resetPasswordUrl %>
 
-If you don't wish to reset your password, disregard this email and no action will be taken.
+Se você não deseja redefinir sua senha, desconsidere este e-mail e nenhuma ação será tomada.
 
-- The <%= site.name %> Team
-- <%= site.url %>
+<%- include ../partials/footer-text.ejs %>

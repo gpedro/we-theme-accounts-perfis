@@ -1,16 +1,14 @@
-Hi <%= user.name %>,
-
+Oi <%= user.name %>,
 <p>
-Someone (hopefully you) has requested a <strong>password reset</strong> for your <%= site.name %> account.
+Alguém (esperamos que você) solicitou uma <strong>nova senha</strong> para a sua conta no <%= site.name %> .
 </p>
 <p>
-Follow the link below to set a new password:
+<strong>Siga o link</strong> abaixo para definir uma nova senha:
 <br>
-<%= resetPasswordUrl %>
+Link: <strong><%= resetPasswordUrl %></strong>
 </p>
 <p>
-If you don't wish to reset your password, disregard this email and no action will be taken.
+Se você não deseja redefinir sua senha, desconsidere este e-mail e nenhuma ação será tomada.
 </p>
 <br>
-- The <strong><%= site.name %></strong> Team <br>
-- <%= site.url %>
+<%- include ../partials/footer-html.ejs %>
