@@ -1,94 +1,102 @@
-<h2 class="page-title form-signin-heading"><%= __("auth.register.title") %></h2>
-<hr>
-
 <%- include ../partials/sys-messages.ejs %>
 
-<form action="<%= formAction %>" name="createAccountForm" class="user-signup-form" method="POST">
-  <h4><%- __('auth.register.form.fields.required.title') %></h4><br>
-  <!-- input: username -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="username" class="input-group-addon">
-        <span class="glyphicon glyphicon-user"></span>
-      </label>
-      <input id="username" minlength="2" class="form-control input-lg" placeholder="<%= __("auth.register.form.username") %>" required="true" type="text" value="<%= (user.username||'') %>" name="username">
-      <label for="username" class="input-group-addon">
-        <div id="usernameResponse"></div>
-      </label>
+<form action="<%= formAction %>" name="createAccountForm" class="auth-form user-signup-form" method="POST">
+  <div class="form-content">
+    <div class="form-icon">
+      <i class="line line-world"></i>
     </div>
-  </div>
-  <!-- /input: username -->
-
-  <!-- input: cpf -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="cpf" class="input-group-addon">
-        <span class="glyphicon glyphicon-user"></span>
-      </label>
-      <input id="cpf" class="form-control input-lg" placeholder="Digite o seu CPF" required="true" type="text" value="<%= (user.cpf||'') %>" name="cpf">
-      <label for="cpf" class="input-group-addon">
-        <div id="cpfResponse"></div>
-      </label>
-    </div>
-  </div>
-  <!-- /input: cpf -->
-
-  <!-- input: email -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="email" class="input-group-addon">
-        <span class="glyphicon glyphicon-envelope"></span>
-      </label>
-      <input id="email" class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" value="<%= (user.email||'') %>" name="email">
-    </div>
-  </div>
-  <!-- /input: email -->
-
-  <!-- input: password -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="password" class="input-group-addon">
-        <span class="glyphicon glyphicon-lock"> </span>
-      </label>
-      <input id="password" class="form-control input-lg" placeholder="<%= __("auth.register.form.password") %>" required="true" type="password" name="password">
-
-      <!-- input: confirm-password -->
-      <label for="confirm-password" class="sr-only input-group-btn">
-      </label>
-      <input id="confirm-password" class="form-control input-lg" placeholder="<%= __("auth.register.form.confirmPassword") %>" required="true" type="password" name="confirmPassword">
-      <!-- /input: confirm-password -->
-    </div>
-  </div>
-  <!-- /input: password -->
-
-  <%- include ../partials/sys-messages.ejs %>
-
-  <hr>
-  <div class="form-group">
-    <div class="input-group">
-      <div class="agree-terms">
-        <input type="checkbox" name="termos" value="1" class="form-checkbox required">
-        <strong>Li e aceito as <a href="/page/regras-de-convivencia">regras de convivência</a> e <a href="/page/termos-de-uso">termo de uso</a> da Comunidade de Práticas.*</strong>
+    <h2 class="form-heading"><%= __("auth.register.title") %></h2>
+    <h4><%- __('auth.register.form.fields.required.title') %></h4>
+    <!-- input: username -->
+    <div class="form-group">
+      <div class="input-group">
+        
+        <input id="username" minlength="2" class="form-control input-lg" placeholder="<%= __("auth.register.form.username") %>" required="true" type="text" value="<%= (user.username||'') %>" name="username">
+        <label for="username" class="input-group-addon">
+          <div id="usernameResponse"></div>
+        </label>
+        <label for="username" class="input-group-addon">
+          <span class="glyphicon glyphicon-user"></span>
+        </label>
       </div>
     </div>
-  </div>
-  <hr>
+    <!-- /input: username -->
 
-  <div class="form-group">
-    <div class="input-group">
-      <button class="btn btn-lg btn-success submit" type="submit">
-        <%= __("auth.register.form.submit") %>
-        <span class="glyphicon glyphicon-chevron-right"> </span>
-      </button>
+    <!-- input: cpf -->
+    <div class="form-group">
+      <div class="input-group">
+        <input id="cpf" class="form-control input-lg" placeholder="Digite o seu CPF" required="true" type="text" value="<%= (user.cpf||'') %>" name="cpf">
+        <label for="cpf" class="input-group-addon">
+          <div id="cpfResponse"></div>
+        </label>
+        <label for="cpf" class="input-group-addon">
+          <span class="glyphicon glyphicon-user"></span>
+        </label>
+      </div>
     </div>
+    <!-- /input: cpf -->
+
+    <!-- input: email -->
+    <div class="form-group">
+      <div class="input-group">
+        <input id="email" class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" value="<%= (user.email||'') %>" name="email">
+        <label for="email" class="input-group-addon">
+          <span class="glyphicon glyphicon-envelope"></span>
+        </label>
+      </div>
+    </div>
+    <!-- /input: email -->
+
+    <!-- input: password -->
+    <div class="form-group">
+      <div class="input-group">
+        
+        <input id="password" class="form-control input-lg" placeholder="<%= __("auth.register.form.password") %>" required="true" type="password" name="password">
+
+        <!-- input: confirm-password -->
+        <label for="confirm-password" class="sr-only input-group-btn">
+        </label>
+        <label for="password" class="input-group-addon">
+          <span class="glyphicon glyphicon-lock"> </span>
+        </label>
+      </div>
+    </div>
+    <!-- /input: password -->
+    <div class="form-group">
+      <div class="input-group">
+        <input id="confirm-password" class="form-control input-lg" placeholder="<%= __("auth.register.form.confirmPassword") %>" required="true" type="password" name="confirmPassword">
+        <label for="password" class="input-group-addon">
+          <span class="glyphicon glyphicon-lock"> </span>
+        </label>
+      </div>
+    </div>
+    <!-- /input: confirm-password -->
+
+    <%- include ../partials/sys-messages.ejs %>
+
+    <div class="form-group">
+      <div class="input-group">
+        <div class="agree-terms">
+          <input type="checkbox" name="termos" value="1" class="form-checkbox required">
+          <strong>Li e aceito as <a href="/page/regras-de-convivencia">regras de convivência</a> e <a href="/page/termos-de-uso">termo de uso</a> da Comunidade de Práticas.*</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group clearfix">
+      <div class="input-group pull-right">
+        <button class="btn btn-lg btn-success submit" type="submit">
+          <%= __("auth.register.form.submit") %>
+        </button>
+      </div>
+    </div>
+
+
+    <% if(req.accessToken){ %>
+      <input type="hidden" name="access_token" value="<%= req.accessToken.token %>" />
+    <% } %>
+    <input type="hidden" name="service" value="<%= service %>" />
+    <input type="hidden" name="consumerId" value="<%= consumerId %>" />
+    <input type="hidden" name="_csrf" value="<%= _csrf %>" />
   </div>
-
-
-  <% if(req.accessToken){ %>
-    <input type="hidden" name="access_token" value="<%= req.accessToken.token %>" />
-  <% } %>
-  <input type="hidden" name="service" value="<%= service %>" />
-  <input type="hidden" name="consumerId" value="<%= consumerId %>" />
-  <input type="hidden" name="_csrf" value="<%= _csrf %>" />
-
 </form>
