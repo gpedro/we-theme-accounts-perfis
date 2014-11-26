@@ -3,7 +3,7 @@
 <form action="<%= formAction %>" name="createAccountForm" class="auth-form user-signup-form" method="POST">
   <div class="form-content">
     <div class="form-icon">
-      <i class="line line-world"></i>
+      <i class="icons-outline icons-outline-globe"></i>
     </div>
     <h2 class="form-heading"><%= __("auth.register.title") %></h2>
     <h4><%- __('auth.register.form.fields.required.title') %></h4>
@@ -16,7 +16,7 @@
           <div id="usernameResponse"></div>
         </label>
         <label for="username" class="input-group-addon">
-          <span class="glyphicon glyphicon-user"></span>
+          <span class="icons-outline icons-outline-user"></span>
         </label>
       </div>
     </div>
@@ -30,7 +30,7 @@
           <div id="cpfResponse"></div>
         </label>
         <label for="cpf" class="input-group-addon">
-          <span class="glyphicon glyphicon-user"></span>
+          <span class="icons-outline icons-outline-user"></span>
         </label>
       </div>
     </div>
@@ -41,7 +41,7 @@
       <div class="input-group">
         <input id="email" class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" value="<%= (user.email||'') %>" name="email">
         <label for="email" class="input-group-addon">
-          <span class="glyphicon glyphicon-envelope"></span>
+          <span class="icons-outline icons-outline-letter"></span>
         </label>
       </div>
     </div>
@@ -57,7 +57,7 @@
         <label for="confirm-password" class="sr-only input-group-btn">
         </label>
         <label for="password" class="input-group-addon">
-          <span class="glyphicon glyphicon-lock"> </span>
+          <span class="icons-outline icons-outline-padlock-closed"> </span>
         </label>
       </div>
     </div>
@@ -66,7 +66,7 @@
       <div class="input-group">
         <input id="confirm-password" class="form-control input-lg" placeholder="<%= __("auth.register.form.confirmPassword") %>" required="true" type="password" name="confirmPassword">
         <label for="password" class="input-group-addon">
-          <span class="glyphicon glyphicon-lock"> </span>
+          <span class="icons-outline icons-outline-padlock-closed"> </span>
         </label>
       </div>
     </div>
