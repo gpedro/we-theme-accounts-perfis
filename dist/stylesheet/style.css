@@ -12,6 +12,93 @@
 .navbar-default .navbar-brand {
   color: red;
 }
-/**
- * Footer css ...
- */
+
+body {
+  background: #fafafa;
+}
+.auth-form .form-group input[type="text"].form-control,
+.auth-form .form-group input[type="email"].form-control,
+.auth-form .form-group input[type="password"].form-control {
+  box-shadow: none;
+  background: #f2f2f2;
+  border: none;
+}
+.auth-form .input-group label {
+  background: #f2f2f2;
+  border: none;
+}
+.auth-form .input-group label i.line {
+  font-size: 1.5em;
+  color: #333;
+}
+.auth-form .form-group .submit {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.auth-form {
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 0 4px #b5b5b5;
+  width: 400px;
+  margin: 150px auto;
+}
+.auth-form .form-content {
+  padding: 35px 35px 20px 35px;
+}
+.auth-form .form-icon {
+  text-align: center;
+}
+.auth-form .form-icon i {
+  font-size: 10em;
+  color: #a2a2a2;
+}
+.user-signup-form .user-signup-logo-cdp {
+  text-align: center;
+}
+.user-signup-form .user-signup-logo-cdp svg {
+  width: 96px;
+  height: 96px;
+}
+.auth-form h2.form-heading {
+  color: #797979;
+  font-weight: bold;
+  margin: 35px 0 0 0;
+  text-align: center;
+}
+.auth-form h3,
+.auth-form h4 {
+  color: #797979;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+.auth-form h3+.form-group,
+.auth-form h4+.form-group {
+  margin-top: 50px;
+}
+.auth-form .form-footer {
+  background: #f2f2f2;
+  padding: 20px;
+  text-align: center;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.auth-form .form-footer ul {
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+}
+.auth-form .form-footer ul li {
+  display: inline-block;
+  list-style: none;
+  font-size: 12px;
+  padding: 0 5px;
+  border-right: 1px solid #c0c0c0;
+  line-height: 1em;
+}
+.auth-form .form-footer ul li a {
+  color: #58a8cd;
+}
+.auth-form .form-footer ul li:last-child {
+  border: none;
+}
+
