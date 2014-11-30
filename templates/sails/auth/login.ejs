@@ -1,6 +1,3 @@
-
-<h2 class="form-signin-heading"><%= __("auth.login.title") %></h2>
-
 <% if (typeof errors !== 'undefined' && errors ) {%>
   <% errors.forEach(function (error) { %>
     <%= __(error) %>
@@ -9,37 +6,121 @@
 
 <%- include ../partials/sys-messages.ejs %>
 
-<form role="form" class="user-signup-form"  action="/login" method="post">
-  <!-- input: email -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="email" class="input-group-addon">
-        <span class="glyphicon glyphicon-envelope"></span>
-      </label>
-      <input class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" name="email">
+<form role="form" class="auth-form user-signup-form"  action="/login" method="post">
+
+  <div class="form-content">
+
+    <div class="user-signup-logo-cdp">
+      <svg viewBox="9 4 31 31">
+        <g>
+          <g class="logo-icon">
+            <g>
+              <circle fill="#6ABD46" cx="24.7" cy="12.5" r="2.5"></circle>
+            </g>
+            <g>
+              <circle fill="#F48520" cx="24.7" cy="26.6" r="2.5"></circle>
+            </g>
+            <g>
+              <circle fill="#29ABE2" cx="19.7" cy="14.5" r="2.5"></circle>
+            </g>
+            <g>
+              <circle fill="#EE4224" cx="29.7" cy="24.6" r="2.5"></circle>
+            </g>
+            <g>
+              <circle fill="#EE4224" cx="17.6" cy="19.5" r="2.5"></circle>
+            </g>
+            <g>
+              <circle fill="#29ABE2" cx="31.8" cy="19.5" r="2.5"></circle>
+            </g>
+            <g>
+              <circle fill="#6ABD46" cx="19.7" cy="24.6" r="2.5"></circle>
+            </g>
+            <g>
+              <circle fill="#FED900" cx="29.7" cy="14.5" r="2.5"></circle>
+            </g>
+            <g>
+              <path fill="#EE4224" d="M12.4,19.5c0-2.9,2-5.4,4.7-6c-0.5-0.1-1-0.2-1.5-0.2c-3.4,0-6.2,2.8-6.2,6.2s2.8,6.2,6.2,6.2
+                c0.5,0,1-0.1,1.5-0.2C14.4,24.9,12.4,22.5,12.4,19.5z"></path>
+            </g>
+            <g>
+              <g>
+                <path fill="#29ABE2" d="M37,19.5c0,2.9-2,5.4-4.7,6c0.5,0.1,1,0.2,1.5,0.2c3.4,0,6.2-2.8,6.2-6.2s-2.8-6.2-6.2-6.2
+                  c-0.5,0-1,0.1-1.5,0.2C35,14.2,37,16.6,37,19.5z"></path>
+              </g>
+            </g>
+            <g>
+              <path fill="#F48520" d="M24.7,31.9c-2.9,0-5.4-2-6-4.7c-0.1,0.5-0.2,1-0.2,1.5c0,3.4,2.8,6.2,6.2,6.2s6.2-2.8,6.2-6.2
+                c0-0.5-0.1-1-0.2-1.5C30.1,29.9,27.6,31.9,24.7,31.9z"></path>
+            </g>
+            <g>
+              <g>
+                <path fill="#6ABD46" d="M24.7,7.2c2.9,0,5.4,2,6,4.7c0.1-0.5,0.2-1,0.2-1.5c0-3.4-2.8-6.2-6.2-6.2s-6.2,2.8-6.2,6.2
+                  c0,0.5,0.1,1,0.2,1.5C19.3,9.2,21.7,7.2,24.7,7.2z"></path>
+              </g>
+            </g>
+            <g>
+              <path fill="#6ABD46" d="M16,28.2c-2.1-2.1-2.4-5.2-0.9-7.6c-0.4,0.3-0.8,0.6-1.2,0.9c-2.4,2.4-2.4,6.4,0,8.8s6.4,2.4,8.8,0
+                c0.4-0.4,0.7-0.8,0.9-1.2C21.2,30.6,18,30.3,16,28.2z"></path>
+            </g>
+            <g>
+              <g>
+                <path fill="#FED900" d="M33.4,10.8c2.1,2.1,2.4,5.2,0.9,7.6c0.4-0.3,0.8-0.6,1.2-0.9c2.4-2.4,2.4-6.4,0-8.8s-6.4-2.4-8.8,0
+                  c-0.4,0.4-0.7,0.8-0.9,1.2C28.2,8.5,31.3,8.8,33.4,10.8z"></path>
+              </g>
+            </g>
+            <g>
+              <path fill="#29ABE2" d="M16,10.8c2.1-2.1,5.2-2.4,7.6-0.9c-0.3-0.4-0.6-0.8-0.9-1.2c-2.4-2.4-6.4-2.4-8.8,0s-2.4,6.4,0,8.8
+                c0.4,0.4,0.8,0.7,1.2,0.9C13.6,16.1,13.9,12.9,16,10.8z"></path>
+            </g>
+            <g>
+              <g>
+                <path fill="#EE4224" d="M33.4,28.2c-2.1,2.1-5.2,2.4-7.6,0.9c0.3,0.4,0.6,0.8,0.9,1.2c2.4,2.4,6.4,2.4,8.8,0s2.4-6.4,0-8.8
+                  c-0.4-0.4-0.8-0.7-1.2-0.9C35.8,23,35.4,26.2,33.4,28.2z"></path>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
     </div>
-  </div>
-
-
-  <!-- input: password -->
-  <div class="form-group">
-    <div class="input-group">
-      <label for="password" class="input-group-addon">
-        <span class="glyphicon glyphicon-lock"> </span>
-      </label>
-      <input class="form-control input-lg" placeholder="<%= __("auth.register.form.password") %>" required="true" type="password" name="password">
+    <h2 class="form-heading"><%= __("auth.login.title") %></h2>
+    <h3>Faça seu login na CdP</h3>
+    <!-- input: email -->
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" name="email">
+        <label for="email" class="input-group-addon">
+          <span class="icons-outline icons-outline-letter"></span>
+        </label>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <div class="input-group">
-      <button class="btn btn-lg btn-success submit" type="submit">
-        <%= __("auth.register.form.submit") %>
-        <span class="glyphicon glyphicon-chevron-right"> </span>
-      </button>
+
+    <!-- input: password -->
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control input-lg" placeholder="<%= __("auth.register.form.password") %>" required="true" type="password" name="password">
+        <label for="password" class="input-group-addon">
+          <span class="icons-outline icons-outline-padlock-closed"> </span>
+        </label>
+      </div>
     </div>
-  </div>
 
+    <div class="form-group clearfix">
+      <div class="input-group pull-right">
+        <button class="btn btn-lg btn-success submit" type="submit">
+          <%= __("auth.register.form.submit") %>
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <div class="form-footer">
+    <ul>
+      <li><a href="/register">Registrar-se</a></li>
+      <li><a href="/forgot-password">Relembrar Senha</a></li>
+      <li><a href="#">Relembrar o email</a></li>
+    </ul>
+  </div>
 </form>
 
 <% if (typeof providers !== 'undefined' && providers ) {%>
