@@ -1,4 +1,4 @@
-<div class="navbar navbar-default" role="navigation">
+<!-- <div class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -33,5 +33,113 @@
         <% } %>
       </ul>
     </div><!--/.nav-collapse -->
+  <!-- </div>
+</div> -->
+
+<nav id="header-main" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand header-main-brand">
+        <!-- Logo -->
+        <%- include ../partials/logo-cdp.ejs %>
+        <!-- /Logo -->
+      </div>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+
+      <ul class="nav navbar-nav">
+
+        <!--{{#active-li currentWhen="groups" classNames="main_menu-item style_group"}}
+          {{#link-to 'groups' classNames="main_menu-item--wrapper"}}
+            <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
+            <span class="main_menu-item--name">{{t 'mainmenu.link.groups'}}</span>
+          {{/link-to}}
+        {{/active-li}}-->
+
+        <li class="main_menu-item style_group inactive">
+          <a class="main_menu-item--wrapper" href="/comunidade">
+            <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
+            <span class="main_menu-item--name">Comunidades</span>
+          </a>
+        </li>
+
+        <!--{{#active-li currentWhen="relatos" classNames="main_menu-item style_story"}}
+          {{#link-to 'relatos' (query-params categorias='' order='new' q='') classNames="main_menu-item--wrapper"}}
+            <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
+            <span class="main_menu-item--name">Relatos</span>
+          {{/link-to}}
+        {{/active-li}}-->
+
+        <li class="main_menu-item style_story inactive">
+          <a class="main_menu-item--wrapper" href="/relato?categorias=&amp;q=">
+            <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
+            <span class="main_menu-item--name">Relatos</span>
+          </a>
+        </li>
+
+        <li class="main_menu-item dropdown style_service">
+          <a class="main_menu-item--wrapper dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
+            <span class="main_menu-item--name">CdP+</span>
+          </a>
+          <ul class="dropdown-services dropdown-menu dropdown-menu-right arrow_box-menu-services" role="menu">
+            <%- include ../partials/services-menu.ejs %>
+          </ul>
+        </li>
+
+        <li class="main_menu-search">
+            <form class="form-inline" role="form">
+              <div class="input-group">
+                <input type="search" class="search-input form-control" placeholder="Faça sua busca">
+                <span class="input-group-btn">
+                  <button class="search-btn btn btn-default" type="button">
+                    <i class="icon-search cdp cdp-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+        </li>
+        <!--{{!--
+          <li class="main_menu-message">
+            <a href="#">
+              <i class="cdp cdp-message cdp-2x cdp-align-justify"><span class="badge">42</span></i>
+            </a>
+          </li>
+         --}}
+        {{#if isAuthenticated}}
+          <li class="main_menu-notification">
+            {{#link-to 'notifications' classNames=""}}
+              {{we-notifications-link classNames="cdp cdp-bell cdp-2x cdp-align-justify" text='' labelDefaultClass="badge" labelHighlightClass="badge"}}
+            {{/link-to}}
+          </li>
+        {{/if}}-->
+
+        <!--{{#unless isAuthenticated}}
+        <li class="main_menu-dropdown logged-off dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Entrar <span class="caret"></span></a>
+          <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right arrow_box" role="menu"> -->
+            <!-- FORM LOGIN -->
+            <!-- {{we-auth-modal-login}} -->
+            <!-- /FORM LOGIN -->
+          </ul>
+
+        </li>
+        <!-- {{/unless}}
+        {{render 'user/usermenu' currentUser controller='UserMenu'}}-->
+
+      </ul>
+      <div class="bar-colored"></div>
+    </div>
   </div>
-</div>
+</nav>
+
+<!-- Modal Services -->
+<!-- {{partial 'partials/modal-services'}}-->
+<!-- /Modal Services -->
+
