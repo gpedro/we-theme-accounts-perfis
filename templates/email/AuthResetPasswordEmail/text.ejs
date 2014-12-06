@@ -1,9 +1,10 @@
-Oi <%= user.displayName %>,
+Oi <%= user.name %>,
 
-Alguém (esperamos que você) solicitou uma nova senha para a sua conta no <%= site.name %> . Siga o link abaixo para definir uma nova senha:
+Você pediu uma redefinição de senha para sua conta na <%= site.name %>? Se sim, siga o link abaixo para definir uma nova senha:
 
-Link: <%= resetPasswordUrl %>
+Redefinir senha: <%= resetPasswordUrl %>
 
 Se você não deseja redefinir sua senha, desconsidere este e-mail e nenhuma ação será tomada.
 
-<%- include ../partials/footer-text.ejs %>
+<%= site.name %>
+<%= site.url %>

@@ -1,14 +1,16 @@
 Oi <%= user.name %>,
+
+<p>Você pediu uma <strong>redefinição de senha</strong> para sua conta na <%= site.name %>? Se sim, siga o link abaixo para definir uma nova senha:</p>
+
 <p>
-Alguém (esperamos que você) solicitou uma <strong>nova senha</strong> para a sua conta no <%= site.name %> .
+  Clique no link abaixo para redefinir sua senha:
+  <br>
+  <%= resetPasswordUrl %>
 </p>
-<p>
-<strong>Siga o link</strong> abaixo para definir uma nova senha:
+
+<p>Se você não deseja redefinir sua senha, desconsidere este e-mail e nenhuma ação será tomada.</p>
+
 <br>
-Link: <strong><%= resetPasswordUrl %></strong>
-</p>
-<p>
-Se você não deseja redefinir sua senha, desconsidere este e-mail e nenhuma ação será tomada.
-</p>
-<br>
-<%- include ../partials/footer-html.ejs %>
+
+<%= site.name %>
+<%= site.url %>

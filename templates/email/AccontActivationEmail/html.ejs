@@ -1,13 +1,13 @@
-<h1>Thanks for signing up for <%= site.name %>!</h1>
-
-<h2>Email validation</h2>
+<!-- Template email -->
+<h1>Obrigado por participar da <%= site.name %>!</h1>
 
 <p>
-  Hi <%= user.name %>,<br>
-  <a text="Confirm link" href="<%= confirmUrl %>">Click here</a> or copy and paste the link below to confirm your email address and login in <%= site.name %>
+  Oi <%= user.displayName %>,<br>
+  Para validar seu email <a text="Confirm link" href="<%= confirmUrl %>">clique aqui</a> ou copie e cole o link abaixo no seu navegador para confirmar seu endereço de e-mail e faça o login na <%= site.name %>
 
-  <b>Confirm link:</b> <%= confirmUrl %>
+  <%= confirmUrl %>
 </p>
 
-Cheers,
-<%= site.name %> team
+Obrigado,<br>
+<%= site.name %><br>
+<%= site.url %>

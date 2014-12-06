@@ -9,11 +9,13 @@ img.user-avatar: {
   vertical-align: middle;
 }
 
+/* e-mail stylesheets */
 body {
-  background-color: black;
-  color: #fff;
-  padding: 10px;
+  background-color: #eee;
+  color: #444;
+  padding: 20px;
 }
+
 
 /* Client-specific Styles */
 #outlook a{padding:0;} /* Force Outlook to provide a "view in browser" button. */
