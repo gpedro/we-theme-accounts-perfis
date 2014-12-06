@@ -1,0 +1,27 @@
+<br><br>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header" style="width: 100%;">
+      <ul class="nav navbar-nav" style="width: 400px; margin: 0px auto;">
+      <% if(!req.isAuthenticated || !req.isAuthenticated()){ %>
+        <li role="presentation">
+          <a href="/signup"><%- __('navbar.link.register') %></a>
+        </li>
+        <li role="presentation">
+          <a href="/login"><%- __('navbar.link.login') %></a>
+        </li>
+        <li role="presentation">
+          <a href="/auth/forgot-password"><%- __('navbar.link.forgot-password') %></a>
+        </li>
+        <% } else { %>
+        <li role="presentation">
+          <a href="/account"><%- __('navbar.link.user.account') %></a>
+        </li>
+        <li>
+          <a href="/auth/logout"><%- __('navbar.link.user.logout') %></a>
+        </li>
+      <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

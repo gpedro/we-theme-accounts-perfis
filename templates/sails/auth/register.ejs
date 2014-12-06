@@ -10,7 +10,7 @@
     <!-- input: username -->
     <div class="form-group">
       <div class="input-group">
-        
+
         <input id="username" minlength="2" class="form-control input-lg" placeholder="<%= __("auth.register.form.username") %>" required="true" type="text" value="<%= (user.username||'') %>" name="username">
         <label for="username" class="input-group-addon">
           <div id="usernameResponse"></div>
@@ -50,7 +50,7 @@
     <!-- input: password -->
     <div class="form-group">
       <div class="input-group">
-        
+
         <input id="password" class="form-control input-lg" placeholder="<%= __("auth.register.form.password") %>" required="true" type="password" name="password">
 
         <!-- input: confirm-password -->
@@ -78,7 +78,7 @@
       <div class="input-group">
         <div class="agree-terms">
           <input type="checkbox" name="termos" value="1" class="form-checkbox required">
-          <strong>Li e aceito as <a href="/page/regras-de-convivencia">regras de convivência</a> e <a href="/page/termos-de-uso">termo de uso</a> da Comunidade de Práticas.*</strong>
+          <strong>Li e aceito as <a href="https://ajuda.atencaobasica.org.br/ajuda/central-cdp/termo-de-uso/">regras de convivência</a> e <a href="https://ajuda.atencaobasica.org.br/ajuda/central-cdp/termo-de-uso/">termo de uso</a> da Comunidade de Práticas.*</strong>
         </div>
       </div>
     </div>
@@ -91,6 +91,7 @@
       </div>
     </div>
 
+    <input type="hidden" name="language" value="pt-br">
 
     <% if(req.accessToken){ %>
       <input type="hidden" name="access_token" value="<%= req.accessToken.token %>" />
