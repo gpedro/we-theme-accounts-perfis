@@ -1,8 +1,8 @@
 <br><br>
 <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
-    <div class="navbar-header" style="width: 100%;">
-      <ul class="nav navbar-nav" style="width: 400px; margin: 0px auto;">
+    <div class="navbar-header">
+      <ul class="nav navbar-nav">
       <% if(!req.isAuthenticated || !req.isAuthenticated()){ %>
         <li role="presentation">
           <a href="/signup"><%- __('navbar.link.register') %></a>
