@@ -1,7 +1,7 @@
 {
   "name": "we-theme-accounts-perfis",
   "description": "Tema visual do we-theme-accounts-perfis.",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "repository": {
     "type": "git",
     "url": "git@github.com:wejs/we-theme-accounts-perfis.git"
