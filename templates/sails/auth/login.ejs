@@ -14,7 +14,7 @@
       <%- include ../partials/cdp-logo-svg.ejs %>
     </div>
     <h2 class="form-heading"><%= __("auth.login.title") %></h2>
-    <h3>Faça seu login na CdP</h3>
+    <p style="margin: 20px 0;">A CdP migrou para outro servidor, por isso precisa que você recadastre a sua senha. Se você já fez esse procedimento, pode seguir adiante normalmente. Caso ainda não tenha feito clique <a href="#">aqui</a>.</p>
     <!-- input: email -->
     <div class="form-group">
       <div class="input-group">
@@ -42,6 +42,10 @@
           <%= __("auth.register.form.submit") %>
         </button>
       </div>
+    </div>
+
+    <div style="text-align: center;">
+      <a style="font-weight: bold;" href="/signup">Registrar-se</a>
     </div>
 
 
