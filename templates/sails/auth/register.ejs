@@ -47,6 +47,17 @@
     </div>
     <!-- /input: email -->
 
+    <!-- input: confirm-email -->
+    <div class="form-group">
+      <div class="input-group">
+        <input id="confirm-email" class="form-control input-lg" placeholder="<%= __("auth.register.form.confirmEmail") %>" required="true" type="email" value="<%= (user.email||'') %>" name="confirmEmail">
+        <label for="confirm-email" class="input-group-addon">
+          <span class="icons-outline icons-outline-letter"></span>
+        </label>
+      </div>
+    </div>
+    <!-- input: confirm-email -->
+
     <!-- input: password -->
     <div class="form-group">
       <div class="input-group">
