@@ -6,8 +6,10 @@
     <h4><%- __('auth.register.form.fields.required.title') %></h4>
     <!-- input: username -->
     <div class="form-group">
+      <label for="username">
+        Nome único:
+      </label>
       <div class="input-group">
-        
         <input id="username" minlength="2" class="form-control input-lg" placeholder="<%= __("auth.register.form.username") %>" required="true" type="text" value="<%= (user.username||'') %>" name="username">
         <label for="username" class="input-group-addon">
           <div id="usernameResponse"></div>
@@ -22,6 +24,9 @@
 
     <!-- input: cpf -->
     <div class="form-group">
+      <label for="cpf">
+        CPF:
+      </label>
       <div class="input-group">
         
         <input id="cpf" class="form-control input-lg" placeholder="Digite o seu CPF" required="true" type="text" value="<%= (user.cpf||'') %>" name="cpf">
@@ -37,6 +42,9 @@
 
     <!-- input: email -->
     <div class="form-group">
+      <label for="email">
+        E-mail:
+      </label>
       <div class="input-group">
         <input id="email" class="form-control input-lg" placeholder="<%= __("auth.register.form.email") %>" required="true" type="email" value="<%= (user.email||'') %>" name="email">
         <label for="email" class="input-group-addon">
@@ -49,6 +57,9 @@
     <% if(!user.id){ %>
       <!-- input: password -->
       <div class="form-group">
+        <label for="password">
+          Senha:
+        </label>
         <div class="input-group">
           <input id="password" class="form-control input-lg" placeholder="<%= __("auth.register.form.password") %>" required="true" type="password" name="password">
 
@@ -62,6 +73,9 @@
       </div>
       <!-- /input: password -->
       <div class="form-group">
+        <label for="confirm-password">
+          Confirme a Senha:
+        </label>
         <div class="input-group">
           <input id="confirm-password" class="form-control input-lg" placeholder="<%= __("auth.register.form.confirmPassword") %>" required="true" type="password" name="confirmPassword">
         </div>
