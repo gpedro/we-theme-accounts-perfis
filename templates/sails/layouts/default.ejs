@@ -10,6 +10,7 @@
 
     <%- sails.services.theme.getlinkCssTags() %>
 
+    <%- sails.services.theme.getJsScriptTag() %>
     <script src="/core/js/app.js"></script>
     <script src="/core/js/jquery.checkAvailability.js"></script>
     <script>
@@ -34,6 +35,5 @@
     </div>
     <%- include ../partials/footer.ejs %>
 
-    <%- sails.services.theme.getJsScriptTag() %>
   </body>
 </html>
