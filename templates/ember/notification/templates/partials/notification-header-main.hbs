@@ -1,0 +1,23 @@
+
+<header id="notification-list--header">
+
+  <div class="header-brand--notifications">
+    <div class="header-brand-icon">
+      <span class="fa-stack">
+        <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-people"></i>
+        <i class="cdp cdp-bell cdp-stack-1x cdp-inverse"></i>
+      </span>
+    </div>
+    <div class="header-brand-text">
+      <h3 class="header-brand-text--title">{{t 'notifications.title'}}</h3>
+      <small class="header-brand-text--small">{{t 'notifications.subtitle'}}</small>
+    </div>
+  </div>
+
+  <div class="notification-list--header-button">
+    {{#unless readNotificationPage}}
+      <button {{action 'markAllAsRead'}} {{bind-attr disabled=isEmpty}} class="btn btn-sm btn-primary">Marcar todas como lido</button>
+    {{/unless}}
+  </div>
+
+</header>

@@ -1,0 +1,28 @@
+<section class="section">
+  <div class="container">
+    {{bread-crumbs}}
+
+    {{partial "partials/group-header-main" }}
+
+    <div class="row">
+      <div class="group-list">
+        <div>
+        {{#if currentUser.id}}
+          {{#link-to 'groups.create' classNames="btn btn-sm btn-primary pull-right"}}
+            {{t "Create group"}}
+          {{/link-to}}
+        {{/if}}
+        </div>
+
+        {{#each controller}}
+          <div>
+            {{render 'group/teaser' this}}
+          </div>
+        {{else}}
+          <p>{{t "groups.empty"}}</p>
+        {{/each}}
+      </div>
+
+    </div>
+  </div>
+</section>

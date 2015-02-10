@@ -1,0 +1,107 @@
+
+{{#if canCreatePost}}
+  <div {{bind-attr class='shareboxClass'}}>
+  <form role="form" {{action "submit" on="submit"}}>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        {{#if post.isOpen}}
+          <div class="form-group">
+            {{we-wysiwyg-editor name="body" linkedPage=newWembed value=post.body
+              onChangeText="onChangeBodyText"
+              onPasteText="onPasteBodyText"
+            }}
+          </div>
+
+          {{#unless post.contentType}}
+            <div class="form-group attach-options">
+              <button {{action 'setContentType' 'image'}} type="button" class="btn btn-info" title="Imagem">
+                <i class="fa fa-image"></i>
+              </button>
+          {{!--               <button {{action 'setContentType' 'link'}} type="button" class="btn btn-info">
+                <i class="fa fa-link"></i>
+              </button> --}}
+            </div>
+          {{/unless}}
+
+          {{#if isImageType}}
+            <div class="form-group">
+              <div class="form-group row add-images">
+                <label for="addImages" class="col-sm-2 control-label">Imagens:</label>
+                <div class="col-sm-10">
+                  {{#unless resetImageSelector}}
+                    {{image-upload files=post.selectedImage}}
+                  {{/unless}}
+                </div>
+              </div>
+            </div>
+            {{#if post.imagesToSave}}
+              <div class="form-group images-preview">
+                <div class="table-responsive">
+                  <table class="table table-hover table-striped">
+                    <thead>
+                      <tr><td>Imagem:</td><td>Ações:</td></tr>
+                    </thead>
+                    <tbody>
+                      {{#each post.imagesToSave}}
+                        <tr>
+                          <td>
+                            {{we-image-preview file=this width='30px'}}
+                          </td>
+                          <td>
+                            <div class="pull-right">
+                              <button {{action 'onRemoveImage' this}} class="btn btn-danger btn-sm">Remover</button>
+                            </div>
+                          </td>
+                        </tr>
+                      {{/each}}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            {{/if}}
+          {{/if}}
+
+          {{#if isLinkType}}
+            <div class="form-group">
+              {{#if post.wembed.url}}
+                {{we-wembed url=post.wembed.url imageIndex=post.wembed.imageIndex isEditing='true'}}
+              {{/if}}
+            </div>
+          {{/if}}
+
+          <div class="footer">
+            <div class="actions">
+              <button type="submit" class="btn btn-info">
+                Salvar
+              </button>
+              <button type="button" {{action 'cancel'}} class="btn btn-default">
+                <i class="fa fa-close"></i>
+                Cancelar
+              </button>
+            </div>
+          </div>
+
+        {{else}}
+          <div {{action "openBox"}} class="post-placeholder form-control post-content">Escreva sua postagem</div>
+        {{/if}}
+      </div>
+    </div>
+  </form>
+  </div>
+{{/if}}
+
+{{#if post}}
+  <div class="sharebox-preview">
+    <h5>Preview! Seu conteúdo vai ficar assim:</h5>
+    {{render 'post/teaser-preview' post}}
+  </div>
+{{/if}}
+
+{{#if postsSending}}
+   <div class="sharebox-saving">
+    <h5>Salvando os conteúdo(s):</h5>
+    {{#each postsSending}}
+      {{render 'post/teaser-preview' this}}
+    {{/each}}
+  </div>
+{{/if}}

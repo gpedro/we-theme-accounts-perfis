@@ -1,0 +1,85 @@
+<nav id="header-main" class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand header-main-brand">
+        <!-- Logo -->
+        {{#link-to 'home' classNames="app-main-logo"}}
+          {{partial 'partials/logo-cdp'}}
+        {{/link-to}}
+        <!-- /Logo -->
+      </div>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+
+      <ul class="nav navbar-nav">
+
+        {{!-- link temporario --}}
+        <li class="ember-view main_menu-item style_group inactive">
+          <a class="ember-view main_menu-item--wrapper" href="http://atencaobasica.org.br/comunidades">
+            <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
+            <span class="main_menu-item--name">Comunidades</span>
+          </a>
+        </li>
+
+        <li class="main_menu-item style_story inactive">
+          <a class="main_menu-item--wrapper" href="https://novo.atencaobasica.org.br/relato">
+            <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
+            <span class="main_menu-item--name">Relatos</span>
+          </a>
+        </li>        
+
+        <li class="main_menu-item dropdown style_service">
+          <a class="main_menu-item--wrapper dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
+            <span class="main_menu-item--name">CdP+</span>
+          </a>
+          <ul class="dropdown-services dropdown-menu dropdown-menu-right arrow_box-menu-services" role="menu">
+            {{partial 'partials/services-menu'}}
+          </ul>
+        </li>
+        <li class="main_menu-search">
+            <form class="form-inline" style="opacity: 0;" role="form">
+              <div class="input-group">
+                <input type="search" class="search-input form-control" placeholder="Faça sua busca">
+                <span class="input-group-btn">
+                  <button class="search-btn btn btn-default" type="button">
+                    <i class="icon-search cdp cdp-search"></i>
+                  </button>
+                </span>
+              </div>
+            </form>
+        </li>
+
+{{!--         {{#if isAuthenticated}}
+          <li class="main_menu-notification">
+            {{#link-to 'notifications' classNames=""}}
+              {{we-notifications-link classNames="cdp-2x cdp-align-justify" text='' labelDefaultClass="badge" labelHighlightClass="badge"}}
+            {{/link-to}}
+          </li>
+        {{/if}}
+
+        {{#unless isAuthenticated}}
+            <li class="main_menu-dropdown logged-off dropdown">
+            {{log auth}}
+            {{#link-to "authLogin" classNames="dropdown-toggle" role="button"}}
+              {{t "Login"}}
+            {{/link-to}}              
+            </li>
+        {{/unless}} --}}
+        {{render 'user/usermenu' currentUser controller='UserMenu'}}
+
+      </ul>
+      <div class="bar-colored"></div>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal Services -->
+{{partial 'partials/modal-services'}}
+<!-- /Modal Services -->

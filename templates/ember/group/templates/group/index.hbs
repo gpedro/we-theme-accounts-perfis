@@ -1,0 +1,55 @@
+<div class="row"><div class="col-md-12">
+  <header id="group--header" class="section-header">
+    <div class="header-brand">
+      <div class="header-brand-icon">
+        <span class="fa-stack">
+          <i class="cdp cdp-cdp-logo cdp-lg cdp-stack-1x cdp-inverse"></i>
+        </span>
+      </div>
+      <div class="header-brand-text">
+        <h3 class="header-brand-text--title">
+         {{#if group.canAdmin}}
+            {{#we-content-editable value=group.name attribute='name' onSave="saveAttribute" }}
+            {{focus-input value=group.name classNames="form-control" type="text"}}
+            {{/we-content-editable}}
+          {{else}}
+            {{group.name}}
+          {{/if}}
+        </h3>
+        <small class="header-brand-text--small">
+          Atualizado ha {{format-date group.updatedAt}}
+        </small>
+      </div>
+    </div>
+
+  </header>
+
+  {{#if group.canAdmin}}
+    <label>{{input checked=group.disableRelatoFeature type="checkbox"}} Desativar os relatos relacionados?</label>
+  {{/if}}
+  {{#unless group.disableRelatoFeature}}
+    {{we-group-related-relato-slideshow groupId=group.id}}
+  {{/unless}}
+
+  <div id="groups-assuntos">
+    <span class="fa-stack">
+      <i class="icons-outline icons-outline-label"></i>
+    </span>
+    <div class="groups-assuntos-text">
+      <h3>Assuntos do Momento</h3>
+      {{#if group.canAdmin}}
+        {{#we-term-editable value=group.categories maximumSelectionSize=2 onSave="saveCategories"}}
+          {{we-category-field value=group.categories
+            newTagMark=' (nova)' vocabulary=vocabularyId}}
+        {{/we-term-editable}}
+      {{else}}
+        {{we-terms terms=group.categories}}
+      {{/if}}
+    </div>
+  </div>
+
+  <div class="group-list">
+    <h3>Atividades</h3>
+    {{we-activities group=group}}
+  </div>
+</div></div>

@@ -1,0 +1,11 @@
+<div class="loading-more-content text-center">
+  {{#if loadingMore}}
+    Carregando ... <img src="/core/images/loading.gif">
+  {{else}}
+    {{#if haveMore}}
+      <button type="button" class="btn btn-default" {{action 'getMore'}}>Ver mais</button>
+    {{else}}
+      Fim da lista.
+    {{/if}}
+  {{/if}}
+</div>

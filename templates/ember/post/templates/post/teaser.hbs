@@ -1,0 +1,41 @@
+<div class="content-block post">
+<div class="post-teaser teaser panel panel-default">
+  <div class="header panel-heading">
+
+    {{partial 'partials/post-header-partial'}}
+
+  </div>
+  <div class="panel-body">
+    {{#if isEditing}}
+      {{partial 'partials/post-edit-form-partial'}}
+    {{else}}
+      <div class="content">
+        <div class="post-text">{{html body}}</div>
+
+        {{#if wembed.url}}
+          {{we-wembed url=wembed.url imageIndex=wembed.imageIndex }}
+        {{/if}}
+
+        {{partial 'partials/post-images-display-partial'}}
+      </div>
+
+      {{partial 'partials/post-footer-actions-partial'}}
+
+    {{/if}}
+  </div>
+  <div class="panel-footer">
+    {{#if hasMoreComments}}
+      <div class="comments-header">
+        <span>Total de {{commentCount}} comentarios.</span>
+        <a {{action 'loadAllComments'}} href="#mostrar-comment" class="btn btn-default btn-xs">Mostrar todos</a>
+      </div>
+      <hr>
+    {{/if}}
+
+    {{#if id}}
+      {{we-comments commentedModelName="post" commentedModelId=id}}
+      {{we-comment-form commentedModelName="post" commentedModelId=id}}
+    {{/if}}
+  </div>
+</div>
+</div>

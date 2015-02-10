@@ -1,0 +1,8 @@
+<tr {{bind-attr class='itemClass'}}>
+  <td>
+    {{view 'notification-text'}}
+  </td>
+  <td>
+    <button {{action 'changeNotificedStatus'}} class="btn btn-sm btn-success">{{linkStatusText}}</button>
+  </td>
+</tr>

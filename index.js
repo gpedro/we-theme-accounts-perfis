@@ -19,11 +19,11 @@ module.exports = {
       path: 'templates/ember',
     },
 
-    assetsFolderToCopy: 'dist/**/*',
+    assetsFolderToCopy: 'assets/**/*',
 
     // one theme javascript file
-    javascript: 'dist/javascript/script.js',
+    javascript: 'assets/javascript/script.js',
     // one css file
-    stylesheet: 'dist/stylesheet/style.css'
+    stylesheet: 'assets/stylesheet/style.css'
   }
 };

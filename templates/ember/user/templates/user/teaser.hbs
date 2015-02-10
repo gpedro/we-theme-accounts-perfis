@@ -1,0 +1,21 @@
+<div class="user-list-widget">
+  <div class="user-list-widget--item">
+    {{#link-to 'user' id}}
+      {{we-avatar userId=id size="medium" classNames="user-list-img"}}
+    {{/link-to}}
+    <!--<img class="user-list-img img-circle" src="img/img-groups.jpg">-->
+    <div class="caption">
+      <h4 class="user-list-name">
+        {{#link-to 'user' id}}
+          {{substr username max=15}}
+        {{/link-to}}
+      </h4>
+      <p class="user-list-desc">Lorem ipsum dolor sit amet, consete adipiscing elit, sed do eusmo tempor.</p>
+    </div>
+    <nav class="user-list-nav">
+      <a href="#" class="btn btn-xs btn-warning" role="button">Mensagem</a>
+      <a href="#" class="btn btn-xs btn-success" role="button">Seguir</a>
+      <a href="#" class="btn btn-xs btn-primary" role="button">Adicionar</a>
+    </nav>
+  </div>
+</div>

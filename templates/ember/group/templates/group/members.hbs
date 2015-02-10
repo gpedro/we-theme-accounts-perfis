@@ -1,0 +1,61 @@
+<div class="row group-members-header">
+  <h2>Comunidade: {{group.name}}</h2>
+</div>
+
+<div class="context-search">
+  <form  {{action "filter" on="submit"}} class="form-inline" role="form">
+    <div class="form-group">
+      <label for="searchString">Buscar</label>
+    </div>
+    <div class="form-group">
+      {{input name="searchString" placeholder="Nome:" classNames="form-control input-sm" value=searchString}}
+    </div>
+
+    <div class="form-group">
+      {{view "select"
+        name="searchSort" classNames="form-control input-sm"
+        content=querySortOptions
+        optionValuePath="content.value"
+        optionLabelPath="content.label"
+        value=selectedSort
+      }}
+    </div>
+
+    <div class="form-group">
+      {{view "select"
+        name="searchOrder" classNames="form-control input-sm"
+        content=queryOrderOptions
+        optionValuePath="content.value"
+        optionLabelPath="content.label"
+        value=selectedOrder
+      }}
+    </div>
+
+    <div class="form-group">
+      <button class="form-control input-sm btn-info" type="submit">Buscar</button>
+    </div>
+    <div class="form-group">
+      <button {{action 'resetSearch'}} class="form-control input-sm" type="button">Ver todos</button>
+    </div>
+  </form>
+</div>
+
+<div class="row group-members-list">
+  {{#each members}}
+    <div class="col-md-4">
+      {{#link-to 'user' id}}
+        <span class="avatar-large">{{we-avatar userId=id size="medium"}}</span>
+      {{/link-to}}
+
+      {{#link-to 'user' id}}
+        <h3>{{displayName}}</h3>
+      {{/link-to}}
+
+      Membro há {{format-date createdAt}}
+    </div>
+  {{else}}
+    <div class="col-md-12">
+      sem membros
+    </div>
+  {{/each}}
+</div>

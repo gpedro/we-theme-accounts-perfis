@@ -1,0 +1,92 @@
+<footer id="footer-main">
+  <div class="container">
+    <div class="row">
+
+      <div id="footer-main--blog">
+        <h4 class="title-footer">
+          {{partial 'partials/logo-cdp'}}
+        </h4>
+        <div class="small-footer">
+          <p>Espaço virtual de construção de conhecimento e aprendizado a partir das experiências de cada profissional da Atenção Básica.</p>
+        </div>
+        <a class="btn btn-xs btn-default">Saiba mais</a>
+      </div>
+
+      <div id="footer-main--facebook">
+        <div class="fb-like-box-lg">
+          {{facebook-block}}
+        </div>
+      </div>
+
+      <div id="footer-main--links">
+        <h4 class="links-section--title title-footer">Links</h4>
+        <ul class="links-section--list">
+
+          <li class="links-section--list-item style-help_center">
+            <a class="links-section--subtitle" href="http://ajuda.atencaobasica.org.br">
+              <img style="width: 30px; margin-bottom: 10px; margin-right: 10px; margin-top: 2px; height: 30px; position: relative; float: left;" src="/theme/assets/img/img-icon-ajuda.png">
+              <div style="float: right; width: 86%; padding: 0;" class="icon-title">Central de Ajuda</div>
+            </a>
+            <!--<p class="links-section--description"></p>-->
+          </li>
+
+          <li class="links-section--list-item style-blog">
+            <a class="links-section--subtitle" href="http://blog.atencaobasica.org.br">
+              <img style="width: 30px; margin-bottom: 10px; margin-right: 10px; margin-top: 3px; height: 30px; position: relative; float: left;" src="https://blog.atencaobasica.org.br/wp-content/uploads/2014/12/logo-blog.png">
+              <div style="float: right; width: 86%; padding: 0;" class="icon-title">Blog</div>
+            </a>
+            <!--<p class="links-section--description"></p>-->
+          </li>
+
+          <li class="links-section--list-item style-terms">
+            <a href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/" class="links-section--subtitle">
+              <span class="fa-stack">
+                <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-group"></i>
+                <i class="cdp cdp-contacts cdp-lg cdp-stack-1x cdp-inverse"></i>
+              </span>
+              <span class="icon-title">Termos de Uso</span>
+            </a>
+            <!--<p class="links-section--description"></p>-->
+          </li>
+        </ul>
+      </div>
+
+      <div id="footer-main--sponsor">
+        <h4 class="sponsor-title">{{t 'sponsor.title'}}</h4>
+        <ul class="sponsor-list pull-left">
+          <li class="sponsor-list--item item-01">
+            <a href="http://dab.saude.gov.br/portaldab/smp_o_que_e.php"target="_blank">
+              <img class="sponsor-list--item-img item-01" src="/theme/assets/img/saude-perto-de-voce.png">
+            </a>
+          </li>
+          <li class="sponsor-list--item item-02">
+            <a href="http://portalsaude.saude.gov.br/index.php/cidadao/entenda-o-sus"target="_blank">
+              <img class="sponsor-list--item-img item-02" src="/theme/assets/img/sus.png">
+            </a>
+          </li>
+          <li class="sponsor-list--item item-03">
+            <a href="http://portalsaude.saude.gov.br/"target="_blank">
+              <img class="sponsor-list--item-img item-03" src="/theme/assets/img/ministerio-da-saude.png">
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="footer-main--partner">
+        <h4 class="partner-title">{{t 'partner.title'}}</h4>
+        <ul class="partner-list">
+          <li class="partner-list--item">
+            <img class="partner-list--item-img" src="/theme/assets/img/direita.png">
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p class="text-muted">Comunidade de Práticas - <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">CC</a> 2014</p>
+  </div>
+</footer>
+
+{{we-avatar-modal store=store}}

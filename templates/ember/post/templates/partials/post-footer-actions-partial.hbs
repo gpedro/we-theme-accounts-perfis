@@ -1,0 +1,28 @@
+<div class="footer">
+    <div class="actions">
+      {{#if id}}
+        {{we-follow model='post' modelId=id flagText="Seguir" unFlagText="Seguindo"}}
+
+        {{we-flag flagType='like' model='post' modelId=id
+          flagText='<i class="fa fa-heart" title="Amar"></i>'
+          flagClass= 'btn btn-xs btn-danger active'
+          unFlagClass= 'btn btn-xs btn-danger' }}
+
+        {{#can editPost model}}
+          <button type="button" class="btn btn-xs btn-warning" {{action 'edit'}}>
+            <i class="fa fa-edit-marked"></i>Editar
+          </button>
+        {{/can}}
+
+        {{#can deletePost model}}
+          <button class="btn btn-xs btn-default" {{action 'deleteItem'}}>
+            <i class="fa fa-close text-danger"></i> Deletar
+          </button>
+        {{/can}}
+
+        {{#link-to 'post' id classNames="btn btn-xs btn-default"}}
+          <span class="glyphicon glyphicon-link text-success"></span>  Ver
+        {{/link-to}}
+      {{/if}}
+    </div>
+</div>

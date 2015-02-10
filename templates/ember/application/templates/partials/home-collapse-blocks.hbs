@@ -1,0 +1,133 @@
+<div class="collapse-blocks">
+
+  <div class="panel-group" id="accordion-one">
+    <div class="block-collapse panel panel-default">
+      <div class="panel-heading story_bg">
+        <h4 class="panel-title">
+          <a class="collapse-trigger" data-toggle="collapse" data-parent="#accordion-one" href="#collapseOne">
+            <span class="panel-title--icon">
+              <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-group"></i>
+              <i class="cdp cdp-report cdp-lg cdp-stack-1x cdp-inverse"></i>
+            </span>
+            <h1 class="block-collapse--title"> &nbsp;&nbsp;{{homeData.relatoCount}}&nbsp;&nbsp;
+              <small class="block-collapse--title-small">Relatos</small>
+            </h1>
+            <i class="icons-outline icons-outline-skip-previous"></i>
+            <i class="icons-outline icons-outline-skip-next"></i>
+          </a>
+        </h4>
+      </div>
+
+      <div id="collapseOne" class="panel-collapse collapse in">
+        <div class="panel-body">
+          {{#if homeData.relatos}}
+            <h2 class="block-collapse--subtitle"><small class="block-collapse--subtitle-small">Últimos relatos enviados</small></h2>
+
+            <ul class="block-collapse--list">
+
+            {{#each homeData.relatos}}
+              <li class="block-collapse--list-item">
+                {{#link-to 'relato' id}}
+                  {{we-image file=imagemDestaque classNames="block-collapse--list-item-img" size="thumbnail"}}
+
+                  <div class="block-collapse--list-item-text">
+                    <h3 class="block-collapse--list-item-text--title">
+                      {{substr titulo max=30}}
+                    </h3>
+                    <p class="block-collapse--list-item-text--description">
+                      {{substr descricaoClean max=70}}
+                    </p>
+                  </div>
+                {{/link-to}}
+              </li>
+            {{/each}}
+            </ul>
+          {{/if}}
+        </div> {{!-- /panel-body --}}
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-group" id="accordion-two">
+    <div class="block-collapse panel panel-default">
+      <div class="panel-heading groups_bg">
+        <h4 class="panel-title">
+          <a class="collapse-trigger" data-toggle="collapse" data-parent="#accordion-two" href="#collapseTwo">
+            <span class="panel-title--icon">
+              <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-group"></i>
+              <i class="cdp cdp-cdp-logo cdp-lg cdp-stack-1x cdp-inverse"></i>
+            </span>
+            <h1 class="block-collapse--title">
+              &nbsp;&nbsp;{{homeData.comunidadeCount}}&nbsp;&nbsp;
+              <small class="block-collapse--title-small">Comunidades</small></h1>
+            <i class="icons-outline icons-outline-skip-previous"></i>
+            <i class="icons-outline icons-outline-skip-next"></i>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse in">
+        <div class="panel-body">
+          {{#if homeData.comunidades}}
+            <h2 class="block-collapse--subtitle"><small class="block-collapse--subtitle-small">Comunidades ativas no momento</small></h2>
+
+            <ul class="block-collapse--list">
+
+              {{#each homeData.comunidades}}
+                <li class="block-collapse--list-item">
+                  <img class="block-collapse--list-item-img" src="http://goo.gl/VNOCQg">
+                  <div class="block-collapse--list-item-text">
+                    <h3 class="block-collapse--list-item-text--title">
+                      {{substr name max=30}}
+                    </h3>
+                    <p class="block-collapse--list-item-text--description">{{substr descriptionClean max=60}}</p>
+                  </div>
+                </li>
+              {{/each}}
+            </ul>
+          {{/if}}
+        </div>{{!-- /panel-body --}}
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-group" id="accordion-three">
+    <div class="block-collapse block-collapase--people panel panel-default">
+      <div class="panel-heading people_bg">
+        <h4 class="panel-title">
+          <a class="collapse-trigger" data-toggle="collapse" data-parent="#accordion-three" href="#collapseThree">
+            <span class="panel-title--icon">
+              <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-group"></i>
+              <i class="cdp cdp-people cdp-lg cdp-stack-1x cdp-inverse"></i>
+            </span>
+            <h1 class="block-collapse--title"> &nbsp;&nbsp;{{homeData.pessoaCount}}&nbsp;&nbsp; <small class="block-collapse--title-small">Pessoas inscritas</small></h1>
+            <i class="icons-outline icons-outline-skip-previous"></i>
+            <i class="icons-outline icons-outline-skip-next"></i>
+          </a>
+        </h4>
+      </div>
+      <div id="collapseThree" class="panel-collapse collapse in">
+        <div class="panel-body">
+          {{#if homeData.pessoas}}
+            <h2 class="block-collapse--subtitle"><small class="block-collapse--subtitle-small">Últimos usuários cadastrados</small></h2>
+
+            <ul class="block-collapse--list">
+              {{#each homeData.pessoas}}
+                <li class="block-collapse--list-item">
+                  {{#link-to 'user' id}}
+                    {{we-avatar userId=id classNames="block-collapse--list-item-img"}}
+                    <div class="block-collapse--list-item-text">
+                      <h3 class="block-collapse--list-item-text--title">{{substr displayName max=30}}</h3>
+                      <p class="block-collapse--list-item-text--description">
+                        {{substr biography max=70}}
+                      </p>
+                    </div>
+                  {{/link-to}}
+                </li>
+              {{/each}}
+            </ul>
+          {{/if}}
+        </div>{{!-- /panel-body --}}
+      </div>
+    </div>
+  </div>
+</div>

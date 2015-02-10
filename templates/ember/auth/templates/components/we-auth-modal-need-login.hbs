@@ -1,0 +1,29 @@
+{{!-- we-auth-modal-need-login --}}
+<!-- Modal -->
+<div class="we-auth-modal-need-login modal fade" id="we-auth-modal-need-login" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <div class="container-fluid modal-header-cdp-logo">
+          {{partial 'partials/logo-cdp'}}
+        </div>
+        <button type="button" class="close" data-dismiss="modal"><i class="icons-outline icons-outline-circle-close icons-outline-2x"></i></button>
+      </div>
+
+      <div class="modal-body">
+        <div class="container-fluid">
+          <p>Venha participar do espaço virtual de construção de conhecimento e aprendizado a partir das experiências de cada profissional da Atenção Básica.&nbsp;<small><a target="_blank" href="https://ajuda.atencaobasica.org.br/central-de-ajuda/quantas-categorias-eu-posso-escolher-quais-sao-as-categorias/">Saiba mais</a></small></p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="containter-fluid text-center">
+          <a class="btn btn-default" {{bind-attr href=loginUrl}} >Faça o Login</a>
+          <a class="btn btn-primary" {{bind-attr href=registerUrl}} >Cadastre-se</a>
+        </div>
+      </div>
+
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

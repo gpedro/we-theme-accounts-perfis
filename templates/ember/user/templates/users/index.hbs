@@ -1,0 +1,33 @@
+<section class="section">
+  <div class="container">
+    <div class="row">
+
+    <!-- breadcrumb -->
+    {{partial "partials/breadcrumb" }}
+    <!-- /breadcrumb -->
+
+    <!-- user-list -->
+    <div id="people-list">
+      <!-- header-main -->
+      {{partial "partials/people-header-main" }}
+      <!-- /header-main -->
+
+      <!-- user-item-widget -->
+      {{#each controller}}
+        {{render 'user/teaser' this}}
+      {{/each}}
+      <!-- /user-item-widget -->
+    </div>
+    <!-- /user-list -->
+
+    <!-- sidebar-widgets -->
+    <div id="draggable-widgets">
+      {{partial 'partials/feed-sidebar-widget'}}       <!-- feed -->
+      {{partial 'partials/group-sidebar-widget'}}      <!-- group -->
+      {{partial 'partials/course-sidebar-widget'}}     <!-- course -->
+    </div>
+    <!-- /sidebar-widgets -->
+
+    </div>
+  </div><!-- /container -->
+</section><!-- /section -->

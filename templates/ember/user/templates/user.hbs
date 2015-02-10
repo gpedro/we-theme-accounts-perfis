@@ -1,0 +1,113 @@
+<section class="section">
+  <div class="container user-profile">
+
+    {{bread-crumbs}}
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="avatar-large">
+          {{user-avatar user=user size="large"}}
+        </div>
+
+        {{#if user.canEdit}}
+          <button class="btn btn-primary btn-block btn-change-user-avatar" {{action "showAvatarChangeModal"}} >
+            Mudar imagem
+          </button>
+        {{/if}}
+
+        <div class="user-profile-edit">
+
+          <div class="user-admin-actions-area">
+            <div class="actions">
+            {{#if showSocialActions}}
+              {{view 'contact-buttom' contactStatus=contact.currentUserStatus}}
+              {{we-follow model='user' classNames="btn btn-warning" modelId=user.id flagText="Seguir" unFlagText="Seguindo"}}
+            {{/if}}
+
+            </div>
+          </div>
+        </div>
+
+        <aside id="feed-widget" class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">
+            {{#link-to 'user.index' user.id classNames="widget-trigger-collapse"}}
+                <span class="fa-stack">
+                  <i class="cdp cdp-time cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
+                </span>
+                <span class="icon-title">Atividades</span>
+            {{/link-to}}
+            </h3>
+          </div>
+        </aside>
+
+        {{!-- {{partial 'partials/group-sidebar-widget'}} --}}
+
+        {{!-- {{partial 'partials/course-sidebar-widget'}} --}}
+
+        {{we-user-relatos-favoritos userId=user.id relatos=null}}
+
+        <aside id="related-users" class="widget-user-list widget">
+          {{we-user-contacts-block userId=user.id}}
+        </aside>
+
+      </div>
+
+      <div class="col-md-9">
+        <header id="user--header" class="section-header">
+          <div class="header-brand">
+            <div class="header-brand-icon">
+              <span class="fa-stack">
+                <i class="fa fa-user cdp-lg cdp-stack-1x cdp-inverse"></i>
+              </span>
+            </div>
+            <div class="header-brand-text">
+              <h3 class="header-brand-text--title">
+                {{#we-content-editable tagName="span" value=user.displayName attribute='displayName' onSave="saveAttribute" canEdit=user.canEdit}}
+                  {{focus-input value=user.displayName type="text"}}
+                {{/we-content-editable}}
+                <small class="username">@{{user.username}}</small>
+              </h3>
+              <small class="header-brand-text--small">
+                Membro ha {{format-date user.createdAt}}
+              </small>
+            </div>
+          </div>
+
+          <div class="header-info">
+            <div class="local">
+            {{#if user.canEdit}}
+              <b>Local</b>: {{we-state-city-selector-inline tagName="span" country="BR" selectedState=user.locationState selectedCity=user.city}}
+            {{else}}
+              {{#if user.locationState}}
+                <b>Local</b>: {{user.locationState}}, {{user.city}}
+              {{/if}}
+            {{/if}}
+
+            </div>
+            {{!--
+              <div class="area"><b>Área</b>: Enfermagem</div>
+             --}}
+            <div class="about">
+              <b>Sobre</b>:
+              <p>
+              {{#we-content-editable value=user.biography attribute='biography' onSave="saveAttribute" canEdit=user.canEdit}}
+                {{we-editor value=user.biography}}
+              {{/we-content-editable}}
+              </p>
+            </div>
+          </div>
+
+ {{!--          <a href="#" class="about-group btn">Sobre <span class="caret"></span></a> --}}
+
+        </header>
+
+        {{outlet}}
+
+      </div>
+
+    </div>
+
+
+  </div><!-- /container -->
+</section><!-- end -->

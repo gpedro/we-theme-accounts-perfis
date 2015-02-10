@@ -1,0 +1,27 @@
+<div class="actions">
+  <button {{action 'unFollow'}} type="button" class="btn btn-xs btn-success">
+    {{t 'Seguindo'}}
+  </button>
+
+  <div class="btn-group dropup">
+    <button class="btn btn-xs btn-primary dropdown-toggle" type="button" id="dropdownGroupActions" data-toggle="dropdown">
+      {{t 'Ações'}}
+      <span class="caret"></span>
+    </button>
+
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownGroupActions">
+      <li role="presentation">
+        <a href="#d" {{action 'editItem'}} role="menuitem" tabindex="-1">
+          <i class="fa fa-pencil"></i>
+          {{t 'Editar'}}
+        </a>
+      <li role="presentation" class="divider"></li>
+      <li role="presentation">
+        <a href="#d" {{action 'deleteItem'}} role="menuitem" tabindex="-1">
+          <i class="fa fa-remove"></i>
+          {{t 'Deletar'}}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

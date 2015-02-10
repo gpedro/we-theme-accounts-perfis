@@ -1,0 +1,61 @@
+<div class="container">
+{{we-sys-messages messages=messages}}
+{{partial 'partials/auth-navbar'}}
+<form role="form" class="auth-form user-signup-form"  action="/login" method="post">
+
+  <div class="form-content">
+
+    <div class="user-signup-logo-cdp">
+      {{partial 'partials/cdp-logo-svg'}}
+    </div>
+    <h2 class="form-heading">{{t "auth.login.title"}}</h2>
+    <p style="margin: 20px 0;">A CdP migrou para outro servidor, por isso precisa que você recadastre a sua senha. Se você já fez esse procedimento, pode seguir adiante normalmente. Caso ainda não tenha feito clique <a href="/auth/forgot-password">aqui</a>.</p>
+    <!-- input: email -->
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control input-lg" placeholder="Email" required="true" type="email" name="email">
+        <label for="email" class="input-group-addon">
+          <span class="icons-outline icons-outline-letter"></span>
+        </label>
+      </div>
+    </div>
+
+
+    <!-- input: password -->
+    <div class="form-group">
+      <div class="input-group">
+        <input class="form-control input-lg" placeholder="Senha" required="true" type="password" name="password">
+        <label for="password" class="input-group-addon">
+          <span class="icons-outline icons-outline-padlock-closed"> </span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group clearfix">
+      <div class="input-group pull-right">
+        <button class="btn btn-lg btn-success submit" type="submit">
+          {{t "Send"}}
+        </button>
+      </div>
+    </div>
+
+    <div style="text-align: center;">
+      {{#link-to "authRegister"}}
+        {{t "Sign up"}}
+      {{/link-to}}
+    </div>
+
+    <input class="eu-gosto-de-mel" type="text" name="mel" value="" style="display: none">
+
+  </div>
+  <div class="form-footer">
+    <ul>
+      <li>
+        {{#link-to "authForgotPassword"}}
+          {{t "Remember Password"}}
+        {{/link-to}}
+      </li>
+    </ul>
+  </div>
+</form>
+</div>

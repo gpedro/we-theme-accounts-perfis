@@ -1,0 +1,11 @@
+<div class="images">
+  <div class="row">
+    {{#each images}}
+      <div class="col-md-3">
+        {{#we-image-overlay href=urls.original data-fancybox-group='postGaleria'}}
+          {{we-image file=this size="large" }}
+        {{/we-image-overlay}}
+      </div>
+    {{/each}}
+  </div>
+</div>

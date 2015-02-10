@@ -1,0 +1,167 @@
+<section class="section">
+  <div class="container">
+    {{bread-crumbs}}
+<div class="row">
+<div class="col-md-3">
+
+  {{#unless group.newAvatarSRC}}
+    <div id="group-picture">
+      {{#link-to 'group' group.id}}
+        {{#if group.logo}}
+          <img width="100%" {{bind-attr src="group.logo.urls.large"}} />
+        {{else}}
+          <img width="100%" class="group-list-img img-circle" src="/theme/assets/img/img-groups.jpg">
+        {{/if}}
+      {{/link-to}}
+    </div>
+  {{else}}
+    <div id="group-picture">
+      <img width="100%" {{bind-attr src=group.newAvatarSRC}}>
+    </div>
+
+    <div class="btn-group btn-group-lg group-save-group-avatar" role="group">
+
+      <button class="btn btn-success" {{action 'saveAvatar'}}>Salvar</button>
+
+      <button {{action 'cancelChangeAvatar'}} class="btn btn-default">Cancelar</button>
+
+    </div>
+
+  {{/unless}}
+  {{#if changeAvatar}}
+    <div class="group-change-picture widget" >
+      {{image-upload name="chaneGroupAvatar" classNames="we-share-images-input" files=group.avatarSelected}}
+    </div>
+  {{else}}
+    {{#if group.canAdmin}}
+      <button {{action 'showChangeAvatar'}} class="btn btn-primary btn-block btn-change-group-avatar">
+        Mudar imagem
+      </button>
+    {{/if}}
+  {{/if}}
+
+  <div id="group-icons">
+    <ul>
+      <li class="group-icon-like">
+        {{we-flag flagType='like' model='group' modelId=group.id
+          flagText=' '
+          flagClass= 'cdp cdp-love'
+          unFlagClass= 'cdp cdp-love active' }}
+      </li>
+      <li class="group-icon-access"><i class="icons-outline icons-outline-padlock-open"></i></li>
+      <li class="group-icon-follow">
+        {{we-follow model='group' modelId=group.id flagText='<i class="icons-outline icons-outline-eye"></i>' unFlagText="Seguindo"}}
+      </li>
+    </ul>
+  </div>
+
+  <aside id="group-menu-widget" class="widget">
+  {{#link-to 'group.about' group.id classNames="btn btn-default btn-block"}}
+    Sobre
+  {{/link-to}}
+  {{#if group.isCreator}}
+    {{!-- group create is a super admin and cant leave the group --}}
+
+    <button disabled="true" type="button" class="btn btn-success btn-block">Super Admin</button>
+
+  {{else}}
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+    {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
+    {{#if group.canInvite}}
+      {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
+        Convidar Pessoa
+      {{/link-to}}  
+    {{/if}}      
+    
+=======
+    <aside id="group-menu-widget" class="group-widget">
+      {{we-group-join-button status=membership.status action="changeMembership" classNames="btn btn-success"}}
+      {{#if group.canInvite}}
+        {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
+          Convidar Pessoa
+        {{/link-to}}  
+      {{/if}}      
+    </aside>
+>>>>>>> 021ec02d33531c9f65a461fcfee15d5eb8aeae66
+=======
+
+  {{we-group-join-button status=membership.status action="changeMembership" disabled=group.isCreator classNames="btn btn-success"}}
+  {{#if group.canInvite}}
+    {{#link-to 'group.addMember' group.id classNames="btn btn-primary" }}
+      Convidar Pessoa
+    {{/link-to}}
+  {{/if}}
+
+>>>>>>> 0ff635605cd217442bec8c7187e766bff6499cf0
+  {{/if}}
+  </aside>
+  {{#if group.canAdmin}}
+    <aside id="administer-widget" class="widget panel panel-gray">
+      <div class="panel-heading">
+        <h3 class="panel-title">
+          <a class="widget-trigger-collapse" data-toggle="collapse" data-parent="#accordion" href="#collapse-administer-widget">
+            <span class="fa-stack">
+              <i class="cdp cdp-settings cdp-lg cdp-fw cdp-stack-1x pull-left"></i>
+            </span>
+            <span class="icon-title">Administrar</span>
+          </a>
+        </h3>
+      </div>
+      <div id="collapse-administer-widget" class="panel-collapse list-group in">
+
+        {{#link-to 'group.addMember' group.id classNames="list-group-item" }}
+          Convidar Pessoa
+        {{/link-to}}
+        {{#if group.shouldAdminRequests}}
+          {{#link-to 'group.requests' group.id classNames="btn btn-default" }}
+            Gerenciar Solicitacões
+          {{/link-to}}
+        {{/if}}
+      </div>
+    </aside>
+  {{/if}}
+
+  {{#if members}}
+    <aside id="group-members" class="group-members-list group-widget">
+      <h3>Quem Faz Parte?</h3>
+      <p>Membros da Comunidade</p>
+      <div class="content members-list">
+        {{#each members}}
+          {{#link-to 'user' id classNames="facilitador"}}
+            <span class="img-wrapper">{{we-avatar userId=id size="thumbnail" classNames="img-circle"}}</span>
+          {{/link-to}}
+        {{/each}}
+      </div>
+      <div class="group-widget-more">
+        {{#link-to 'group.members' ../group.id classNames="pull-right btn"}}
+          Ver Todos
+        {{/link-to}}
+      </div>
+    </aside>
+  {{/if}}
+
+  {{#if moderators}}
+    <aside id="group-facilitadores" class="group-facilitadores-list group-widget">
+      <h3>Facilitadores</h3>
+        <div class="content facilitadores-list">
+          {{#each moderators}}
+            {{#link-to 'user' id classNames="facilitador"}}
+              <span class="img-wrapper">{{we-avatar userId=id size="medium" classNames="img-circle"}}</span>
+              <h4 class="nome">{{displayName}}</h4>
+            {{/link-to}}
+          {{/each}}
+        </div>
+    </aside>
+  {{/if}}
+
+</div>
+<div class="col-md-9">
+  {{outlet}}
+</div>
+
+</div>
+
+  </div>
+</section>

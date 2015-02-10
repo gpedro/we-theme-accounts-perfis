@@ -1,0 +1,54 @@
+<section class="section">
+  <div class="container">
+    {{bread-crumbs}}
+
+<div class="content-block post">
+<div class="full-post panel panel-default">
+  <div class="header panel-heading">
+  {{#with post}}
+    {{partial 'partials/post-header-partial'}}
+  {{/with}}
+  </div>
+  {{#with post}}
+    <div class="panel-body">
+      {{#if isEditing}}
+        {{partial 'partials/post-edit-form-partial'}}
+      {{else}}
+        <div class="content">
+          <div class="post-text">{{html body}}</div>
+
+          {{#if wembed.url}}
+            {{we-wembed url=wembed.url imageIndex=wembed.imageIndex }}
+          {{/if}}
+
+          {{partial 'partials/post-images-display-partial'}}
+
+        </div>
+
+        {{partial 'partials/post-footer-actions-partial'}}
+
+      {{/if}}
+    </div>
+  {{/with}}
+
+  <div class="panel-footer">
+    {{#if hasMoreComments}}
+      <div class="comments-header">
+        <span>Total de {{commentCount}} comentarios.</span>
+        <a {{action 'loadAllComments'}} href="#mostrar-comment" class="btn btn-default btn-xs">Mostrar todos</a>
+      </div>
+      <hr>
+    {{/if}}
+
+    {{#if post.id}}
+      {{we-comments commentedModelName="post" commentedModelId=post.id}}
+      {{we-comment-form commentedModelName="post" commentedModelId=post.id}}
+    {{/if}}
+  </div>
+
+</div>
+</div>
+
+
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<ul class="nav nav-pills nav-stacked">
+
+  {{#link-to 'notifications.index' tagName="li" href=false}}
+    {{#link-to 'notifications.index' bubbles=false}}
+      {{we-notifications-count
+      count=App.WeNotification.notificationCount
+      pullRight=true
+      labelHighlightClass='badge pull-right'
+      labelDefaultClass='badge pull-right'}}
+      {{t "notifications.unread"}}
+    {{/link-to}}
+  {{/link-to}}
+
+  {{#link-to 'notifications.lidas' tagName="li" href=false}}
+    {{#link-to 'notifications.lidas' bubbles=false}}
+      {{we-notifications-count
+      count=App.WeNotification.readNotificationCount
+      highlight=false
+      pullRight=true
+      labelHighlightClass='badge pull-right'
+      labelDefaultClass='badge pull-right'}}
+      {{t "notifications.read"}}
+    {{/link-to}}
+  {{/link-to}}
+</ul>
