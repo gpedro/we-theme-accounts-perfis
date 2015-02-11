@@ -1,7 +1,6 @@
 <div class="container">
-{{we-sys-messages messages=messages}}
 {{partial 'partials/auth-navbar'}}
-<form role="form" class="auth-form user-signup-form"  action="/login" method="post">
+<form role="form" class="auth-form user-signup-form user-login-form"  {{action 'login' on="submit"}} method="post">
 
   <div class="form-content">
 
@@ -9,11 +8,14 @@
       {{partial 'partials/cdp-logo-svg'}}
     </div>
     <h2 class="form-heading">{{t "auth.login.title"}}</h2>
-    <p style="margin: 20px 0;">A CdP migrou para outro servidor, por isso precisa que você recadastre a sua senha. Se você já fez esse procedimento, pode seguir adiante normalmente. Caso ainda não tenha feito clique <a href="/auth/forgot-password">aqui</a>.</p>
+    <p style="margin: 20px 0;">A CdP migrou para outro servidor, por isso precisa que você recadastre a sua senha. Se você já fez esse procedimento, pode seguir adiante normalmente. Caso ainda não tenha feito clique {{#link-to 'authForgotPassword'}}aqui.{{/link-to}}</p>
+
+    {{we-sys-messages messages=messages}}
+
     <!-- input: email -->
     <div class="form-group">
       <div class="input-group">
-        <input class="form-control input-lg" placeholder="Email" required="true" type="email" name="email">
+        {{input id="email" name="email" value=email  type="email" placeholder=emailPlaceholder classNames="form-control input-lg"}}
         <label for="email" class="input-group-addon">
           <span class="icons-outline icons-outline-letter"></span>
         </label>
@@ -24,7 +26,7 @@
     <!-- input: password -->
     <div class="form-group">
       <div class="input-group">
-        <input class="form-control input-lg" placeholder="Senha" required="true" type="password" name="password">
+        {{input id="password" name="password" value=password type="password" placeholder=passwordPlaceholder classNames="form-control input-lg"}}
         <label for="password" class="input-group-addon">
           <span class="icons-outline icons-outline-padlock-closed"> </span>
         </label>

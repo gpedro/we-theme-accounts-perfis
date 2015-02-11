@@ -1,7 +1,6 @@
 <div class="container">
-{{we-sys-messages messages=messages}}
 {{partial 'partials/auth-navbar'}}
-<form action="/signup" name="createAccountForm" class="auth-form user-signup-form" method="POST">
+<form role="form" {{action 'register' on="submit"}} name="createAccountForm" class="auth-form user-signup-form" method="POST">
   <div class="form-content">
     <div class="user-signup-logo-cdp">
       {{partial 'partials/cdp-logo-svg'}}
@@ -11,8 +10,7 @@
     <!-- input: username -->
     <div class="form-group">
       <div class="input-group">
-
-        <input id="username" minlength="2" class="form-control input-lg" placeholder="Digite um nome único" required="true" type="text" name="username">
+        {{input id="username" name="username" value=user.username  type="text" placeholder="Digite um nome único" required="true" classNames="form-control input-lg"}}
         <label for="username" class="input-group-addon">
           <div id="usernameResponse"></div>
         </label>
@@ -26,7 +24,7 @@
     <!-- input: cpf -->
     <div class="form-group">
       <div class="input-group">
-        <input id="cpf" class="form-control input-lg" placeholder="Digite o seu CPF" required="true" type="text"  name="cpf">
+        {{input id="cpf" name="cpf" value=user.cpf  type="email" placeholder="CPF" classNames="form-control input-lg" required="true"}}
         <label for="cpf" class="input-group-addon">
           <div id="cpfResponse"></div>
         </label>
@@ -40,7 +38,7 @@
     <!-- input: email -->
     <div class="form-group">
       <div class="input-group">
-        <input id="email" class="form-control input-lg" placeholder="Email" required="true" type="email" name="email">
+        {{input id="email" name="email" value=user.email  type="email" placeholder="Email" classNames="form-control input-lg" required="true"}}              
         <label for="email" class="input-group-addon">
           <span class="icons-outline icons-outline-letter"></span>
         </label>
@@ -51,7 +49,7 @@
     <!-- input: confirm-email -->
     <div class="form-group">
       <div class="input-group">
-        <input id="confirm-email" class="form-control input-lg" placeholder="Repetir email" required="true" type="email" name="confirmEmail">
+        {{input id="confirmEmail" name="confirmEmail" value=user.confirmEmail  type="email" placeholder="Repetir Email" classNames="form-control input-lg" required="true"}}      
         <label for="confirm-email" class="input-group-addon">
           <span class="icons-outline icons-outline-letter"></span>
         </label>
@@ -63,7 +61,7 @@
     <div class="form-group">
       <div class="input-group">
 
-        <input id="password" class="form-control input-lg" placeholder="Senha" required="true" type="password" name="password">
+        {{input id="password" name="password" value=user.password  type="password" placeholder="Senha"  required="true" classNames="form-control input-lg"}}
 
         <!-- input: confirm-password -->
         <label for="confirm-password" class="sr-only input-group-btn">
@@ -76,15 +74,13 @@
     <!-- /input: password -->
     <div class="form-group">
       <div class="input-group">
-        <input id="confirm-password" class="form-control input-lg" placeholder="Repetir Senha" required="true" type="password" name="confirmPassword">
+       {{input id="confirmPassword" name="confirmPassword" value=user.confirmPassword  type="password" placeholder="Repetir Senha" required="true" classNames="form-control input-lg"}}
         <label for="password" class="input-group-addon">
           <span class="icons-outline icons-outline-padlock-closed"> </span>
         </label>
       </div>
     </div>
     <!-- /input: confirm-password -->
-
-    {{we-sys-messages messages=messages}}
 
     <div class="form-group">
       <div class="input-group">
@@ -94,6 +90,8 @@
         </div>
       </div>
     </div>
+
+    {{we-sys-messages messages=messages}}
 
     <div class="form-group clearfix">
       <div class="input-group pull-right">
