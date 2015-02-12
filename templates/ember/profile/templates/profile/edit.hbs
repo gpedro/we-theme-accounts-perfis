@@ -8,9 +8,9 @@
         </h2>
         <div class="content">
           <div class="user-picture">
-            <img src="http://lorempicsum.com/up/215/215/1">
+            {{user-avatar user=controller.model size="large"}}
           </div>
-          <button class="btn btn-warning btn-block">Editar</button>
+          <button class="btn btn-warning btn-block" {{action "showAvatarChangeModal"}}>Editar</button>
         </div>
       </div>
     </div>
@@ -54,11 +54,7 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <select name="" id="" class="form-control">
-                    <option value="" selected>Gênero</option>
-                    <option value="">Feminino</option>
-                    <option value="">Masculino</option>
-                  </select>
+                {{view "select" content=generos value=gender prompt="Sexo" classNames="form-control input-50"}}
                   <div class="input-help">Sexo</div>
                 </div>
                 <div class="col-md-6">
@@ -102,7 +98,7 @@
                   </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}}>Enviar</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
               </div>
             </form>
           </div>
@@ -113,7 +109,7 @@
             <form>
               <div class="row">
                 <div class="col-md-12">
-                  {{textarea value=name class="form-control" placeholder="Fique a vontade para falar sobre você"}}                  
+                  {{textarea value=biography class="form-control" placeholder="Fique a vontade para falar sobre você"}}                  
                   <div class="input-help">Fale sobre você e seus objetivos na Comunidade de Prática</div>
                 </div>
               </div>
@@ -122,26 +118,26 @@
               </h4>
               <div class="row">
                 <div class="col-md-6">
-                  {{input type="text" placeholder="Perfil no Facebook" class="form-control" value="fbprofile"}}
+                  {{input type="text" placeholder="Perfil no Facebook" class="form-control" value=fbprofile}}
                 </div>
                 <div class="col-md-6">
-                  {{input type="text" placeholder="Perfil no Instagram" class="form-control" value="instprofile"}}
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  {{input type="text" placeholder="Perfil no LinkedIn" class="form-control" value="lkinprofile"}}
-                </div>
-                <div class="col-md-6">
-                  {{input type="text" placeholder="Perfil no Twitter" class="form-control" value="twitprofile"}}
+                  {{input type="text" placeholder="Perfil no Instagram" class="form-control" value=instprofile}}
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  {{input type="text" placeholder="Perfil no YouTube" class="form-control" value="youtbprofile"}}
+                  {{input type="text" placeholder="Perfil no LinkedIn" class="form-control" value=lkinprofile}}
                 </div>
                 <div class="col-md-6">
-                  {{input type="text" placeholder="Qualquer link sobre você (Seu Blog, About.me)" class="form-control" value="otherprofile"}}
+                  {{input type="text" placeholder="Perfil no Twitter" class="form-control" value=twitprofile}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  {{input type="text" placeholder="Perfil no YouTube" class="form-control" value=youtbprofile}}
+                </div>
+                <div class="col-md-6">
+                  {{input type="text" placeholder="Qualquer link sobre você (Seu Blog, About.me)" class="form-control" value=otherprofile}}
                 </div>
               </div>
               <h4 class="heading--text-sm">
@@ -149,7 +145,7 @@
               </h4>
               <div class="row">
                 <div class="col-md-12">
-                  {{input type="text" placeholder="Coloca o link do Currículo" class="form-control" value="lattes"}}
+                  {{input type="text" placeholder="Coloca o link do Currículo" class="form-control" value=lattes}}
                   <div class="input-help">Insira o link do seu currículo</div>
                 </div>
               </div>
@@ -169,7 +165,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}}>Enviar</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
               </div>
             </form>
           </div>
@@ -183,14 +179,7 @@
               </h4>
               <div class="row">
                 <div class="col-md-12">
-                   <select name="" id="" class="form-control input-50">
-                    <option value="" selected>Maior grau de formação</option>
-                    <option value="">Opção 1</option>
-                    <option value="">Opção 2</option>
-                    <option value="">Opção 3</option>
-                    <option value="">Opção 4</option>
-                    <option value="">Opção 5</option>
-                  </select>
+                  {{view "select" content=formacao value=grade prompt="Selecione grau de formação" classNames="form-control input-50"}}
                   <div class="input-help">Qual o seu grau de formação?</div>
                 </div>
               </div>
@@ -226,7 +215,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}}>Enviar</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
               </div>
             </form>
           </div>
@@ -237,35 +226,35 @@
             <form>
               <div class="row">
                 <div class="col-md-6">
-                  {{input type="text" placeholder="E-mail" classNames="form-control" value="email"}}
+                  {{input type="text" placeholder="E-mail" classNames="form-control" value=email disabled="disabled"}}
                   <div class="input-help">Insira seu email</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  {{input type="text" placeholder="CPF" classNames="form-control" disabled="disabled" value="cpf"}}
+                  {{input type="text" placeholder="CPF" classNames="form-control" disabled="disabled" value=cpf}}
                   <div class="input-help">Insira um CPF válido</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  {{input type="text" placeholder="Username" classNames="form-control" disabled="disabled" value="username"}}
-                  <div class="input-help">Qual será seu nome de cadastro</div>
+                  {{input type="text" placeholder="Username" classNames="form-control" disabled="disabled" value=username}}
+                  <div class="input-help">Seu nome de usuário</div>
                 </div>
               </div>
               <h4 class="heading--text-sm">Mudar a Senha</h4>
               <div class="row">
                 <div class="col-md-6">
-                  <input type="password" placeholder="Nova Senha" class="form-control">
+                  {{input type="password" placeholder="Nova senha" classNames="form-control" value=newPassword}}
                   <div class="input-help">Crie uma nova senha</div>
                 </div>
                 <div class="col-md-6">
-                  <input type="password" placeholder="Confirmar senha" class="form-control">
+                  {{input type="password" placeholder="Confirmar senha" classNames="form-control" value=rNewPassword}}
                   <div class="input-help">Confirme a senha</div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'changePassword'}}>Alterar Senha</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'changePassword'}} {{bind-attr disabled=newPasswordInvalid}}>Alterar Senha</button></div>
               </div>
             </form>
           </div>
