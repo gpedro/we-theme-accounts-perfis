@@ -24,10 +24,7 @@
     <!-- input: cpf -->
     <div class="form-group">
       <div class="input-group">
-        {{input id="cpf" name="cpf" value=user.cpf  type="email" placeholder="CPF" classNames="form-control input-lg" required="true"}}
-        <label for="cpf" class="input-group-addon">
-          <div id="cpfResponse"></div>
-        </label>
+        {{input id="cpf" name="cpf" value=user.cpf  type="text" placeholder="CPF" classNames="form-control input-lg" required="true"}}
         <label for="cpf" class="input-group-addon">
           <span class="icons-outline icons-outline-user"></span>
         </label>
@@ -38,7 +35,7 @@
     <!-- input: email -->
     <div class="form-group">
       <div class="input-group">
-        {{input id="email" name="email" value=user.email  type="email" placeholder="Email" classNames="form-control input-lg" required="true"}}              
+        {{input id="email" name="email" value=user.email  type="email" placeholder="Email" classNames="form-control input-lg" required="true"}}           
         <label for="email" class="input-group-addon">
           <span class="icons-outline icons-outline-letter"></span>
         </label>
@@ -85,7 +82,7 @@
     <div class="form-group">
       <div class="input-group">
         <div class="agree-terms">
-          <input type="checkbox" name="termos" value="1" class="form-checkbox required">
+          {{input type="checkbox" name="isChecked" checked=isChecked class="form-checkbox required"}}
           <strong>Li e aceito as <a target="_blank" href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/">regras de convivência</a> e <a target="_blank" href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/">termo de uso</a> da Comunidade de Práticas.*</strong>
         </div>
       </div>

@@ -22,8 +22,8 @@ module.exports = {
     assetsFolderToCopy: 'assets/**/*',
 
     // one theme javascript file
-    javascript: 'assets/javascript/script.js',
+    javascript: 'dist/js/themejs.js',
     // one css file
-    stylesheet: 'assets/stylesheet/style.css'
+    stylesheet: 'dist/css/themecss.css'
   }
 };
