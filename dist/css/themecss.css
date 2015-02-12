@@ -4,6 +4,11 @@ CSS das Tabs
 
 */
 
+.user-profile{
+  padding-top: 20px;
+  padding-bottom: 50px;  
+}
+
 .tabs {
   background: #fff;
   border-radius: 3px;
