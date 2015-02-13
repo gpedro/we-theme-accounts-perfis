@@ -40,7 +40,7 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  {{input classNames="form-control" placeholder="dd/mm/aaaa" type="date" value=birthDate}}
+                  {{input classNames="form-control" type="date" value=birthDate}}
                   <div class="input-help">Data de Nascimento</div>
                 </div>
                 <div class="col-md-6">
@@ -68,33 +68,14 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <select name="" id="" class="form-control">
-                    <option value="" selected>Cidade/UF</option>
-                    <option value="">Opção 1</option>
-                    <option value="">Opção 2</option>
-                    <option value="">Opção 3</option>
-                    <option value="">Opção 4</option>
-                    <option value="">Opção 5</option>
-                  </select>
+                  {{we-state-city-simple-selector}}
                   <div class="input-help">Cidade que reside atualmente</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                     <select name="" id="" class="form-control">
-                      <option value="" selected>Formação Promocional</option>
-                      <option value="">Opção 1</option>
-                      <option value="">Opção 2</option>
-                      <option value="">Opção 3</option>
-                      <option value="">Opção 4</option>
-                      <option value="">Opção 5</option>
-                      <option value="">Opção 6</option>
-                      <option value="">Opção 7</option>
-                      <option value="">Opção 8</option>
-                      <option value="">Opção 9</option>
-                      <option value="">Opção 10</option>
-                    </select>
-                    <div class="input-help">Formação profissional mais relevante para o trabalho atual</div>
+                  {{we-term-simple-select vocabulary="4" promptText="Formação Profissional" currentValue=major}}
+                  <div class="input-help">Formação profissional mais relevante para o trabalho atual</div>
                   </div>
               </div>
               <div class="row">
@@ -109,7 +90,7 @@
             <form>
               <div class="row">
                 <div class="col-md-12">
-                  {{textarea value=biography class="form-control" placeholder="Fique a vontade para falar sobre você"}}                  
+                  {{textarea value=biography class="form-control" placeholder="Fique a vontade para falar sobre você"}}
                   <div class="input-help">Fale sobre você e seus objetivos na Comunidade de Prática</div>
                 </div>
               </div>
@@ -154,13 +135,13 @@
               </h4>
               <div class="row">
                 <div class="col-md-12">
-                  <input type="text" placeholder="Em quê você pode ajudar?" class="form-control">
+                  {{we-term-select2 placeholder="Em quê você pode ajudar?" vocabulary="5" delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <input type="text" placeholder="Em quê você pode ajudar?" class="form-control">
+                  {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary="5" delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>

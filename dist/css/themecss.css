@@ -1,3 +1,6 @@
+div.growlUI h1, div.growlUI h2 {
+    color: white; padding: 5px 5px 5px 5px; text-align: center; font-size: 12pt;
+}
 /*
 
 CSS das Tabs
@@ -828,7 +831,8 @@ input[type="date"], input[type="time"], input[type="datetime-local"], input[type
         display: none; } }
   #header-main .dropdown-menu-user {
     padding: 0 !important;
-    margin-top: 26px !important; }
+    margin-top: 26px !important; 
+    }
     #header-main .dropdown-menu-user .btn-danger {
       width: 200px;
       margin: 0 10px 10px 10px; }
