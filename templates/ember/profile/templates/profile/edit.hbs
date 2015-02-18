@@ -4,7 +4,7 @@
       <div class="block block-up-picture">
         <h2 class="heading--text-md title">
           Foto Perfil
-          <span class="nome">{{displayName}}</span>
+          <span class="nome">{{profileName}}</span>
         </h2>
         <div class="content">
           <div class="user-picture">
@@ -28,14 +28,14 @@
             <form>
               <div class="row">
                 <div class="col-md-12">
-                  {{input classNames="form-control input-50" placeholder="Nome" type="text" value=firstName}}
+                  {{input classNames="form-control input-50" placeholder="Como gostaria de ser chamado?" type="text" value=displayName}}
                   <div class="input-help">Como você deseja ser chamado? (pode ser um apelido, seu nome ou sobrenome)</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{input classNames="form-control input-50" placeholder="Sobrenome" type="text" value=lastName}}
-                  <div class="input-help">Como você deseja ser chamado? (pode ser um apelido, seu nome ou sobrenome)</div>
+                  {{input classNames="form-control input-50" placeholder="Nome Completo" type="text" value=fullName}}
+                  <div class="input-help">Digite seu nome completo</div>
                 </div>
               </div>
               <div class="row">
@@ -67,8 +67,8 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
-                  {{we-state-city-simple-selector}}
+                <div class="col-md-12">
+                  {{we-state-city-simple-selector selectedState=locationState selectedCity=city}}
                   <div class="input-help">Cidade que reside atualmente</div>
                 </div>
               </div>
@@ -168,32 +168,7 @@
                 Cursos
               </h4>
               <div class="row">
-                <div class="col-md-12">
-                  <table class="table-form">
-                    <thead>
-                      <tr>
-                        <th>Tipo de Curso</th>
-                        <th>Nome do Curso</th>
-                        <th>Instituição</th>
-                        <th colspan="2">Ano de Conclusão</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                           <select name="" id="" class="form-control">
-                            <option value="" selected=""></option>
-                            <option value=""></option>
-                          </select>
-                        </td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><button class="btn btn-success">Adicionar</button></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                  {{we-courses classNames="col-md-12" user=id}}
               </div>
               <div class="row">
                 <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
