@@ -25,28 +25,28 @@
         <div class="tab active">
           <div class="tab-content">
             <h3 class="heading--text-lg">Sobre Mim</h3>
-            <form>
+            <form {{action "updateUser" on="submit"}} novalidate>
               <div class="row">
                 <div class="col-md-12">
-                  {{input classNames="form-control input-50" placeholder="Como gostaria de ser chamado?" type="text" value=displayName}}
+                  {{input classNames="form-control input-50" placeholder="Como gostaria de ser chamado?" type="text" value=displayName required="required"}}
                   <div class="input-help">Como você deseja ser chamado? (pode ser um apelido, seu nome ou sobrenome)</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{input classNames="form-control input-50" placeholder="Nome Completo" type="text" value=fullName}}
+                  {{input classNames="form-control input-50" placeholder="Nome Completo" type="text" value=fullName required="required"}}
                   <div class="input-help">Digite seu nome completo</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  {{input classNames="form-control" type="date" value=birthDate}}
+                  {{input classNames="form-control" type="date" value=birthDate required="required"}}
                   <div class="input-help">Data de Nascimento</div>
                 </div>
                 <div class="col-md-6">
                   <div class="checkbox">
                     <label>
-                      {{input type="checkbox" name="showBday" checked=showBday}} Exibir no Perfil
+                      {{input type="checkbox" name="showBday" checked=showBday required="required"}} Exibir no Perfil
                       <div class="input-help">(desmarque caso não queira exibir esta informação)</div>
                     </label>
                   </div>
@@ -54,13 +54,13 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                {{view "select" content=generos value=gender prompt="Sexo" classNames="form-control input-50"}}
+                {{view "select" content=generos value=gender prompt="Sexo" classNames="form-control input-50" required="required"}}
                   <div class="input-help">Sexo</div>
                 </div>
                 <div class="col-md-6">
                   <div class="checkbox">
                     <label>
-                      {{input type="checkbox" name="showGenre" checked=showGenre}} Exibir no Perfil
+                      {{input type="checkbox" name="showGenre" checked=showGenre required="required"}} Exibir no Perfil
                       <div class="input-help">(desmarque caso não queira exibir esta informação)</div>
                     </label>
                   </div>
@@ -79,7 +79,7 @@
                   </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
+                <div class="col-md-12"><button type="submit" class="btn btn-primary" {{bind-attr disabled=isDirty}}>Enviar</button></div>
               </div>
             </form>
           </div>
@@ -200,13 +200,17 @@
               </div>
               <h4 class="heading--text-sm">Mudar a Senha</h4>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
+                  {{input type="password" placeholder="Senha Atual" classNames="form-control" value=currPassword}}
+                  <div class="input-help">Digite a senha atual</div>
+                </div>              
+                <div class="col-md-4">
                   {{input type="password" placeholder="Nova senha" classNames="form-control" value=newPassword}}
-                  <div class="input-help">Crie uma nova senha</div>
+                  <div class="input-help">Defina uma nova senha</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   {{input type="password" placeholder="Confirmar senha" classNames="form-control" value=rNewPassword}}
-                  <div class="input-help">Confirme a senha</div>
+                  <div class="input-help">Confirme a nova senha</div>
                 </div>
               </div>
               <div class="row">
