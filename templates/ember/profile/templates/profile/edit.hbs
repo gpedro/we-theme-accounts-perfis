@@ -25,7 +25,7 @@
         <div class="tab active">
           <div class="tab-content">
             <h3 class="heading--text-lg">Sobre Mim</h3>
-            <form {{action "updateUser" on="submit"}} novalidate>
+            <form {{action "updateUser" on="submit"}}>
               <div class="row">
                 <div class="col-md-12">
                   {{input classNames="form-control input-50" placeholder="Como gostaria de ser chamado?" type="text" value=displayName required="required"}}
@@ -74,7 +74,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-simple-select vocabulary="4" promptText="Formação Profissional" currentValue=major}}
+                  {{we-term-simple-select vocabulary="1" promptText="Formação Profissional" currentValue=major}}
                   <div class="input-help">Formação profissional mais relevante para o trabalho atual</div>
                   </div>
               </div>
@@ -84,7 +84,7 @@
             </form>
           </div>
         </div>
-        <div class="tab">
+        <div class="tab" {{bind-attr class="aboutMe::tab-blocked"}}>
           <div class="tab-content">
             <h3 class="heading--text-lg">Mais sobre você</h3>
             <form>
@@ -135,13 +135,13 @@
               </h4>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="Em quê você pode ajudar?" vocabulary="5" delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
+                  {{we-term-select2 placeholder="Em quê você pode ajudar?" vocabulary="2" delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary="5" delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
+                  {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary="2" delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
@@ -151,7 +151,7 @@
             </form>
           </div>
         </div>
-        <div class="tab">
+        <div class="tab" {{bind-attr class="aboutMe::tab-blocked"}}>
           <div class="tab-content">
             <h3 class="heading--text-lg">Estudo e Trabalhos</h3>
             <form action="">
@@ -176,13 +176,13 @@
             </form>
           </div>
         </div>
-        <div class="tab">
+        <div class="tab" {{bind-attr class="aboutMe::tab-blocked"}}>
           <div class="tab-content">
             <h3 class="heading--text-lg">Conta e Acesso ao CdP</h3>
             <form>
               <div class="row">
                 <div class="col-md-6">
-                  {{input type="text" placeholder="E-mail" classNames="form-control" value=email disabled="disabled"}}
+                  {{input type="text" placeholder="E-mail" classNames="form-control" disabled="disabled" value=email}}
                   <div class="input-help">Insira seu email</div>
                 </div>
               </div>
@@ -193,10 +193,13 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
-                  {{input type="text" placeholder="Username" classNames="form-control" disabled="disabled" value=username}}
-                  <div class="input-help">Seu nome de usuário</div>
+                <div class="col-md-6" {{bind-attr class="usernameInvalid:has-error"}}>
+                  {{input type="text" placeholder="Username" classNames="form-control" value=username}}
+                  <div class="input-help-username input-help">Seu nome de usuário</div>                    
                 </div>
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-primary" {{bind-attr disabled=usernameInvalid}} {{action 'updateUser'}}>Enviar</button>                
+                </div>                              
               </div>
               <h4 class="heading--text-sm">Mudar a Senha</h4>
               <div class="row">

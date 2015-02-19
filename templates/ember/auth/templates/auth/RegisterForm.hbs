@@ -9,7 +9,7 @@
     <h4>{{t "auth.register.subtitle"}}</h4>
     <!-- input: username -->
     <div class="form-group">
-      <div class="input-group">
+      <div class="input-group" {{bind-attr class="usernameInvalid:has-error:has-success" }}>
         {{input id="username" name="username" value=user.username  type="text" placeholder="Digite um nome único" required="true" classNames="form-control input-lg"}}
         <label for="username" class="input-group-addon">
           <div id="usernameResponse"></div>
