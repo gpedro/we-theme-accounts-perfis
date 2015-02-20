@@ -221,12 +221,16 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6" {{bind-attr class="usernameInvalid:has-error"}}>
+                <div class="col-md-6" {{bind-attr class="usernameErr:has-error"}}>
                   {{input type="text" placeholder="Username" classNames="form-control" value=username}}
-                  <div class="input-help-username input-help">Seu nome de usuário</div>                    
+                  {{#if usernameErr}}
+                    <div class="input-help">{{usernameErrMessage}}</div>
+                  {{else}}
+                    <div class="input-help">Seu nome de usuário</div>  
+                  {{/if}}                                                       
                 </div>
                 <div class="col-md-6">
-                  <button type="button" class="btn btn-primary" {{bind-attr disabled=usernameInvalid}} {{action 'updateUser'}}>Enviar</button>                
+                  <button type="button" class="btn btn-primary" {{bind-attr disabled=usernameErr}} {{action 'updateUser'}}>Enviar</button>                
                 </div>                              
               </div>
               <h4 class="heading--text-sm">Mudar a Senha</h4>
