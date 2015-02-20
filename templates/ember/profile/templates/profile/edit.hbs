@@ -4,7 +4,7 @@
       <div class="block block-up-picture">
         <h2 class="heading--text-md title">
           Foto Perfil
-          <span class="nome">{{displayName}}</span>
+          <span class="nome">{{profileName}}</span>
         </h2>
         <div class="content">
           <div class="user-picture">
@@ -25,28 +25,28 @@
         <div class="tab active">
           <div class="tab-content">
             <h3 class="heading--text-lg">Sobre Mim</h3>
-            <form>
+            <form {{action "updateUser" on="submit"}}>
               <div class="row">
                 <div class="col-md-12">
-                  {{input classNames="form-control input-50" placeholder="Nome" type="text" value=firstName}}
+                  {{input classNames="form-control input-50" placeholder="Como gostaria de ser chamado?" type="text" value=displayName required="required"}}
                   <div class="input-help">Como você deseja ser chamado? (pode ser um apelido, seu nome ou sobrenome)</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{input classNames="form-control input-50" placeholder="Sobrenome" type="text" value=lastName}}
-                  <div class="input-help">Como você deseja ser chamado? (pode ser um apelido, seu nome ou sobrenome)</div>
+                  {{input classNames="form-control input-50" placeholder="Nome Completo" type="text" value=fullName required="required"}}
+                  <div class="input-help">Digite seu nome completo</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  {{input classNames="form-control" type="date" value=birthDate}}
+                  {{input classNames="form-control" type="date" value=birthDate required="required"}}
                   <div class="input-help">Data de Nascimento</div>
                 </div>
                 <div class="col-md-6">
                   <div class="checkbox">
                     <label>
-                      {{input type="checkbox" name="showBday" checked=showBday}} Exibir no Perfil
+                      {{input type="checkbox" name="showBday" checked=showBday required="required"}} Exibir no Perfil
                       <div class="input-help">(desmarque caso não queira exibir esta informação)</div>
                     </label>
                   </div>
@@ -54,37 +54,37 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                {{view "select" content=generos value=gender prompt="Sexo" classNames="form-control input-50"}}
+                {{view "select" content=generos value=gender prompt="Sexo" classNames="form-control input-50" required="required"}}
                   <div class="input-help">Sexo</div>
                 </div>
                 <div class="col-md-6">
                   <div class="checkbox">
                     <label>
-                      {{input type="checkbox" name="showGenre" checked=showGenre}} Exibir no Perfil
+                      {{input type="checkbox" name="showGenre" checked=showGenre required="required"}} Exibir no Perfil
                       <div class="input-help">(desmarque caso não queira exibir esta informação)</div>
                     </label>
                   </div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
-                  {{we-state-city-simple-selector}}
+                <div class="col-md-12">
+                  {{we-state-city-simple-selector selectedState=locationState selectedCity=city}}
                   <div class="input-help">Cidade que reside atualmente</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-simple-select vocabulary="4" promptText="Formação Profissional" currentValue=major}}
+                  {{we-term-simple-select vocabulary="1" promptText="Formação Profissional" currentValue=major}}
                   <div class="input-help">Formação profissional mais relevante para o trabalho atual</div>
                   </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
+                <div class="col-md-12"><button type="submit" class="btn btn-primary" {{bind-attr disabled=isDirty}}>Enviar</button></div>
               </div>
             </form>
           </div>
         </div>
-        <div class="tab">
+        <div class="tab" {{bind-attr class="aboutMe::tab-blocked"}}>
           <div class="tab-content">
             <h3 class="heading--text-lg">Mais sobre você</h3>
             <form>
@@ -135,13 +135,13 @@
               </h4>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="Em quê você pode ajudar?" vocabulary="5" delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
+                  {{we-term-select2 placeholder="Em quê você pode ajudar?" vocabulary="2" delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary="5" delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
+                  {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary="2" delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
@@ -151,7 +151,7 @@
             </form>
           </div>
         </div>
-        <div class="tab">
+        <div class="tab" {{bind-attr class="aboutMe::tab-blocked"}}>
           <div class="tab-content">
             <h3 class="heading--text-lg">Estudo e Trabalhos</h3>
             <form action="">
@@ -168,32 +168,7 @@
                 Cursos
               </h4>
               <div class="row">
-                <div class="col-md-12">
-                  <table class="table-form">
-                    <thead>
-                      <tr>
-                        <th>Tipo de Curso</th>
-                        <th>Nome do Curso</th>
-                        <th>Instituição</th>
-                        <th colspan="2">Ano de Conclusão</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                           <select name="" id="" class="form-control">
-                            <option value="" selected=""></option>
-                            <option value=""></option>
-                          </select>
-                        </td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><input type="text" class="form-control"></td>
-                        <td><button class="btn btn-success">Adicionar</button></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                  {{we-courses classNames="col-md-12" user=id}}
               </div>
               <div class="row">
                 <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
@@ -201,13 +176,13 @@
             </form>
           </div>
         </div>
-        <div class="tab">
+        <div class="tab" {{bind-attr class="aboutMe::tab-blocked"}}>
           <div class="tab-content">
             <h3 class="heading--text-lg">Conta e Acesso ao CdP</h3>
             <form>
               <div class="row">
                 <div class="col-md-6">
-                  {{input type="text" placeholder="E-mail" classNames="form-control" value=email disabled="disabled"}}
+                  {{input type="text" placeholder="E-mail" classNames="form-control" disabled="disabled" value=email}}
                   <div class="input-help">Insira seu email</div>
                 </div>
               </div>
@@ -218,20 +193,27 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
-                  {{input type="text" placeholder="Username" classNames="form-control" disabled="disabled" value=username}}
-                  <div class="input-help">Seu nome de usuário</div>
+                <div class="col-md-6" {{bind-attr class="usernameInvalid:has-error"}}>
+                  {{input type="text" placeholder="Username" classNames="form-control" value=username}}
+                  <div class="input-help-username input-help">Seu nome de usuário</div>                    
                 </div>
+                <div class="col-md-6">
+                  <button type="button" class="btn btn-primary" {{bind-attr disabled=usernameInvalid}} {{action 'updateUser'}}>Enviar</button>                
+                </div>                              
               </div>
               <h4 class="heading--text-sm">Mudar a Senha</h4>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
+                  {{input type="password" placeholder="Senha Atual" classNames="form-control" value=currPassword}}
+                  <div class="input-help">Digite a senha atual</div>
+                </div>              
+                <div class="col-md-4">
                   {{input type="password" placeholder="Nova senha" classNames="form-control" value=newPassword}}
-                  <div class="input-help">Crie uma nova senha</div>
+                  <div class="input-help">Defina uma nova senha</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                   {{input type="password" placeholder="Confirmar senha" classNames="form-control" value=rNewPassword}}
-                  <div class="input-help">Confirme a senha</div>
+                  <div class="input-help">Confirme a nova senha</div>
                 </div>
               </div>
               <div class="row">
