@@ -1,6 +1,6 @@
 <div class="container">
 {{partial 'partials/auth-navbar'}}
-<form role="form" {{action 'register' on="submit"}} name="createAccountForm" class="auth-form user-signup-form" method="POST">
+<form role="form" {{action 'register' on="submit"}} name="createAccountForm" class="auth-form user-signup-form">
   <div class="form-content">
     <div class="user-signup-logo-cdp">
       {{partial 'partials/cdp-logo-svg'}}
@@ -9,11 +9,13 @@
     <h4>{{t "auth.register.subtitle"}}</h4>
     <!-- input: username -->
     <div class="form-group">
-      <div class="input-group" {{bind-attr class="usernameInvalid:has-error:has-success" }}>
+      <div class="input-group" {{bind-attr class="usernameErr:has-error:has-success" }}>
         {{input id="username" name="username" value=user.username  type="text" placeholder="Digite um nome único" required="true" classNames="form-control input-lg"}}
         <label for="username" class="input-group-addon">
-          <div id="usernameResponse"></div>
-        </label>
+        {{#if usernameErr}}
+          <div class="input-help">{{usernameErrMessage}}</div>
+        {{/if}}
+        </label>                 
         <label for="username" class="input-group-addon">
           <span class="icons-outline icons-outline-user"></span>
         </label>
@@ -23,8 +25,13 @@
 
     <!-- input: cpf -->
     <div class="form-group">
-      <div class="input-group">
+      <div class="input-group" {{bind-attr class="cpfErr:has-error:has-success" }}>
         {{input id="cpf" name="cpf" value=user.cpf  type="text" placeholder="CPF" classNames="form-control input-lg" required="true"}}
+        <label for="cpf" class="input-group-addon">
+        {{#if cpfErr}}
+          <div class="input-help">{{cpfErrMessage}}</div>
+        {{/if}}
+        </label>        
         <label for="cpf" class="input-group-addon">
           <span class="icons-outline icons-outline-user"></span>
         </label>
@@ -34,8 +41,13 @@
 
     <!-- input: email -->
     <div class="form-group">
-      <div class="input-group">
-        {{input id="email" name="email" value=user.email  type="email" placeholder="Email" classNames="form-control input-lg" required="true"}}           
+      <div class="input-group" {{bind-attr class="emailErr:has-error:has-success" }}>
+        {{input id="email" name="email" value=user.email  type="email" placeholder="Email" classNames="form-control input-lg" required="true"}}
+        <label for="email" class="input-group-addon">
+        {{#if emailErr}}
+          <div class="input-help">{{emailErrMessage}}</div>
+        {{/if}}
+        </label>
         <label for="email" class="input-group-addon">
           <span class="icons-outline icons-outline-letter"></span>
         </label>
@@ -45,9 +57,14 @@
 
     <!-- input: confirm-email -->
     <div class="form-group">
-      <div class="input-group">
-        {{input id="confirmEmail" name="confirmEmail" value=user.confirmEmail  type="email" placeholder="Repetir Email" classNames="form-control input-lg" required="true"}}      
-        <label for="confirm-email" class="input-group-addon">
+      <div class="input-group" {{bind-attr class="confirmEmailErr:has-error:has-success" }}>
+        {{input id="confirmEmail" name="confirmEmail" value=user.confirmEmail  type="email" placeholder="Repetir Email" classNames="form-control input-lg" required="true"}}
+        <label for="confirmEmail" class="input-group-addon">
+        {{#if confirmEmailErr}}
+          <div class="input-help">{{confirmEmailErrMessage}}</div>
+        {{/if}}
+        </label>
+        <label for="confirmEmail" class="input-group-addon">
           <span class="icons-outline icons-outline-letter"></span>
         </label>
       </div>
@@ -56,12 +73,12 @@
 
     <!-- input: password -->
     <div class="form-group">
-      <div class="input-group">
-
+      <div class="input-group" {{bind-attr class="passwordErr:has-error:has-success" }}>
         {{input id="password" name="password" value=user.password  type="password" placeholder="Senha"  required="true" classNames="form-control input-lg"}}
-
-        <!-- input: confirm-password -->
-        <label for="confirm-password" class="sr-only input-group-btn">
+        <label for="password" class="input-group-addon">
+        {{#if passwordErr}}
+          <div class="input-help">{{passwordErrMessage}}</div>
+        {{/if}}
         </label>
         <label for="password" class="input-group-addon">
           <span class="icons-outline icons-outline-padlock-closed"> </span>
@@ -70,9 +87,14 @@
     </div>
     <!-- /input: password -->
     <div class="form-group">
-      <div class="input-group">
+      <div class="input-group" {{bind-attr class="confirmPasswordErr:has-error:has-success" }}>
        {{input id="confirmPassword" name="confirmPassword" value=user.confirmPassword  type="password" placeholder="Repetir Senha" required="true" classNames="form-control input-lg"}}
-        <label for="password" class="input-group-addon">
+        <label for="confirmPassword" class="input-group-addon">
+        {{#if confirmPasswordErr}}
+          <div class="input-help">{{confirmPasswordErrMessage}}</div>
+        {{/if}} 
+        </label>
+        <label for="confirmPassword" class="input-group-addon">
           <span class="icons-outline icons-outline-padlock-closed"> </span>
         </label>
       </div>
@@ -85,6 +107,9 @@
           {{input type="checkbox" name="isChecked" checked=isChecked class="form-checkbox required"}}
           <strong>Li e aceito as <a target="_blank" href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/">regras de convivência</a> e <a target="_blank" href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/">termo de uso</a> da Comunidade de Práticas.*</strong>
         </div>
+        {{#if isCheckedErrMessage}}
+          <div class="input-help">É necessário aceitar as regras de convivência e termos de uso</div>
+        {{/if}}        
       </div>
     </div>
 
@@ -92,7 +117,7 @@
 
     <div class="form-group clearfix">
       <div class="input-group pull-right">
-        <button class="btn btn-lg btn-success submit" type="submit">
+        <button class="btn btn-lg btn-success submit" type="submit" {{bind-attr disabled=invalidForm}}> 
           {{t "Send"}}
         </button>
       </div>
