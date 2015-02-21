@@ -46,9 +46,10 @@
                   {{/if}}                   
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-6" {{bind-attr class="birthDateErr:has-error"}}>
-                  {{input classNames="form-control" type="date" value=birthDate required="required"}}
+                  {{date-field classNames="form-control" value=birthDate required="required"}}
                   {{#if birthDateErr}}
                     <div class="input-help">{{birthDateErrMessage}}</div>
                   {{else}}
@@ -64,6 +65,7 @@
                   </div>
                 </div>
               </div>
+
               <div class="row">
                 <div class="col-md-6" {{bind-attr class="genderErr:has-error"}}>
                 {{view "select" content=generos value=gender prompt="Sexo" classNames="form-control input-50" required="required"}}
