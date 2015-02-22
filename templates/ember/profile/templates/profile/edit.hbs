@@ -100,7 +100,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12" {{bind-attr class="majorErr:has-error"}}>
-                  {{we-term-simple-select vocabulary="1" promptText="Formação Profissional" currentValue=major}}
+                  {{we-term-simple-select vocabulary=majorVocabularyId promptText="Formação Profissional" currentValue=major}}
                   {{#if majorErr}}
                     <div class="input-help">{{majorErrMessage}}</div>
                   {{else}}
@@ -165,13 +165,13 @@
               </h4>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="Em quê você pode ajudar?" vocabulary="2" delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
+                  {{we-term-select2 placeholder="Em quê você pode ajudar?" vocabulary=interestsVocabularyId delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary="2" delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
+                  {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary=interestsVocabularyId delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
