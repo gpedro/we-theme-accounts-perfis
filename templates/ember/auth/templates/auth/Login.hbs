@@ -1,5 +1,6 @@
 <div class="container">
 {{partial 'partials/auth-navbar'}}
+{{we-sys-messages messages=messages}}
 <form role="form" class="auth-form user-signup-form user-login-form"  {{action 'login' on="submit"}}>
 
   <div class="form-content">
@@ -10,21 +11,17 @@
     <h2 class="form-heading">{{t "auth.login.title"}}</h2>
     <p style="margin: 20px 0;">A CdP migrou para outro servidor, por isso precisa que você recadastre a sua senha. Se você já fez esse procedimento, pode seguir adiante normalmente. Caso ainda não tenha feito clique {{#link-to 'authForgotPassword'}}aqui.{{/link-to}}</p>
 
-    {{we-sys-messages messages=messages}}
-
     <!-- input: email -->
     <div class="form-group">
       <div class="input-group" {{bind-attr class="emailErr:has-error:has-success" }}>
         {{input id="email" name="email" value=email  type="email" placeholder="Email" classNames="form-control input-lg" required="true"}}
         <label for="email" class="input-group-addon">
-        {{#if emailErr}}
-          <div class="input-help">{{emailErrMessage}}</div>
-        {{/if}}
-        </label>
-        <label for="email" class="input-group-addon">
           <span class="icons-outline icons-outline-letter"></span>
         </label>
       </div>
+      {{#if emailErr}}
+        <div class="input-help error">{{emailErrMessage}}</div>
+      {{/if}}
     </div>
     <!-- /input: email -->
 
@@ -33,15 +30,14 @@
     <div class="form-group">
       <div class="input-group" {{bind-attr class="passwordErr:has-error:has-success" }}>
         {{input id="password" name="password" value=password  type="password" placeholder="Senha"  required="true" classNames="form-control input-lg"}}
-        <label for="password" class="input-group-addon">
-        {{#if passwordErr}}
-          <div class="input-help">{{passwordErrMessage}}</div>
-        {{/if}}
-        </label>
+        
         <label for="password" class="input-group-addon">
           <span class="icons-outline icons-outline-padlock-closed"> </span>
         </label>
       </div>
+      {{#if passwordErr}}
+        <div class="input-help">{{passwordErrMessage}}</div>
+      {{/if}}
     </div>
     <!-- /input: password -->
 
