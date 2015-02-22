@@ -28,21 +28,23 @@
             <form {{action "updateUser" on="submit"}}>
               <div class="row">
                 <div class="col-md-12" {{bind-attr class="displayNameErr:has-error"}}>
-                  {{input classNames="form-control input-50" placeholder="Como gostaria de ser chamado?" type="text" value=displayName required="required"}}
+                  {{input classNames="form-control input-50" placeholder="Nome de exibição" type="text" value=displayName required="required"}}
+                  <span class='input-help required-indicator'>*</span>
                   {{#if displayNameErr}}
                     <div class="input-help">{{displayNameErrMessage}}</div>
                   {{else}}
-                    <div class="input-help">Como você deseja ser chamado? (pode ser um apelido, seu nome ou sobrenome)</div>                  
+                    <div class="input-help">Esta será a forma como outros usuários irão visualizar seu nome</div>                  
                   {{/if}}                  
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12" {{bind-attr class="fullNameErr:has-error"}}>
                   {{input classNames="form-control input-50" placeholder="Nome Completo" type="text" value=fullName required="required"}}
+                  <span class='input-help required-indicator'>*</span>
                   {{#if fullNameErr}}
                     <div class="input-help">{{fullNameErrMessage}}</div>
                   {{else}}
-                    <div class="input-help">Digite seu nome completo</div>                  
+                    <div class="input-help">Nome completo (é o nome que será usado para os certificados dos cursos e outros documentos oficiais gerados no site)</div>                  
                   {{/if}}                   
                 </div>
               </div>
@@ -50,6 +52,7 @@
               <div class="row">
                 <div class="col-md-6" {{bind-attr class="birthDateErr:has-error"}}>
                   {{date-field classNames="form-control" value=birthDate required="required"}}
+                  <span class='input-help required-indicator'>*</span>
                   {{#if birthDateErr}}
                     <div class="input-help">{{birthDateErrMessage}}</div>
                   {{else}}
@@ -69,6 +72,7 @@
               <div class="row">
                 <div class="col-md-6" {{bind-attr class="genderErr:has-error"}}>
                 {{view "select" content=generos value=gender prompt="Sexo" classNames="form-control input-50" required="required"}}
+                  <span class='input-help required-indicator'>*</span>
                   {{#if genderErr}}
                     <div class="input-help">{{genderErrMessage}}</div>
                   {{else}}
@@ -87,13 +91,14 @@
               <div class="row">
                 <div class="col-md-12" {{bind-attr class="locationStateErr:has-error cityErr:has-error"}}>
                   {{we-state-city-simple-selector selectedState=locationState selectedCity=city}}
+                  <span class='input-help required-indicator'>*</span>
                   {{#if locationStateErr}}
                     <div class="input-help">{{locationStateErrMessage}}</div>
                   {{else}}
                     {{#if cityErr}}
                     <div class="input-help">{{cityErrMessage}}</div>
                     {{else}}
-                    <div class="input-help">Cidade que reside atualmente</div>
+                    <div class="input-help">Estado e cidade que reside atualmente</div>
                     {{/if}}                    
                   {{/if}}                                     
                 </div>
@@ -101,6 +106,7 @@
               <div class="row">
                 <div class="col-md-12" {{bind-attr class="majorErr:has-error"}}>
                   {{we-term-simple-select vocabulary=majorVocabularyId promptText="Formação Profissional" currentValue=major}}
+                  <span class='input-help required-indicator'>*</span>
                   {{#if majorErr}}
                     <div class="input-help">{{majorErrMessage}}</div>
                   {{else}}
