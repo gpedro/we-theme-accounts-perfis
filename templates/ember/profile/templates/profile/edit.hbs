@@ -1,4 +1,12 @@
-
+{{#unless aboutMe}}
+<div class="container missing-info-msg">
+  <div class="alert alert-success" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4><strong>Email validado com sucesso!</strong></h4>
+    <p>Agora, para ter acesso à CdP, preencha o formulário abaixo com suas informações básicas. O preenchimento é obrigatório...</p>
+  </div>  
+</div>
+{{/unless}}
 <div class="container">
   <div class="row user-profile">
     <div class="col-sm-3">
@@ -52,7 +60,7 @@
 
               <div class="row">
                 <div class="col-md-6" {{bind-attr class="birthDateErr:has-error"}}>
-                  {{date-field classNames="form-control" value=birthDate required="required"}}
+                  {{date-field classNames="form-control" value=birthDate required="required" placeholder="DD/MM/AAAA" i18n=i18n}}
                   <span class='input-help required-indicator'>*</span>
                   {{#if birthDateErr}}
                     <div class="input-help">{{birthDateErrMessage}}</div>
@@ -116,7 +124,7 @@
                   </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="submit" class="btn btn-primary" {{bind-attr disabled=basicInvalid}}>Enviar</button></div>
+                <div class="col-md-12"><button type="submit" class="btn btn-primary" {{bind-attr disabled=basicInvalid}}>Salvar</button></div>
               </div>
             </form>
           </div>
@@ -127,8 +135,9 @@
             <form>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-editor value=biography style="small" placeholder="Fique a vontade para falar sobre você"}}
+                  {{textarea value=biography cols="80" rows="4" placeholder="Fique a vontade para falar sobre você" class="form-control"}}                
                   <div class="input-help">Fale sobre você e seus objetivos na Comunidade de Prática</div>
+                  <div class="input-help text-field-count">{{textFieldCount}}</div>
                 </div>
               </div>
               <h4 class="heading--text-sm">
@@ -167,8 +176,7 @@
                   <div class="input-help">Insira o link do seu currículo</div>
                 </div>
               </div>
-              {{!-- TODO refatorar os campos de termos para usar as tags no lugar de termos --}}
-   {{!--             <h4 class="heading--text-sm">
+               <h4 class="heading--text-sm">
                 Interesses
               </h4>
               <div class="row">
@@ -182,9 +190,9 @@
                   {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary=interestsVocabularyId delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
-              </div> --}}
+              </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Salvar</button></div>
               </div>
             </form>
           </div>
@@ -209,7 +217,7 @@
                   {{we-courses classNames="col-md-12" user=id}}
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Enviar</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Salvar</button></div>
               </div>
             </form>
           </div>
@@ -238,28 +246,36 @@
                   {{else}}
                     <div class="input-help">Seu nome de usuário</div>  
                   {{/if}}                                                       
-                </div>
-                <div class="col-md-6">
-                  <button type="button" class="btn btn-primary" {{bind-attr disabled=usernameErr}} {{action 'updateUser'}}>Enviar</button>                
-                </div>                              
+                </div>              
               </div>
+              <div class="row">
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'changePassword'}} {{bind-attr disabled=isDirty}}>Alterar</button></div>
+              </div>              
               <h4 class="heading--text-sm">Mudar a Senha</h4>
               <div class="row">
                 <div class="col-md-4">
                   {{input type="password" placeholder="Senha Atual" classNames="form-control" value=currPassword}}
                   <div class="input-help">Digite a senha atual</div>
                 </div>              
-                <div class="col-md-4">
+                <div class="col-md-4" {{bind-attr class="newPasswordErr:has-error"}}>
                   {{input type="password" placeholder="Nova senha" classNames="form-control" value=newPassword}}
-                  <div class="input-help">Defina uma nova senha</div>
+                  {{#if newPasswordErr}}
+                    <div class="input-help">{{newPasswordErrMessage}}</div>
+                  {{else}}
+                    <div class="input-help">Defina uma nova senha</div>
+                  {{/if}}                                     
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4" {{bind-attr class="rNewPasswordErr:has-error"}}>
                   {{input type="password" placeholder="Confirmar senha" classNames="form-control" value=rNewPassword}}
-                  <div class="input-help">Confirme a nova senha</div>
+                  {{#if rNewPasswordErr}}
+                    <div class="input-help">{{rNewPasswordErrMessage}}</div>
+                  {{else}}
+                    <div class="input-help">Confirme a nova senha</div>
+                  {{/if}}                                     
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'changePassword'}} {{bind-attr disabled=newPasswordInvalid}}>Alterar Senha</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'changePassword'}} {{bind-attr disabled=newPasswordInvalid}}>Salvar Senha</button></div>
               </div>
             </form>
           </div>
