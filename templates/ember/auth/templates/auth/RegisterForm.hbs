@@ -1,5 +1,6 @@
 <div class="container">
 {{partial 'partials/auth-navbar'}}
+{{we-sys-messages messages=messages}}
 <form role="form" {{action 'register' on="submit"}} name="createAccountForm" class="auth-form user-signup-form">
   <div class="form-content">
     <div class="user-signup-logo-cdp">
@@ -113,11 +114,9 @@
       </div>
     </div>
 
-    {{we-sys-messages messages=messages}}
-
     <div class="form-group clearfix">
       <div class="input-group pull-right">
-        <button class="btn btn-lg btn-success submit" type="submit" {{bind-attr disabled=invalidForm}}> 
+        <button class="btn btn-primary submit" type="submit" {{bind-attr disabled=invalidForm}}> 
           {{t "Send"}}
         </button>
       </div>
