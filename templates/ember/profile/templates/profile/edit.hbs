@@ -154,36 +154,42 @@
                 Você nas Redes
               </h4>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="fbprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no Facebook" class="form-control" value=fbprofile}}
+                  <div class="input-help">Ex: 'https://www.facebook.com/(nomedeusuario)'</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="instprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no Instagram" class="form-control" value=instprofile}}
+                  <div class="input-help">Ex: 'http://instagram.com/(nomedeusuario)'</div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="lkinprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no LinkedIn" class="form-control" value=lkinprofile}}
+                  <div class="input-help">Ex: 'linkedin.com/pub/(nomedeusuario)'</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="twitprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no Twitter" class="form-control" value=twitprofile}}
+                  <div class="input-help">Ex: 'https://twitter.com/(nomedeusuario)'</div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="youtbprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no YouTube" class="form-control" value=youtbprofile}}
+                  <div class="input-help">Ex: 'https://www.youtube.com/user/(nomedeusuario)'</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="otherprofileErr:has-error"}}>
                   {{input type="text" placeholder="Qualquer link sobre você (Seu Blog, About.me)" class="form-control" value=otherprofile}}
+                  <div class="input-help">Ex: 'http://www.(seusite).com.br'</div>
                 </div>
               </div>
               <h4 class="heading--text-sm">
                 Tem Lattes?
               </h4>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" {{bind-attr class="lattesErr:has-error"}}>
                   {{input type="text" placeholder="Coloca o link do Currículo" class="form-control" value=lattes}}
-                  <div class="input-help">Insira o link do seu currículo</div>
+                  <div class="input-help">Insira o link do seu currículo no formato 'http://lattes.cnpq.br/5781403814989678'</div>
                 </div>
               </div>
                <h4 class="heading--text-sm">
@@ -202,7 +208,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Salvar</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=moreAboutYouInvalid}}>Salvar</button></div>
               </div>
             </form>
           </div>
