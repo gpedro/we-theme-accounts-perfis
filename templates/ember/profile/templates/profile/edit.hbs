@@ -3,7 +3,7 @@
   <div class="alert alert-success" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <h4><strong>Email validado com sucesso!</strong></h4>
-    <p>Agora, para ter acesso à CdP, preencha o formulário abaixo com suas informações básicas. O preenchimento é obrigatório...</p>
+    <p>Agora, basta preencher as informações básicas (formulário abaixo) e ter acesso total à CdP! É rápido! Após isso você já pode navegar pela rede, ou se preferir preencher seu perfil completo acessando as abas. Quanto mais você preencher, mais fácil você será encontrado e encontrará pessoas e conteúdos de seu interesse. Está com pressa? Sem problemas. O seu cadastro sempre estará aqui e poderá ser preenchido (ou atualizado) a qualquer momento.</p>
   </div>  
 </div>
 {{/unless}}
@@ -123,6 +123,16 @@
                   {{/if}}                   
                   </div>
               </div>
+              <div class="row">
+
+              </div>
+              {{#if basicInvalid}}
+                <div class="row">
+                  <div class="col-md-12">                  
+                    <div class="alert alert-warning" role="alert">Preencha todos os campos do formulário acima antes de salvar.</div>
+                  </div>
+                </div>
+              {{/if}}
               <div class="row">
                 <div class="col-md-12"><button type="submit" class="btn btn-primary" {{bind-attr disabled=basicInvalid}}>Salvar</button></div>
               </div>
