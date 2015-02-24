@@ -1,7 +1,7 @@
 {
   "name": "we-theme-accounts-perfis",
   "description": "Tema visual do http://perfis.atencaobasica.org.br.",
-  "version": "0.0.35",
+  "version": "0.0.36",
   "repository": {
     "type": "git",
     "url": "git@github.com:wejs/we-theme-accounts-perfis.git"
