@@ -1,9 +1,9 @@
 {{#unless aboutMe}}
 <div class="container missing-info-msg">
-  <div class="alert alert-success" role="alert">
+  <div class="alert alert-warning" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4><strong>Email validado com sucesso!</strong></h4>
-    <p>Agora, para ter acesso à CdP, preencha o formulário abaixo com suas informações básicas. O preenchimento é obrigatório...</p>
+    <h4><strong>Atenção, para continuar preencha todos os campos abaixo!</strong></h4>
+    <p>Agora, basta preencher as informações básicas (formulário abaixo) e ter acesso total à CdP! É rápido! Após isso você já pode navegar pela rede, ou se preferir preencher seu perfil completo acessando as abas. Quanto mais você preencher, mais fácil você será encontrado e encontrará pessoas e conteúdos de seu interesse. Está com pressa? Sem problemas. O seu cadastro sempre estará aqui e poderá ser preenchido (ou atualizado) a qualquer momento.</p>
   </div>  
 </div>
 {{/unless}}
@@ -124,6 +124,16 @@
                   </div>
               </div>
               <div class="row">
+
+              </div>
+              {{#if basicInvalid}}
+                <div class="row">
+                  <div class="col-md-12">                  
+                    <div class="alert alert-warning" role="alert">Preencha todos os campos do formulário acima antes de salvar.</div>
+                  </div>
+                </div>
+              {{/if}}
+              <div class="row">
                 <div class="col-md-12"><button type="submit" class="btn btn-primary" {{bind-attr disabled=basicInvalid}}>Salvar</button></div>
               </div>
             </form>
@@ -144,36 +154,42 @@
                 Você nas Redes
               </h4>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="fbprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no Facebook" class="form-control" value=fbprofile}}
+                  <div class="input-help">Ex: 'https://www.facebook.com/(nomedeusuario)'</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="instprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no Instagram" class="form-control" value=instprofile}}
+                  <div class="input-help">Ex: 'http://instagram.com/(nomedeusuario)'</div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="lkinprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no LinkedIn" class="form-control" value=lkinprofile}}
+                  <div class="input-help">Ex: 'linkedin.com/pub/(nomedeusuario)'</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="twitprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no Twitter" class="form-control" value=twitprofile}}
+                  <div class="input-help">Ex: 'https://twitter.com/(nomedeusuario)'</div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="youtbprofileErr:has-error"}}>
                   {{input type="text" placeholder="Perfil no YouTube" class="form-control" value=youtbprofile}}
+                  <div class="input-help">Ex: 'https://www.youtube.com/user/(nomedeusuario)'</div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" {{bind-attr class="otherprofileErr:has-error"}}>
                   {{input type="text" placeholder="Qualquer link sobre você (Seu Blog, About.me)" class="form-control" value=otherprofile}}
+                  <div class="input-help">Ex: 'http://www.(seusite).com.br'</div>
                 </div>
               </div>
               <h4 class="heading--text-sm">
                 Tem Lattes?
               </h4>
               <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" {{bind-attr class="lattesErr:has-error"}}>
                   {{input type="text" placeholder="Coloca o link do Currículo" class="form-control" value=lattes}}
-                  <div class="input-help">Insira o link do seu currículo</div>
+                  <div class="input-help">Insira o link do seu currículo no formato 'http://lattes.cnpq.br/5781403814989678'</div>
                 </div>
               </div>
                <h4 class="heading--text-sm">
@@ -181,18 +197,18 @@
               </h4>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="Em quê você pode ajudar?" vocabulary=interestsVocabularyId delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
+                  {{we-term-select2 placeholder="Em que pode ajudar?" vocabulary=interestsVocabularyId delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="O que gostaria de saber mais?" vocabulary=interestsVocabularyId delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
-                  <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
+                  {{we-term-select2 placeholder="O que quer saber mais?" vocabulary=interestsVocabularyId delegate=controller alias="weTermInt" getSelection="weTermIntGetSelection" value=interests}}
+                  <div class="input-help">Aqui você coloca assuntos que você quer saber mais e que outros usuários vão poder te ajudar.</div>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Salvar</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=moreAboutYouInvalid}}>Salvar</button></div>
               </div>
             </form>
           </div>
@@ -249,7 +265,7 @@
                 </div>              
               </div>
               <div class="row">
-                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'changePassword'}} {{bind-attr disabled=isDirty}}>Alterar</button></div>
+                <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Alterar</button></div>
               </div>              
               <h4 class="heading--text-sm">Mudar a Senha</h4>
               <div class="row">
