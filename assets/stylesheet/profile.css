@@ -190,3 +190,16 @@ Missing Basic Info Alert Message
 textarea{
   resize: none;
 }
+
+/*
+
+We-Avatar-Modal-Component
+
+*/
+.form-upload-avatar .form-upload div .jcrop-holder {
+  margin: 0 auto;
+}
+
+.jcrop-keymgr {
+  opacity: 0;
+}
