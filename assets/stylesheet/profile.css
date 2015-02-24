@@ -186,3 +186,7 @@ Missing Basic Info Alert Message
 .missing-info-msg .alert{
   margin-top: 22px;
 }
+
+textarea{
+  resize: none;
+}

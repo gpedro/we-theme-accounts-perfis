@@ -189,6 +189,10 @@ Missing Basic Info Alert Message
 .missing-info-msg .alert{
   margin-top: 22px;
 }
+
+textarea{
+  resize: none;
+}
 /**
  * importer.less
  * Use this file to import and organize the processing order of theme less files
