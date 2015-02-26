@@ -35,6 +35,14 @@
           <div class="tab-content">
             <h3 class="heading--text-lg">Sobre Mim</h3>
             <form {{action "updateUser" on="submit"}}>
+              {{#if canEditCPF}}
+                <div class="row"><div class="col-md-12 has-error">
+                  {{input type="text" placeholder="CPF" classNames="form-control" value=cpf}}
+                  <span class='input-help required-indicator'>*</span>
+                  <div class="input-help">Insira um CPF válido</div>
+                </div></div>
+              {{/if}}
+
               <div class="row">
                 <div class="col-md-12" {{bind-attr class="displayNameErr:has-error"}}>
                   {{input classNames="form-control input-50" placeholder="Nome de exibição" type="text" value=displayName required="required"}}
