@@ -109,7 +109,7 @@ Fim do CSS das Tabs
   margin-top: 20px;
 }
 .block-up-picture .content .user-picture {
-  width: 215px;
+  max-width: 215px;
   height: auto;
   border-radius: 50%;
   margin: auto;
