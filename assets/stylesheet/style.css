@@ -53,8 +53,8 @@ body {
 .form-control[readonly],
 fieldset[disabled] .form-control {
   cursor: not-allowed;
-  background-color: #777777;
-  opacity: 1;
+  background-color: #e1e1e1;
+  opacity: 0.8;
 }
 .auth-form .input-group label {
   background: #eeeeee;
@@ -177,8 +177,8 @@ fieldset[disabled] .form-control {
     color: #777777; }
   .form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
     cursor: not-allowed;
-    background-color: #777777;
-    opacity: 1; }
+    background-color: #e1e1e1;
+    opacity: 0.8; }
 
 textarea.form-control {
   height: auto; }
