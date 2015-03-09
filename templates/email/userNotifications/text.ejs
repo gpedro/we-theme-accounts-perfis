@@ -1,4 +1,8 @@
-Oi <%= user.displayName %>
+<% if (user.displayName) { %>
+Oi <%= user.displayName %>,
+<% } else { %>
+Oi <%= user.username %>,
+<% } %>
 
 Email de notificação
 
@@ -8,5 +12,4 @@ Notificações:
   - <%= notification.emailNoHTML %>... link <%= notification.emailLink %>
 <% }); %>
 
-Cheers,
-<%= site.name %> team
+Comunidade de Práticas | https://atencaobasica.org.br/
