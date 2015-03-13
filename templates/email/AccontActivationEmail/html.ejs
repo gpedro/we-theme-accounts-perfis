@@ -1,45 +1,51 @@
 <!-- Template email -->
 <div style="background: #f5f5f5;">
-  <div style="width: 631px; margin: auto;">
-    <table border="0" cellpadding="0" cellspacing="0" style="border: none; border-collapse: collapse; font-family: arial, tahoma, verdana">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <!-- Banner -->
-        <td>
-          <img src="https://perfis.atencaobasica.org.br/theme/assets/img/email/bannerBemVindo.jpg" style="margin: 0" alt="seja Bem-Vindo!">
-        </td>
-      </tr>
-      <tr>
-        <!-- corpo do email -->
-        <td style="background: #fff; padding: 65px 60px 50px 60px; color: #868686; font-size: 14px; line-height: 1.5em;">
-          
-          <h1 style="color: #1b84bb; font-size: 32px;">Obrigado por participar da <%= site.name %>!</h1>
+        <td align="center">
+          <div style="width: 631px; margin: auto;">
+            <table border="0" cellpadding="0" cellspacing="0" style="border: none; border-collapse: collapse; font-family: arial, tahoma, verdana; width: 100%;">
+              <tr>
+                <!-- Banner -->
+                <td>
+                  <img src="https://perfis.atencaobasica.org.br/theme/assets/img/email/bannerBemVindo.jpg" style="margin: 0" alt="seja Bem-Vindo!">
+                </td>
+              </tr>
+              <tr>
+                <!-- corpo do email -->
+                <td style="background: #fff; padding: 65px 60px 50px 60px; color: #868686; font-size: 14px; line-height: 1.5em;">
+                  
+                  <h1 style="color: #1b84bb; font-size: 32px;">Obrigado por participar da <%= site.name %>!</h1>
 
-          <p>Oi <%= user.displayName %>,</p>
-          
-          <p>Para validar seu email <a text="link de confirmação" href="<%= confirmUrl %>">clique aqui</a> ou copie e cole o link abaixo no seu navegador para confirmar seu endereço de e-mail e faça o login na <%= site.name %></p>
+                  <p>Oi <%= user.displayName %>,</p>
+                  
+                  <p>Para validar seu email <a text="link de confirmação" href="<%= confirmUrl %>">clique aqui</a> ou copie e cole o link abaixo no seu navegador para confirmar seu endereço de e-mail e faça o login na <%= site.name %></p>
 
-          <p><a href="<%= confirmUrl %>"><%= confirmUrl %></a></p>
+                  <p><a href="<%= confirmUrl %>"><%= confirmUrl %></a></p>
 
-        </td>
-      </tr>
-      <tr>
-        <!-- botao "vamos comecar" -->
-        <td style="text-align: center; padding-bottom: 50px; background: #fff;">
-          <a href="<%= confirmUrl %>"><img style="margin: 0; border: none" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/btnVamosComecar.jpg" alt="Vamos Começar?"></a>
-        </td>
-      </tr>
-      <tr>
-        <!-- detalhe do layout -->
-        <td style="font-size: 1px; height: 7px; background: #fff;">
-          <img src="https://perfis.atencaobasica.org.br/theme/assets/img/email/linha.gif">
-        </td>
-      </tr>
-      <tr>
-        <!-- footer -->
-        <td style="text-align: center; padding: 30px 0">
-          <img src="https://perfis.atencaobasica.org.br/theme/assets/img/email/emailfooter.gif" style="margin: 0; padding: 0;" alt="Comunidade de Praticas - Todos os Direitos Reservados">
-        </td>
-      </tr>
-    </table>
-  </div>
+                </td>
+              </tr>
+              <tr>
+                <!-- botao "vamos comecar" -->
+                <td style="text-align: center; padding-bottom: 50px; background: #fff;">
+                  <a href="<%= confirmUrl %>"><img style="margin: 0; border: none" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/btnVamosComecar.jpg" alt="Vamos Começar?"></a>
+                </td>
+              </tr>
+              <tr>
+                <!-- detalhe do layout -->
+                <td style="font-size: 1px; height: 7px; background: #fff;">
+                  <img src="https://perfis.atencaobasica.org.br/theme/assets/img/email/linha.gif">
+                </td>
+              </tr>
+              <tr>
+                <!-- footer -->
+                <td style="text-align: center; padding: 30px 0">
+                  <img src="https://perfis.atencaobasica.org.br/theme/assets/img/email/emailfooter.gif" style="margin: 0; padding: 0;" alt="Comunidade de Praticas - Todos os Direitos Reservados">
+                </td>
+              </tr>
+            </table>
+          </div>
+      </td>
+    </tr>
+  </table>
 </div>
