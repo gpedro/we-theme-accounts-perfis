@@ -1,10 +1,65 @@
-Oi <%= user.displayName %>,
+<div style="background: #f5f5f5;">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center">
+        <div style="width: 631px; margin: auto;">
+          <table border="0" cellpadding="0" cellspacing="0" style="border: none; border-collapse: collapse; font-family: arial, tahoma, verdana; width: 100%">
+            <tr>
+              <!-- mensagem do topo -->
+              <td style="text-align: center; font-size: 11px; color: #868686; padding: 15px 0">
+                <%= site.name %> | <a href="<%= site.url %>" style="color: #868686">Atençao Basica</a>
+              </td>
+            </tr>
+            <tr>
+              <!-- Banner -->
+              <td style="text-align: center; color: #424242; background: #fff; height: 80px">
+                <img src="https://perfis.atencaobasica.org.br/theme/assets/img/email/emailNotificacaoTopoAzul.gif" alt="seja Bem-Vindo!">
+              </td>
+            </tr>
+            <tr>
+              <!-- corpo do email -->
+              <td style="background: #fff; padding: 52px 60px 50px 60px; color: #595959; font-size: 14px; line-height: 1.5em;">
 
-<p>Sua senha foi alterada com sucesso.</p>
+                <h2 style="font-size: 26px; margin: 0">Olá <%= user.displayName %>,!</h2>
 
-<p>Se você não foi o autor dessa ação, entre em contato com o nosso <a href="mailto:contato@atencaobasica.org.br">suporte</a>.</p>
+                            <!-- notificacao -->
+                            
+                              <div style="margin-top: 30px; overflow: hidden; clear: both;">
+                                <div style="margin: 16px 0 0 0; padding: 14px; border: 1px solid #f5f5f5; border-radius: 3px; color: #8a8a8a">
 
-<br>
+                      <p>Sua senha foi alterada com sucesso.</p>
 
-<%= site.name %>
-<a href="<%= site.url %>" ><%= site.url %></a> 
+                      <p>Se você não foi o autor dessa ação, entre em contato com o nosso <a href="mailto:contato@atencaobasica.org.br">suporte</a>.</p>
+
+                                </div>
+                              </div>
+                            
+                            <!-- /notificacao -->
+               
+
+              </td>
+            </tr>
+            <!--<tr>
+              <td style="text-align: center; padding-bottom: 30px; background: #fff">
+                <a href="#"><img style="margin: 0; border: none" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/btnVerNotificacao.jpg" alt="Ver notificacoes"></a>
+                <div style="margin-top: 20px"><img style="margin: 0;" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/emailfooter2.gif"></div>
+              </td>
+            </tr>-->
+            <tr>
+              <!-- detalhe do layout -->
+              <td style="font-size: 1px; height: 7px">
+                <img src="https://perfis.atencaobasica.org.br/theme/assets/img/email/linha.gif">
+              </td>
+            </tr>
+            <tr>
+              <!-- footer -->
+              <td style="text-align: center; padding: 30px 0">
+                <a href="#" style="color: #898989; font-size: 12px">Quero mudar minhas configurações de notificação</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
