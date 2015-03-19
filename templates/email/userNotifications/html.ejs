@@ -22,21 +22,10 @@
                 <!-- corpo do email -->
                 <td style="background: #fff; padding: 52px 60px 50px 60px; color: #868686; font-size: 14px; line-height: 1.5em;">
 
-                  <h2 style="font-size: 26px; margin: 0">Oi 
+                <h2 style="font-size: 26px; margin: 0">Oi <%= user.displayName %></h2>
 
-                    <% if (user.displayName) { %>
-                      Oi <%= user.displayName %>
-                    <% } else { %>
-                      Oi <%= user.username %>
-                    <% } %>
+                <div style="font-size: 12px;">Email de Notificaçao:</div>
 
-                  </h2>
-                  <div style="font-size: 12px;">Email de Notificaçao:</div>
-
-                  <% /*
-                  <div style="margin-top: 20px">Comentou: <a href="#">bla bla bla bla bla bla</a> no conteudo <a href="#">Saude Mental e Apoio Matricial...</a></div>
-                  */ %>
-                 
                 <% notifications.forEach(function(notification, index) { %>
 
                   <div style="margin-top: 20px">
@@ -53,7 +42,7 @@
               <tr>
                 <!-- botao "vamos comecar" -->
                 <td style="text-align: center; padding-bottom: 50px; background: #fff">
-                  <a href="#"><img style="margin: 0; border: none" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/btnVerNotificacao.jpg" alt="Ver notificacoes"></a>
+                  <a href="https://atencaobasica.org.br"><img style="margin: 0; border: none" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/btnVerNotificacao.jpg" alt="Ver notificacoes"></a>
                   <div style="margin-top: 60px"><img style="margin: 0;" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/itens.gif"></div>
                 </td>
               </tr>
