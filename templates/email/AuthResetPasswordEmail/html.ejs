@@ -1,4 +1,3 @@
-
 <div style="background: #f5f5f5;">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
@@ -8,7 +7,7 @@
             <tr>
               <!-- mensagem do topo -->
               <td style="text-align: center; font-size: 11px; color: #868686; padding: 15px 0">
-                <%= site.name %> | <a href="<%= site.url %>" style="color: #868686">Atençao Basica</a>
+                <%= site.name %> | <a href="https://atencaobasica.org.br" style="color: #868686">Atençao Basica</a>
               </td>
             </tr>
             <tr>
@@ -21,54 +20,30 @@
               <!-- corpo do email -->
               <td style="background: #fff; padding: 52px 60px 50px 60px; color: #595959; font-size: 14px; line-height: 1.5em;">
 
-                <h2 style="font-size: 26px; margin: 0">Olá <%= user.name %>,!</h2>
+                <h2 style="font-size: 26px; margin: 0">Oi <%= user.name %>,</h2>
 
-                            <!-- notificacao -->
-                            
-                              <div style="margin-top: 30px; overflow: hidden; clear: both;">
-                                <img src="http://lorempicsum.com/simpsons/30/30/9" style="width: 30px; height: 30px; float: left;">
-                                <div style="margin-left: 45px;">
-                                  <b>Fernanda Marcolino</b> comentou na comunidade: <a href="#">Saúde mental e o  apoio matricial a pessoas doentes</a>.
-                                </div>
-                                <div style="margin: 16px 0 0 45px; padding: 14px; border: 1px solid #f5f5f5; border-radius: 3px; color: #8a8a8a">Dramatically innovate functional innovation via goal-oriented e-markets. Objectively brand integrated sources through market-driven innovation. Appropriately customize competitive partnerships rather than focused ideas. Objectively facilitate strategic e-tailers with market positioning communities. Professionally conceptualize performance based ROI vis-a-vis cost effective markets.</div>
-                              </div>
-                            
-                            <!-- /notificacao -->
-                            
-                            <!-- notificacao -->
-                            
-                              <div style="margin-top: 30px; overflow: hidden; clear: both;">
-                                <img src="http://lorempicsum.com/simpsons/30/30/9" style="width: 30px; height: 30px; float: left;">
-                                <div style="margin-left: 45px;">
-                                  <b>Fernanda Marcolino</b> comentou na comunidade: <a href="#">Saúde mental e o  apoio matricial a pessoas doentes</a>.
-                                </div>
-                                <div style="margin: 16px 0 0 45px; padding: 14px; border: 1px solid #f5f5f5; border-radius: 3px; color: #8a8a8a">Dramatically innovate functional innovation via goal-oriented e-markets. Objectively brand integrated sources through market-driven innovation. Appropriately customize competitive partnerships rather than focused ideas. Objectively facilitate strategic e-tailers with market positioning communities. Professionally conceptualize performance based ROI vis-a-vis cost effective markets.</div>
-                              </div>
-                            
-                            <!-- /notificacao -->
-                            
-                            <!-- notificacao -->
-                            
-                              <div style="margin-top: 30px; overflow: hidden; clear: both;">
-                                <img src="http://lorempicsum.com/simpsons/30/30/9" style="width: 30px; height: 30px; float: left;">
-                                <div style="margin-left: 45px;">
-                                  <b>Fernanda Marcolino</b> comentou na comunidade: <a href="#">Saúde mental e o  apoio matricial a pessoas doentes</a>.
-                                </div>
-                                <div style="margin: 16px 0 0 45px; padding: 14px; border: 1px solid #f5f5f5; border-radius: 3px; color: #8a8a8a">Dramatically innovate functional innovation via goal-oriented e-markets. Objectively brand integrated sources through market-driven innovation. Appropriately customize competitive partnerships rather than focused ideas. Objectively facilitate strategic e-tailers with market positioning communities. Professionally conceptualize performance based ROI vis-a-vis cost effective markets.</div>
-                              </div>
-                            
-                            <!-- /notificacao -->
-                
+                  <!-- notificacao -->
 
+                    <div style="margin-top: 30px; overflow: hidden; clear: both;">
+                      <div style="margin: 16px 0 0 0; padding: 14px; border: 1px solid #f5f5f5; border-radius: 3px; color: #8a8a8a">
+
+            <p>Você pediu uma redefinição de senha para sua conta na Comunidade de Práticas? Se sim, siga o link abaixo para definir uma nova senha:</p>
+
+            <p>Redefinir senha: <a href="<%= resetPasswordUrl %>"><%= resetPasswordUrl %></a><p>
+
+            <p>Se você não deseja redefinir sua senha, desconsidere este e-mail e nenhuma ação será tomada.</p>
+
+                      </div>
+                    </div>
+
+                  <!-- /notificacao -->
               </td>
             </tr>
-            <tr>
-              <!-- botao "vamos comecar" -->
+            <!--<tr>
               <td style="text-align: center; padding-bottom: 30px; background: #fff">
-                <a href="#"><img style="margin: 0; border: none" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/btnVerNotificacao.jpg" alt="Ver notificacoes"></a>
                 <div style="margin-top: 20px"><img style="margin: 0;" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/emailfooter2.gif"></div>
               </td>
-            </tr>
+            </tr>-->
             <tr>
               <!-- detalhe do layout -->
               <td style="font-size: 1px; height: 7px">
@@ -77,9 +52,7 @@
             </tr>
             <tr>
               <!-- footer -->
-              <td style="text-align: center; padding: 30px 0">
-                <a href="#" style="color: #898989; font-size: 12px">Quero mudar minhas configurações de notificação</a>
-              </td>
+              <td style="text-align: center; padding: 30px 0"></td>
             </tr>
           </table>
         </div>

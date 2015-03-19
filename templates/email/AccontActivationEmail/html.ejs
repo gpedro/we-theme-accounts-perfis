@@ -14,22 +14,21 @@
               <tr>
                 <!-- corpo do email -->
                 <td style="background: #fff; padding: 65px 60px 50px 60px; color: #868686; font-size: 14px; line-height: 1.5em; word-wrap: break-word;">
-                  
+
                   <h1 style="color: #1b84bb; font-size: 32px; line-height: 36px;">Obrigado por participar da <%= site.name %>!</h1>
 
-                  <p>Oi <%= user.displayName %>,</p>
-                  
-                  <p>Para validar seu email <a text="link de confirmação" href="<%= confirmUrl %>">clique aqui</a> ou copie e cole o link abaixo no seu navegador para confirmar seu endereço de e-mail e faça o login na <%= site.name %></p>
+                  <p>Olá <%= user.displayName %>,</p>
 
-                  <p style="word-wrap: break-word;"><a href="<%= confirmUrl %>" style="word-wrap: break-word;"><%= confirmUrl %></a></p>
+                  <p>Para confirmar seu e-mail, <a text="link de confirmação" href="<%= confirmUrl %>">clique aqui</a> ou copie e cole o link abaixo no seu navegador: <a href="<%= confirmUrl %>" style="word-wrap: break-word;"><%= confirmUrl %></a></p>
+
+                  <p style="word-wrap: break-word;">Após confirmar seu e-mail você fará parte da Comunidade de Práticas!</p>
+                  <p>A CdP  é um espaço de interação onde você pode compartilhar experiências em saúde, conhecer diversas experiências em todo o Brasil e participar de comunidades sobre o seu tema de interesse. Conecte-se, ensine e aprenda!</p>
 
                 </td>
               </tr>
               <tr>
                 <!-- botao "vamos comecar" -->
-                <td style="text-align: center; padding-bottom: 50px; background: #fff;">
-                  <a href="<%= confirmUrl %>"><img style="margin: 0; border: none" src="https://perfis.atencaobasica.org.br/theme/assets/img/email/btnVamosComecar.jpg" alt="Vamos Começar?"></a>
-                </td>
+                <td style="text-align: center; padding-bottom: 50px; background: #fff;"></td>
               </tr>
               <tr>
                 <!-- detalhe do layout -->
