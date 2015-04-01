@@ -7,6 +7,14 @@
 
   <ul id="dropdown-login-menu" class="dropdown-menu dropdown-menu-right dropdown-menu-user arrow_box" role="menu">
     <li>
+      <a href="https://novo.atencaobasica.org.br/account">Meus Relatos</a>
+    </li>  
+    <li class="divider"></li>
+    <li>
+      <a href="/">Editar perfil</a>
+    </li>  
+    <li class="divider"></li>
+    <li>
       <a href="https://cursos.atencaobasica.org.br/user_messages">Mensagens</a>
     </li>
     <li class="divider"></li>
@@ -15,16 +23,19 @@
     </li>
     <li class="divider"></li>
     <li>
-      <a href="https://cursos.atencaobasica.org.br/user_friends">Amigos</a>
+      <a href="https://cursos.atencaobasica.org.br/user_friends">Solicitações de Amizade</a>
     </li>
     <li class="divider"></li>
     <li>
       <a href="https://cursos.atencaobasica.org.br/user_myresults">Notas das Avaliações</a>
     </li>
+
+    {{#if adminMenu}}
     <li class="divider"></li>
     <li>
-      <a href="https://perfis.atencaobasica.org.br/account">Editar perfil</a>
+        <a href="https://novo.atencaobasica.org.br/admin">Administrar</a>
     </li>
+    {{/if}}
 
     <li class="divider"></li>
     <div class="container-button-signin">
