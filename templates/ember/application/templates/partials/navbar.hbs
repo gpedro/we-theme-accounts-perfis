@@ -9,9 +9,9 @@
       </button>
       <div class="navbar-brand header-main-brand">
         <!-- Logo -->
-        {{#link-to 'home' classNames="app-main-logo"}}
+        <a {{bind-attr href=configs.client.publicVars.links.timeline}} class="app-main-logo">
           {{partial 'partials/logo-cdp'}}
-        {{/link-to}}
+        </a>
         <!-- /Logo -->
       </div>
     </div>
