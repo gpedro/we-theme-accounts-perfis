@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
 
-      <div id="footer-main--blog">
+      <div id="footer-main--blog" class="col-xs-12 col-sm-6 col-md-4">
         <h4 class="title-footer">
           {{partial 'partials/logo-cdp'}}
         </h4>
@@ -12,28 +12,28 @@
         <a class="btn btn-xs btn-default" href="https://cursos.atencaobasica.org.br/node/399">Saiba mais</a>
       </div>
 
-      <div id="footer-main--facebook">
+      <div id="footer-main--facebook" class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-4  col-md-offset-0">
         <div class="fb-like-box-lg">
           {{facebook-block}}
         </div>
       </div>
 
-      <div id="footer-main--links">
+      <div id="footer-main--links" class="col-xs-12 col-sm-12 col-md-4">
         <h4 class="links-section--title title-footer">Links</h4>
         <ul class="links-section--list">
 
           <li class="links-section--list-item style-help_center">
             <a class="links-section--subtitle" href="http://ajuda.atencaobasica.org.br">
-              <img style="width: 30px; margin-bottom: 10px; margin-right: 10px; margin-top: 2px; height: 30px; position: relative; float: left;" src="/theme/assets/img/img-icon-ajuda.png">
-              <div style="float: right; width: 86%; padding: 0;" class="icon-title">Central de Ajuda</div>
+              <img src="/theme/assets/img/img-icon-ajuda.png">
+              <div class="icon-title">Central de Ajuda</div>
             </a>
             <!--<p class="links-section--description"></p>-->
           </li>
 
           <li class="links-section--list-item style-blog">
             <a class="links-section--subtitle" href="http://blog.atencaobasica.org.br">
-              <img style="width: 30px; margin-bottom: 10px; margin-right: 10px; margin-top: 3px; height: 30px; position: relative; float: left;" src="https://blog.atencaobasica.org.br/wp-content/uploads/2014/12/logo-blog.png">
-              <div style="float: right; width: 86%; padding: 0;" class="icon-title">Blog</div>
+              <img src="https://blog.atencaobasica.org.br/wp-content/uploads/2014/12/logo-blog.png">
+              <div class="icon-title">Blog</div>
             </a>
             <!--<p class="links-section--description"></p>-->
           </li>
@@ -42,7 +42,7 @@
             <a href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/" class="links-section--subtitle">
               <span class="fa-stack">
                 <i class="fa fa-circle fa-stack-2x fa-4x pull-left icon-circle-group"></i>
-                <i class="cdp cdp-contacts cdp-lg cdp-stack-1x cdp-inverse"></i>
+                <i class="icons-outline icons-outline-paper-lines  cdp-stack-1x cdp-inverse"></i>
               </span>
               <span class="icon-title">Termos de Uso</span>
             </a>
@@ -50,8 +50,10 @@
           </li>
         </ul>
       </div>
+    </div>
+    <div class="row">
 
-      <div id="footer-main--sponsor">
+      <div id="footer-main--sponsor" class="col-xs-12 col-sm-7">
         <h4 class="sponsor-title">{{t 'sponsor.title'}}</h4>
         <ul class="sponsor-list pull-left">
           <li class="sponsor-list--item item-01">
@@ -72,7 +74,7 @@
         </ul>
       </div>
 
-      <div id="footer-main--partner">
+      <div id="footer-main--partner" class="col-xs-12 col-sm-5">
         <h4 class="partner-title">{{t 'partner.title'}}</h4>
         <ul class="partner-list">
           <li class="partner-list--item">
