@@ -9,7 +9,8 @@
       <img src="/theme/assets/img/signup_cdp.png">
     </div>
     <h2 class="form-heading">{{t "auth.login.title"}}</h2>
-    <p style="margin: 20px 0;">A CdP migrou para outro servidor, por isso precisa que você recadastre a sua senha. Se você já fez esse procedimento, pode seguir adiante normalmente. Caso ainda não tenha feito clique {{#link-to 'authForgotPassword'}}aqui.{{/link-to}}</p>
+    {{!-- <p style="margin: 20px 0;">A CdP migrou para outro servidor, por isso precisa que você recadastre a sua senha. Se você já fez esse procedimento, pode seguir adiante normalmente. Caso ainda não tenha feito clique {{#link-to 'authForgotPassword'}}aqui.{{/link-to}}</p> --}}
+    <p style="margin: 20px 0;"></p>
 
     <!-- input: email -->
     <div class="form-group">
@@ -30,7 +31,7 @@
     <div class="form-group">
       <div class="input-group" {{bind-attr class="passwordErr:has-error:has-success" }}>
         {{input id="password" name="password" value=password  type="password" placeholder="Senha"  required="true" classNames="form-control input-lg"}}
-        
+
         <label for="password" class="input-group-addon">
           <span class="icons-outline icons-outline-padlock-closed"> </span>
         </label>
