@@ -4,7 +4,7 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     <h4><strong>Atenção, para continuar preencha todos os campos abaixo!</strong></h4>
     <p>Agora, basta preencher as informações básicas (formulário abaixo) e ter acesso total à CdP! É rápido! Após isso você já pode navegar pela rede, ou se preferir preencher seu perfil completo acessando as abas. Quanto mais você preencher, mais fácil você será encontrado e encontrará pessoas e conteúdos de seu interesse. Está com pressa? Sem problemas. O seu cadastro sempre estará aqui e poderá ser preenchido (ou atualizado) a qualquer momento.</p>
-  </div>  
+  </div>
 </div>
 {{/unless}}
 <div class="container">
@@ -44,14 +44,25 @@
               {{/if}}
 
               <div class="row">
+                <div class="col-md-6" {{bind-attr class="usernameErr:has-error"}}>
+                  {{input type="text" placeholder="Username" classNames="form-control" value=username}}
+                  {{#if usernameErr}}
+                    <div class="input-help">{{usernameErrMessage}}</div>
+                  {{else}}
+                    <div class="input-help">Seu nome de usuário</div>
+                  {{/if}}
+                </div>                
+              </div>
+
+              <div class="row">
                 <div class="col-md-12" {{bind-attr class="displayNameErr:has-error"}}>
                   {{input classNames="form-control input-50" placeholder="Nome de exibição" type="text" value=displayName required="required"}}
                   <span class='input-help required-indicator'>*</span>
                   {{#if displayNameErr}}
                     <div class="input-help">{{displayNameErrMessage}}</div>
                   {{else}}
-                    <div class="input-help">Esta será a forma como outros usuários irão visualizar seu nome</div>                  
-                  {{/if}}                  
+                    <div class="input-help">Esta será a forma como outros usuários irão visualizar seu nome</div>
+                  {{/if}}
                 </div>
               </div>
               <div class="row">
@@ -61,8 +72,8 @@
                   {{#if fullNameErr}}
                     <div class="input-help">{{fullNameErrMessage}}</div>
                   {{else}}
-                    <div class="input-help">Nome completo (é o nome que será usado para os certificados dos cursos e outros documentos oficiais gerados no site)</div>                  
-                  {{/if}}                   
+                    <div class="input-help">Nome completo (é o nome que será usado para os certificados dos cursos e outros documentos oficiais gerados no site)</div>
+                  {{/if}}
                 </div>
               </div>
 
@@ -73,8 +84,8 @@
                   {{#if birthDateErr}}
                     <div class="input-help">{{birthDateErrMessage}}</div>
                   {{else}}
-                    <div class="input-help">Data de Nascimento</div>                  
-                  {{/if}}  
+                    <div class="input-help">Data de Nascimento</div>
+                  {{/if}}
                 </div>
                 <div class="col-md-6">
                   <div class="checkbox">
@@ -93,8 +104,8 @@
                   {{#if genderErr}}
                     <div class="input-help">{{genderErrMessage}}</div>
                   {{else}}
-                    <div class="input-help">Sexo</div>                  
-                  {{/if}}                 
+                    <div class="input-help">Sexo</div>
+                  {{/if}}
                 </div>
                 <div class="col-md-6">
                   <div class="checkbox">
@@ -116,8 +127,8 @@
                     <div class="input-help">{{cityErrMessage}}</div>
                     {{else}}
                     <div class="input-help">Estado e cidade que reside atualmente</div>
-                    {{/if}}                    
-                  {{/if}}                                     
+                    {{/if}}
+                  {{/if}}
                 </div>
               </div>
               <div class="row">
@@ -127,8 +138,8 @@
                   {{#if majorErr}}
                     <div class="input-help">{{majorErrMessage}}</div>
                   {{else}}
-                    <div class="input-help">Formação profissional mais relevante para o trabalho atual</div>                 
-                  {{/if}}                   
+                    <div class="input-help">Formação profissional mais relevante para o trabalho atual</div>
+                  {{/if}}
                   </div>
               </div>
               <div class="row">
@@ -136,7 +147,7 @@
               </div>
               {{#if basicInvalid}}
                 <div class="row">
-                  <div class="col-md-12">                  
+                  <div class="col-md-12">
                     <div class="alert alert-warning" role="alert">Preencha todos os campos do formulário acima antes de salvar.</div>
                   </div>
                 </div>
@@ -153,7 +164,7 @@
             <form>
               <div class="row">
                 <div class="col-md-12">
-                  {{textarea value=biography cols="80" rows="4" placeholder="Fique a vontade para falar sobre você" class="form-control"}}                
+                  {{textarea value=biography cols="80" rows="4" placeholder="Fique a vontade para falar sobre você" class="form-control"}}
                   <div class="input-help">Fale sobre você e seus objetivos na Comunidade de Prática</div>
                   <div class="input-help text-field-count">{{textFieldCount}}</div>
                 </div>
@@ -190,7 +201,7 @@
                   <div class="input-help">Ex: 'https://twitter.com/(nomedeusuario)'</div>
                   {{#if twitprofileErr}}
                     <div class="error-message">Link Inválido!</div>
-                  {{/if}}                  
+                  {{/if}}
                 </div>
               </div>
               <div class="row">
@@ -199,14 +210,14 @@
                   <div class="input-help">Ex: 'https://www.youtube.com/user/(nomedeusuario)'</div>
                   {{#if youtbprofileErr}}
                     <div class="error-message">Link Inválido!</div>
-                  {{/if}}                  
+                  {{/if}}
                 </div>
                 <div class="col-md-6" {{bind-attr class="otherprofileErr:has-error"}}>
                   {{input type="text" placeholder="Qualquer link sobre você (Seu Blog, About.me)" class="form-control" value=otherprofile}}
                   <div class="input-help">Ex: 'http://www.(seusite).com.br'</div>
                   {{#if otherprofileErr}}
                     <div class="error-message">Link Inválido!</div>
-                  {{/if}}                  
+                  {{/if}}
                 </div>
               </div>
               <h4 class="heading--text-sm">
@@ -218,7 +229,7 @@
                   <div class="input-help">Insira o link do seu currículo no formato 'http://lattes.cnpq.br/5781403814989678'</div>
                   {{#if lattesErr}}
                     <div class="error-message">Link Inválido!</div>
-                  {{/if}}                  
+                  {{/if}}
                 </div>
               </div>
                <h4 class="heading--text-sm">
@@ -226,7 +237,7 @@
               </h4>
               <div class="row">
                 <div class="col-md-12">
-                  {{we-term-select2 placeholder="Em que pode ajudar?" vocabulary=interestsVocabularyId delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}                  
+                  {{we-term-select2 placeholder="Em que pode ajudar?" vocabulary=interestsVocabularyId delegate=controller alias="weTermIntHlp" getSelection="weTermIntHlpGetSelection" value=interestsAjd}}
                   <div class="input-help">Escolha assuntos que você domina e pode ajudar a outros usuários a dominar também.</div>
                 </div>
               </div>
@@ -283,32 +294,32 @@
                   <div class="input-help">Insira um CPF válido</div>
                 </div>
               </div>
-              <div class="row">
+{{!--               <div class="row">
                 <div class="col-md-6" {{bind-attr class="usernameErr:has-error"}}>
                   {{input type="text" placeholder="Username" classNames="form-control" value=username}}
                   {{#if usernameErr}}
                     <div class="input-help">{{usernameErrMessage}}</div>
                   {{else}}
-                    <div class="input-help">Seu nome de usuário</div>  
-                  {{/if}}                                                       
-                </div>              
+                    <div class="input-help">Seu nome de usuário</div>
+                  {{/if}}
+                </div>
               </div>
               <div class="row">
                 <div class="col-md-12"><button type="button" class="btn btn-primary" {{action 'updateUser'}} {{bind-attr disabled=isDirty}}>Alterar</button></div>
-              </div>              
+              </div>     --}}
               <h4 class="heading--text-sm">Mudar a Senha</h4>
               <div class="row">
                 <div class="col-md-4">
                   {{input type="password" placeholder="Senha Atual" classNames="form-control" value=currPassword}}
                   <div class="input-help">Digite a senha atual</div>
-                </div>              
+                </div>
                 <div class="col-md-4" {{bind-attr class="newPasswordErr:has-error"}}>
                   {{input type="password" placeholder="Nova senha" classNames="form-control" value=newPassword}}
                   {{#if newPasswordErr}}
                     <div class="input-help">{{newPasswordErrMessage}}</div>
                   {{else}}
                     <div class="input-help">Defina uma nova senha</div>
-                  {{/if}}                                     
+                  {{/if}}
                 </div>
                 <div class="col-md-4" {{bind-attr class="rNewPasswordErr:has-error"}}>
                   {{input type="password" placeholder="Confirmar senha" classNames="form-control" value=rNewPassword}}
@@ -316,7 +327,7 @@
                     <div class="input-help">{{rNewPasswordErrMessage}}</div>
                   {{else}}
                     <div class="input-help">Confirme a nova senha</div>
-                  {{/if}}                                     
+                  {{/if}}
                 </div>
               </div>
               <div class="row">
