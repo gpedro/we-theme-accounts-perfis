@@ -1,7 +1,7 @@
 {{#if isVisible}}
 <li class="main_menu-dropdown logged-on dropdown">
   <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">
-    <span class="avatar-small" {{bind-attr class=status}}>{{we-avatar userId=currentUser.id}}</span>
+    <span class="avatar-small" {{bind-attr class=status}}>{{user-avatar user=currentUser heigth="35" width="35" classNames="user-avatar-image" size="thumbnail"}}</span>
     <span class="user-name " >{{currentUser.displayName}}</span><b class="caret"></b>
   </button>
 
