@@ -753,6 +753,7 @@ input[type="date"], input[type="time"], input[type="datetime-local"], input[type
     }
     #header-main .dropdown-menu-user .btn-danger {
       width: 200px;
+      box-shadow: none;
       margin: 0 10px 10px 10px; }
     #header-main .dropdown-menu-user li {
       margin: 0; }
