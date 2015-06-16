@@ -72,6 +72,13 @@
             {{/link-to}}              
             </li>
         {{/unless}} --}}
+        {{#unless isAuthenticated}}
+          <li class="login-link">
+          {{#link-to "authLogin"}}
+            {{t "Login"}}
+          {{/link-to}}
+          </li>
+        {{/unless}}
         {{render 'user/usermenu' currentUser controller='UserMenu'}}
 
       </ul>

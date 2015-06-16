@@ -126,5 +126,24 @@
 
     <input class="eu-gosto-de-mel" type="text" name="mel" value="" style="display: none">
   </div>
+  <div class="form-footer">
+    <ul>
+      <li>
+        {{#link-to "authLogin"}}
+          {{t "Login"}}
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to "authRegister"}}
+          {{t "Sign up"}}
+        {{/link-to}}
+      </li>
+      <li>
+        {{#link-to "authForgotPassword"}}
+          {{t "Remember Password"}}
+        {{/link-to}}
+      </li>
+    </ul>
+  </div>
 </form>
 </div>

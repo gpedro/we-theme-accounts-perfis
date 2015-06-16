@@ -116,6 +116,10 @@ Fim do CSS das Tabs
   margin-top: 20px;
 }
 
+.block-up-picture {
+  position: relative;
+  min-height: 100px;
+}
 .block-up-picture h2.title {
   margin: 0;
 }
@@ -127,15 +131,42 @@ Fim do CSS das Tabs
 .block-up-picture .content {
   margin-top: 20px;
 }
-.block-up-picture .content .user-picture {
-  max-width: 215px;
-  height: auto;
-  border-radius: 50%;
-  margin: auto;
-  overflow: hidden;
+@media (max-width: 767px) {
+  .block-up-picture h2.title {
+    margin-left: 110px;
+    padding-top: 30px;
+  }
+  .block-up-picture .content .user-picture {
+    max-width: 90px;
+    height: auto;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .block-up-picture .content .btn.btn-warning {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    width: auto;
+  }
 }
-.block-up-picture .content .user-picture+.btn {
-  margin-top: 20px;
+@media (min-width: 768px) {
+  .block-up-picture h2.title {
+    margin-left: 0;
+  }
+  .block-up-picture .content .user-picture {
+    max-width: 215px;
+    height: auto;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+  }
+  .block-up-picture .content .user-picture+.btn {
+    margin-top: 20px;
+  }
 }
 .block-up-picture .content .btn.btn-warning {
   background: #f9ae31;
@@ -264,6 +295,24 @@ We-Avatar-Modal-Component
     font-size: 18px;
   }
 }
+
+.select2-container-multi .select2-choices {
+  background: transparent;
+}
+
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices,
+.select2-container-multi.select2-container-active .select2-choices {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.select2-dropdown-open .select2-choice {
+  box-shadow: none !important;
+  border: none !important;
+}
 /**
  * importer.less
  * Use this file to import and organize the processing order of theme less files
@@ -277,6 +326,10 @@ We-Avatar-Modal-Component
 /* example */
 .navbar-default .navbar-brand {
   color: red;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 body {
@@ -351,6 +404,7 @@ fieldset[disabled] .form-control {
 }
 .auth-form .form-icon {
   text-align: center;
+  display: none;
 }
 .auth-form .form-icon i {
   font-size: 10em;
@@ -358,6 +412,7 @@ fieldset[disabled] .form-control {
 }
 .user-signup-form .user-signup-logo-cdp {
   text-align: center;
+  display: none;
 }
 .user-signup-form .user-signup-logo-cdp svg {
   width: 96px;
@@ -366,8 +421,11 @@ fieldset[disabled] .form-control {
 .auth-form h2.form-heading {
   color: #797979;
   font-weight: bold;
-  margin: 35px 0 0 0;
+  /*margin: 35px 0 35px 0;*/
+  margin: 0 0 35px 0;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 34px;
 }
 .auth-form h3,
 .auth-form h4 {
@@ -378,6 +436,20 @@ fieldset[disabled] .form-control {
 .auth-form h3+.form-group,
 .auth-form h4+.form-group {
   margin-top: 50px;
+}
+@media (max-width: 767px) {
+  .auth-form h2.form-heading {
+    font-size: 26px;
+    margin: 0 0 25px 0;
+  }
+  .auth-form h3,
+  .auth-form h4 {
+    font-size: 16px;
+  }
+  .auth-form h3+.form-group,
+  .auth-form h4+.form-group {
+    margin-top: 30px;
+  }
 }
 .auth-form .form-footer {
   background: #f2f2f2;
@@ -1524,6 +1596,7 @@ form .input-help.error {
 
 
 
+
 .cdp_http_responses_error {
   overflow: hidden;
   width: 100%;
@@ -1584,4 +1657,43 @@ form .input-help.error {
   color: #247DB5;
   font-weight: bold;
   font-size: 14px;
+}
+
+.user-avatar-image.thumbnail {
+  padding: 0;
+  display: inline-block;
+  margin: 0;
+  line-height: auto;
+  border: none;
+  background: transparent;
+  transition: none;
+}
+
+.select2-container-multi .select2-choices {
+  background: transparent;
+}
+
+.select2-container-active .select2-choice,
+.select2-container-active .select2-choices,
+.select2-container-multi.select2-container-active .select2-choices {
+  border: none !important;
+  outline: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.select2-dropdown-open .select2-choice {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+
+#navbar .login-link {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  #navbar .login-link {
+    float: right;
+    padding-top: 15px;
+  }
 }
