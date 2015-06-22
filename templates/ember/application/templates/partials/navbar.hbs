@@ -32,7 +32,7 @@
             <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
             <span class="main_menu-item--name">Relatos</span>
           </a>
-        </li>        
+        </li>
 
         <li class="main_menu-item dropdown style_service">
           <a class="main_menu-item--wrapper dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -44,11 +44,11 @@
           </ul>
         </li>
         <li class="main_menu-search">
-            <form class="form-inline" style="opacity: 0;" role="form">
+            <form class="form-inline" style="visibility: visible!important;oapcity: inherit!important;" role="form" action="https://static.atencaobasica.org.br/gsearch/index.html" method="get">
               <div class="input-group">
-                <input type="search" class="search-input form-control" placeholder="Faça sua busca">
+                <input type="search" name="q" class="search-input form-control" placeholder="Faça sua busca">
                 <span class="input-group-btn">
-                  <button class="search-btn btn btn-default" type="button">
+                  <button class="search-btn btn btn-default" type="submit">
                     <i class="icon-search cdp cdp-search"></i>
                   </button>
                 </span>
@@ -69,7 +69,7 @@
             {{log auth}}
             {{#link-to "authLogin" classNames="dropdown-toggle" role="button"}}
               {{t "Login"}}
-            {{/link-to}}              
+            {{/link-to}}
             </li>
         {{/unless}} --}}
         {{#unless isAuthenticated}}
