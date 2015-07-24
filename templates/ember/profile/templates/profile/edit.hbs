@@ -1,3 +1,18 @@
+{{#if aboutMe}}
+  {{#if redirectToServiceUrl.message}}
+  <div class="container missing-info-msg">
+    <div class="alert alert-success alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <h4>{{redirectToServiceUrl.message.title}}</h4>
+      <p>{{redirectToServiceUrl.message.body}}</p>
+      <p>
+        <a class="btn btn-success" role="button" {{bind-attr href=redirectToServiceUrl.redirectUrl}}>{{redirectToServiceUrl.message.action}}</a>
+        <button type="button" class="btn btn-default">Fechar</button>
+      </p>
+    </div>
+  </div>
+  {{/if}}
+{{/if}}
 {{#unless aboutMe}}
 <div class="container missing-info-msg">
   <div class="alert alert-warning" role="alert">
@@ -337,6 +352,25 @@
             </form>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="redirectModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">{{redirectToServiceUrl.message.title}}</h4>
+      </div>
+      <div class="modal-body">
+      <p>{{redirectToServiceUrl.message.body}}</p>
+      <p>Sinta-se à vontade para explorar e completar o seu cadastro na nossa página de perfil, o painel no topo da página poderá lhe redirecionar no momento que desejar com um simples clique de botão.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-primary">{{redirectToServiceUrl.message.action}}</button>
       </div>
     </div>
   </div>
