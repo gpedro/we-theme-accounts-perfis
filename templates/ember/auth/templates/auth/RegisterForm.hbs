@@ -1,5 +1,5 @@
 <div class="container">
-{{partial 'partials/auth-navbar'}}
+<br>
 {{we-sys-messages messages=messages}}
 <form role="form" {{action 'register' on="submit"}} name="createAccountForm" class="auth-form user-signup-form">
   <div class="form-content">
@@ -106,7 +106,7 @@
       <div class="input-group">
         <div class="agree-terms">
           {{input type="checkbox" name="isChecked" checked=isChecked class="form-checkbox required"}}
-          <strong>Li e aceito as <a target="_blank" href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/">regras de convivência</a> e <a target="_blank" href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/">termo de uso</a> da Comunidade de Práticas.*</strong>
+          <strong>Li e aceito as <a target="_blank" href="https://ajuda.atencaobasica.org.br/central-cdp/termo-de-uso/">regras de convivência e termo de uso</a> da Comunidade de Práticas.*</strong>
         </div>
         {{#if isCheckedErrMessage}}
           <div class="input-help">É necessário aceitar as regras de convivência e termos de uso</div>
