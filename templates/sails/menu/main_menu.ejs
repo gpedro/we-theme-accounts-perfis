@@ -8,7 +8,7 @@
         <span class="icon-bar"></span>
       </button>
       <div class="navbar-brand header-main-brand">
-        <a href="http://atencaobasica.org.br">
+        <a href="<%- req._sails.config.hostname %>">
         <!-- Logo -->
         <%- include ../partials/logo-cdp.ejs %>
         <!-- /Logo -->
@@ -20,16 +20,16 @@
       <ul class="nav navbar-nav">
 
         <li class="main_menu-item style_group inactive">
-          <a class="main_menu-item--wrapper" href="http://atencaobasica.org.br/comunidades">
+          <a class="main_menu-item--wrapper" href="<%- req._sails.config.hostname %>/comunidades">
             <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
-            <span class="main_menu-item--name">Comunidades</span>
+            <span class="main_menu-item--name"><%- __('navbar.link.community')  %></span>
           </a>
         </li>
 
         <li class="main_menu-item style_story inactive">
-          <a class="main_menu-item--wrapper" href="https://devjs.atencaobasica.org.br/relato">
+          <a class="main_menu-item--wrapper" href="<%- req._sails.config.hostname %>/relato">
             <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
-            <span class="main_menu-item--name">Relatos</span>
+            <span class="main_menu-item--name"><%- __('navbar.link.relatos')  %></span>
           </a>
         </li>
 
@@ -46,7 +46,7 @@
         <li class="main_menu-search">
           <form style="visibility: visible!important;" class="form-inline" role="form" action="https://static.atencaobasica.org.br/gsearch/index.html" method="get">
             <div class="input-group">
-              <input type="search" name="q" id="googleSearchBox" class="search-input form-control" placeholder="Faça sua busca">
+              <input type="search" name="q" id="googleSearchBox" class="search-input form-control" placeholder="<%- __('navbar.link.search')  %>">
               <span class="input-group-btn">
                 <button class="btn btn-primary" type="submit">
                   <i class="icon-search cdp cdp-search"></i>
@@ -80,35 +80,33 @@
             <span class="user-name"><%= user.displayName %></span><b class="caret"></b>
           </button>
           <ul class="dropdown-menu dropdown-menu-right dropdown-menu-user arrow_box" role="menu">
+            <li><%- __('navbar.link.my_relatos')  %></a></li>
+            <li class="divider"></li>
             <li>
-              <a href="<%- req._sails.config.wejs.hosts.relato %>/relato/meus"><i class="cdp cdp-report"></i> Meus Relatos</a>
+              <a href="<%- req._sails.config.wejs.hosts.relato %>/meu/perfil"> <i class="cdp cdp-user"></i> <%- __('navbar.link.my_profile')  %></a>
+            </li>
+            <li>
+              <a href="/account"> <i class="cdp cdp-user"></i> <%- __('navbar.link.edit_profile')  %></a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="<%- req._sails.config.wejs.hosts.relato %>/meu/perfil"> <i class="cdp cdp-user"></i> Ver perfil</a>
-            </li>
-            <li>
-              <a href="/account"> <i class="cdp cdp-user"></i> Editar perfil</a>
+              <a href="<%- req._sails.config.wejs.hosts.cursos %>/user_mail_notify"><i class="cdp cdp-bell"></i> <%- __('navbar.link.notifications_via_email')  %></a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="<%- req._sails.config.wejs.hosts.cursos %>/user_mail_notify"><i class="cdp cdp-bell"></i> Notificações por Email</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="<%- req._sails.config.wejs.hosts.cursos %>/user_myresults"><i class="cdp cdp-star-full"></i> Notas das Avaliações</a>
+              <a href="<%- req._sails.config.wejs.hosts.cursos %>/user_myresults"><i class="cdp cdp-star-full"></i> <%- __('navbar.link.notes_rating')  %></a>
             </li>
 
             <% if (isAdmin) { %>
             <li class="divider"></li>
             <li>
-              <a href="<%- req._sails.config.wejs.hosts.relato %>/admin"><i class="fa fa-medkit"></i> Administrar</a>
+              <a href="<%- req._sails.config.wejs.hosts.relato %>/admin"><i class="fa fa-medkit"></i> <%- __('navbar.link.administrator')  %></a>
             </li>
             <% } %>
 
             <li class="divider"></li>
             <div class="container-button-signin">
-              <a href="/auth/logout" class="btn btn-sm btn-danger">Sair</a>
+              <a href="/auth/logout" class="btn btn-sm btn-danger"><%- __('navbar.link.logout')  %></a>
             </div>
           </ul>
         </li>
