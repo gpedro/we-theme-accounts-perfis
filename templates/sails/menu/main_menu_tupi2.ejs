@@ -1,0 +1,72 @@
+<form class="navbar-form navbar-left" role="form">
+	<div class="input-group">
+	  <input type="search" class="search-input form-control" placeholder="Faça sua busca">
+	  <span class="input-group-btn">
+	    <button class="search-btn btn btn-default" type="button">
+	      <i class="icon-search cdp cdp-search"></i>
+	    </button>
+	  </span>
+	</div>
+</form>
+
+<ul class="nav navbar-nav navbar-right">
+	<% if(!isLogged){ %>
+	<li class="main_menu-dropdown dropdown">
+		<button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">Login <b class="caret"></b></button>
+		<ul class="dropdown-menu dropdown-menu-right dropdown-menu-user arrow_box" role="menu">
+			<li role="presentation">
+			  <a href="/login"><%- __('navbar.link.login') %></a>
+			</li>
+			<li role="presentation">
+			  <a href="/signup"><%- __('navbar.link.register') %></a>
+			</li>
+			<li role="presentation">
+			  <a href="/auth/forgot-password"><%- __('navbar.link.forgot-password') %></a>
+			</li>
+		</ul>
+	</li>
+	<% } else { %>
+	<li class="main_menu-dropdown dropdown">
+		<button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">
+			<span class="avatar-small">
+				<img width="35" height="35" src="/avatar/<%- user.id %>?style=thumbnail">
+			</span>
+			<span class="user-name "><%= user.nome %></span><b class="caret"></b>
+		</button>
+		<ul class="dropdown-menu dropdown-menu-right dropdown-menu-user arrow_box" role="menu">
+			<li>
+			  <a href="' + cdp.hosts.relatos + '/relato/meus"><i class="cdp cdp-report"></i> Meus Relatos</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+			  <a href="' + cdp.hosts.relatos + '/meu/perfil"> <i class="cdp cdp-user"></i> Ver perfil</a>
+			</li>
+			<li>
+			  <a href="/account"> <i class="cdp cdp-user"></i> Editar perfil</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+			  <a href="' + cdp.hosts.cursos + '/user_mail_notify"><i class="cdp cdp-bell"></i> Notificações por Email</a>
+			</li>
+			<li class="divider"></li>
+			<li>
+			  <a href="' + cdp.hosts.cursos + '/user_myresults"><i class="cdp cdp-star-full"></i> Notas das Avaliações</a>'
+			</li>
+
+			<% if (isAdmin) { %>
+			<li class="divider"></li>
+			<li>
+			  <a href="' + cdp.hosts.relatos + '/admin"><i class="fa fa-medkit"></i> Administrar</a>
+			</li>
+			<% } %>
+
+			<li class="divider"></li>
+			<div class="container-button-signin">
+			  <a href="/auth/logout" class="btn btn-sm btn-danger">Sair</a>
+			</div>
+		</ul>
+	</li>
+	
+	<% } %>
+</ul>
+<div class="bar-colored"></div>

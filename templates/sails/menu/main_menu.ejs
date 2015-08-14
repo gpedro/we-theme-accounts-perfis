@@ -1,0 +1,124 @@
+<nav id="header-main" class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="navbar-brand header-main-brand">
+        <a href="http://atencaobasica.org.br">
+        <!-- Logo -->
+        <%- include ../partials/logo-cdp.ejs %>
+        <!-- /Logo -->
+        </a>
+      </div>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
+
+      <ul class="nav navbar-nav">
+
+        <li class="main_menu-item style_group inactive">
+          <a class="main_menu-item--wrapper" href="http://atencaobasica.org.br/comunidades">
+            <i class="main_menu-item--icon cdp cdp-cdp-logo cdp-2x"></i>
+            <span class="main_menu-item--name">Comunidades</span>
+          </a>
+        </li>
+
+        <li class="main_menu-item style_story inactive">
+          <a class="main_menu-item--wrapper" href="https://devjs.atencaobasica.org.br/relato">
+            <i class="main_menu-item--icon cdp cdp-report cdp-2x"></i>
+            <span class="main_menu-item--name">Relatos</span>
+          </a>
+        </li>
+
+        <li class="main_menu-item dropdown style_service">
+          <a class="main_menu-item--wrapper dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
+            <span class="main_menu-item--name">CdP+</span>
+          </a>
+          <ul class="dropdown-services dropdown-menu dropdown-menu-right arrow_box-menu-services" role="menu">
+            <%- include ../partials/services-menu.ejs %>
+          </ul>
+        </li>
+
+        <li class="main_menu-search">
+          <form style="visibility: visible!important;" class="form-inline" role="form" action="https://static.atencaobasica.org.br/gsearch/index.html" method="get">
+            <div class="input-group">
+              <input type="search" name="q" id="googleSearchBox" class="search-input form-control" placeholder="Faça sua busca">
+              <span class="input-group-btn">
+                <button class="btn btn-primary" type="submit">
+                  <i class="icon-search cdp cdp-search"></i>
+                </button>
+              </span>
+            </div>
+          </form>
+        </li>
+
+        <% if(!isLogged){ %>
+        <li class="main_menu-dropdown dropdown">
+          <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">Login <b class="caret"></b></button>
+          <ul class="dropdown-menu dropdown-menu-right dropdown-menu-user arrow_box" role="menu">
+            <li role="presentation">
+              <a href="/login"><%- __('navbar.link.login') %></a>
+            </li>
+            <li role="presentation">
+              <a href="/signup"><%- __('navbar.link.register') %></a>
+            </li>
+            <li role="presentation">
+              <a href="/auth/forgot-password"><%- __('navbar.link.forgot-password') %></a>
+            </li>
+          </ul>
+        </li>
+        <% } else { %>
+        <li class="main_menu-dropdown dropdown">
+          <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">
+            <span class="avatar-small">
+              <img width="35" height="35" src="/avatar/<%- user.id %>?style=thumbnail">
+            </span>
+            <span class="user-name"><%= user.displayName %></span><b class="caret"></b>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-right dropdown-menu-user arrow_box" role="menu">
+            <li>
+              <a href="<%- req._sails.config.wejs.hosts.relato %>/relato/meus"><i class="cdp cdp-report"></i> Meus Relatos</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="<%- req._sails.config.wejs.hosts.relato %>/meu/perfil"> <i class="cdp cdp-user"></i> Ver perfil</a>
+            </li>
+            <li>
+              <a href="/account"> <i class="cdp cdp-user"></i> Editar perfil</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="<%- req._sails.config.wejs.hosts.cursos %>/user_mail_notify"><i class="cdp cdp-bell"></i> Notificações por Email</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="<%- req._sails.config.wejs.hosts.cursos %>/user_myresults"><i class="cdp cdp-star-full"></i> Notas das Avaliações</a>
+            </li>
+
+            <% if (isAdmin) { %>
+            <li class="divider"></li>
+            <li>
+              <a href="<%- req._sails.config.wejs.hosts.relato %>/admin"><i class="fa fa-medkit"></i> Administrar</a>
+            </li>
+            <% } %>
+
+            <li class="divider"></li>
+            <div class="container-button-signin">
+              <a href="/auth/logout" class="btn btn-sm btn-danger">Sair</a>
+            </div>
+          </ul>
+        </li>
+        <% } %>
+        <div class="bar-colored"></div>
+    </div>
+  </div>
+</nav>
+
+<!-- Modal Services -->
+<!-- {{partial 'partials/modal-services'}}-->
+<!-- /Modal Services -->
+
