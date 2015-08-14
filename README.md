@@ -23,7 +23,7 @@ In terminal:
 
 ```sh
 git clone https://github.com/wejs/perfis.atencaobasica.org.br.git
-cd perfis.atencaobasica.org.br
+cd we-theme-accounts-perfis
 npm install && bower install
 ```
 
