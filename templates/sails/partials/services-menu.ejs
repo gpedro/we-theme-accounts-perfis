@@ -1,20 +1,20 @@
-<li class="style_courses">
-  <a href="http://cursos.atencaobasica.org.br">
-    <i class="cdp cdp-badge cdp-2x"></i>
-    <span class="text">Cursos</span>
-  </a>
-</li>
-
 <li class="style_blog">
-  <a href="http://blog.atencaobasica.org.br">
-    <i class="cdp cdp-chat cdp-2x"></i>
+  <a href="<%- req._sails.config.wejs.hosts.blog %>">
+    <img style="width: 30px; margin-bottom: 8px; margin-top: 2px; height: 30px; position: relative;" src="<%- req._sails.config.wejs.hosts.static %>/img/icon-blog.png">
     <span class="text">Blog</span>
   </a>
 </li>
 
 <li class="style_help">
-  <a href="http://ajuda.atencaobasica.org.br">
-    <i class="cdp cdp-question cdp-2x"></i>
+  <a href="<%- req._sails.config.wejs.hosts.ajuda %>">
+    <img style="width: 30px; margin-bottom: 10px; margin-top: 2px; height: 30px; position: relative;" src="<%- req._sails.config.wejs.hosts.static %>/img/img-icon-ajuda.png">
     <span class="text">Ajuda</span>
+  </a>
+</li>
+
+<li class="style_help">
+  <a href="<%- req._sails.config.wejs.hosts.eventos %>">
+    <img style="width: 30px; margin-bottom: 10px; margin-top: 2px; height: 30px; position: relative;" src="<%- req._sails.config.wejs.hosts.static %>/img/icon-eventos.png">
+    <span class="text">Eventos</span>
   </a>
 </li>

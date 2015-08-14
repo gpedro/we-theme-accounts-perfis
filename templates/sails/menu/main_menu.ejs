@@ -33,6 +33,13 @@
           </a>
         </li>
 
+        <li class="main_menu-item style_group inactive">
+          <a class="main_menu-item--wrapper" href="<%- req._sails.config.wejs.hosts.cursos %>">
+            <i class="main_menu-item--icon cdp cdp-badge cdp-2x"></i>
+            <span class="main_menu-item--name"><%- __('navbar.link.course')  %></span>
+          </a>
+        </li>
+
         <li class="main_menu-item dropdown style_service">
           <a class="main_menu-item--wrapper dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
             <i class="main_menu-item--icon cdp cdp-services cdp-2x"></i>
@@ -61,13 +68,13 @@
           <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">Login <b class="caret"></b></button>
           <ul class="dropdown-menu dropdown-menu-right dropdown-menu-user arrow_box" role="menu">
             <li role="presentation">
-              <a href="/login"><%- __('navbar.link.login') %></a>
+              <a href="<%- req._sails.config.hostname %>/login"><%- __('navbar.link.login') %></a>
             </li>
             <li role="presentation">
-              <a href="/signup"><%- __('navbar.link.register') %></a>
+              <a href="<%- req._sails.config.hostname %>/signup"><%- __('navbar.link.register') %></a>
             </li>
             <li role="presentation">
-              <a href="/auth/forgot-password"><%- __('navbar.link.forgot-password') %></a>
+              <a href="<%- req._sails.config.hostname %>/auth/forgot-password"><%- __('navbar.link.forgot-password') %></a>
             </li>
           </ul>
         </li>
@@ -75,7 +82,7 @@
         <li class="main_menu-dropdown dropdown">
           <button class="btn btn-default dropdown-toggle user-menu-link" data-toggle="dropdown">
             <span class="avatar-small">
-              <img width="35" height="35" src="/avatar/<%- user.id %>?style=thumbnail">
+              <img width="35" height="35" src="<%- req._sails.config.hostname %>/avatar/<%- user.id %>?style=thumbnail">
             </span>
             <span class="user-name"><%= user.displayName %></span><b class="caret"></b>
           </button>
@@ -86,7 +93,7 @@
               <a href="<%- req._sails.config.wejs.hosts.relato %>/meu/perfil"> <i class="cdp cdp-user"></i> <%- __('navbar.link.my_profile')  %></a>
             </li>
             <li>
-              <a href="/account"> <i class="cdp cdp-user"></i> <%- __('navbar.link.edit_profile')  %></a>
+              <a href="<%- req._sails.config.hostname %>/account"> <i class="cdp cdp-user"></i> <%- __('navbar.link.edit_profile')  %></a>
             </li>
             <li class="divider"></li>
             <li>
@@ -106,7 +113,7 @@
 
             <li class="divider"></li>
             <div class="container-button-signin">
-              <a href="/auth/logout" class="btn btn-sm btn-danger"><%- __('navbar.link.logout')  %></a>
+              <a href="<%- req._sails.config.hostname %>/auth/logout" class="btn btn-sm btn-danger"><%- __('navbar.link.logout')  %></a>
             </div>
           </ul>
         </li>
