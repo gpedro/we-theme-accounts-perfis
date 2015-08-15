@@ -3,7 +3,7 @@
   <head>
     <title><%- title %></title>
 
-    <% if (typeof metadata !== 'undefined' || metadata) { %>
+    <% if (metadata !== undefined && Object.keys(metadata).length > 0) { %>
       <% include ../partials/metadata %>
     <% } else { %>
       <% include ../partials/default-metadata %>
